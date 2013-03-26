@@ -2,79 +2,62 @@
 extends layout
 block content
   .container
-    .hero-unit
-      h1.nameTitle Espresso!
-    #coffeeCarousel.carousel.slide
-      //
-         Carousel Items
-      .carousel-inner
-        .active.item
-          img(src='/images/coffee/1.jpg')
-          .carousel-caption
-            p
-              strong Lets make coffee!
-        .item
-          img(src='/images/coffee/7.jpg')
-          .carousel-caption
-            h4 Check the Machine
-            p
-              | The three switches on the left should be off. They are, in order: Coffee, Hot Water, Steam.
-            p
-              | The power switch should be on, and the boiler light (the big one to the right of power) should be off.
-            p
-              | By default, the portafilter (the handle thing) should be IN the espresso machine's grouphead. It's supposed to be kept hot.
-        .item
-          img(src='/images/coffee/14.jpg')
-          .carousel-caption
-            h4 Grind some Coffee!
-            p
-              | Remove the Portafilter (handle thingy) and place it in the grinder. Do
-              i not
-              | adjust the grind!
-        .item
-          img(src='/images/coffee/15.jpg')
-          .carousel-caption
-            p
-              | Hold the grind button, at the bottom left of the machine, for around 8-9 seconds.
-            p
-              | Carefully flatten the coffee on the portafilter by smoothly moving a finger on the surface of the beans. Don't simply flatten it, try to pack it in a little bit.
-        .item
-          img(src='/images/coffee/18.jpg')
-          .carousel-caption
-            p
-              | Grab the Tamp (Silver hammer thingy, make sure it is dry) and lightly place the big end into the top of the portafilter. Twist it to smooth out the Espresso. Then, with ~30 lb of pressure, push down on the Tamp to pack the espresso. IE, push as hard as you reasonably can. You can't tamp it too hard (don not break it though!).
-        .item
-          img(src='/images/coffee/23.jpg')
-          .carousel-caption
-            h4 Step 3: OMG COFFEE
-            p
-              | Place the portafilter into the espresso machine's group head. You'll need to slot it in around 45 degrees left from the red dot.
-        .item
-          img(src='/images/coffee/24.jpg')
-          .carousel-caption
-            p
-              | Then, twist 45 degrees right to lock it in. Make sure
-              i both
-              | tabs of the portafilter are locked in, or you'll get covered in scalding hot espresso.
-        .item
-          img(src='/images/coffee/4.jpg')
-          .carousel-caption
-            p
-              | When it's locked in, put a cup under the portafilter and flip the first switch!
-        .item
-          img(src='/images/coffee/26.jpg')
-          .carousel-caption
-            p
-              | The extraction should take around 10 seconds, and be slow and dark caramel, getting lighter through the extraction. Too fast? Not enough espresso. Too slow? It's only too slow if it doesn't make coffee. You are aiming to make the thinnest 'legs' you can, without it turning into a drip.
-            p
-              | Turn off the switch! It doesn't stop itself! Remove your cup, remove the portafilter, and bang it out on the bamboo knock box rubber bar. Replace the portafilter into the espresso machine's group head.
-        .item
-          img(src='/images/coffee/29.jpg')
-        .item
-          img(src='/images/coffee/27.jpg')
-      a.carousel-control.left(href='#coffeeCarousel', data-slide='prev') ‹
-      a.carousel-control.right(href='#coffeeCarousel', data-slide='next') ›
-    script
-      $('.carousel').carousel()
-
+    .span8.offset2
+      .hero-unit
+        h1.nameTitle Espresso!
+      #coffeeCarousel.carousel.slide
+        // Carousel Items
+        .carousel-inner
+          .active.item
+            img(src='/images/coffee/1.jpg')
+            .carousel-caption
+              p
+                strong Lets make coffee!
+          .item
+            img(src='/images/coffee/7.jpg')
+            .carousel-caption
+              h4 Check the Machine
+              p The three switches on the left should be off. They are, in order: Coffee, Hot Water, Steam.
+              p The power switch should be on, and the boiler light (the big one to the right of power) should be off.
+              p By default, the portafilter (the handle thing) should be IN the espresso machine's grouphead. It's supposed to be kept hot.
+          .item
+            img(src='/images/coffee/14.jpg')
+            .carousel-caption
+              h4 Grind some Coffee!
+              p Remove the Portafilter (handle thingy) and place it in the grinder. Do not adjust the grind!
+          .item
+            img(src='/images/coffee/15.jpg')
+            .carousel-caption
+              p Hold the grind button, at the bottom left of the machine, for around 8-9 seconds.
+              p Carefully flatten the coffee on the portafilter by smoothly moving a finger on the surface of the beans. Don't simply flatten it, try to pack it in a little bit.
+          .item
+            img(src='/images/coffee/18.jpg')
+            .carousel-caption
+              p Grab the Tamp (Silver hammer thingy, make sure it is dry) and lightly place the big end into the top of the portafilter. Twist it to smooth out the Espresso. Then, with ~30 lb of pressure, push down on the Tamp to pack the espresso. IE, push as hard as you reasonably can. You can't tamp it too hard (don not break it though!).
+          .item
+            img(src='/images/coffee/23.jpg')
+            .carousel-caption
+              h4 Step 3: OMG COFFEE
+              p Place the portafilter into the espresso machine's group head. You'll need to slot it in around 45 degrees left from the red dot.
+          .item
+            img(src='/images/coffee/24.jpg')
+            .carousel-caption
+              p Then, twist 45 degrees right to lock it in. Make sure both tabs of the portafilter are locked in, or you'll get covered in scalding hot espresso.
+          .item
+            img(src='/images/coffee/4.jpg')
+            .carousel-caption
+              p When it's locked in, put a cup under the portafilter and flip the first switch!
+          .item
+            img(src='/images/coffee/26.jpg')
+            .carousel-caption
+              p The extraction should take around 10 seconds, and be slow and dark caramel, getting lighter through the extraction. Too fast? Not enough espresso. Too slow? It's only too slow if it doesn't make coffee. You are aiming to make the thinnest 'legs' you can, without it turning into a drip.
+              p Turn off the switch! It doesn't stop itself! Remove your cup, remove the portafilter, and bang it out on the bamboo knock box rubber bar. Replace the portafilter into the espresso machine's group head.
+          .item
+            img(src='/images/coffee/29.jpg')
+          .item
+            img(src='/images/coffee/27.jpg')
+        a.carousel-control.left(href='#coffeeCarousel', data-slide='prev') ‹
+        a.carousel-control.right(href='#coffeeCarousel', data-slide='next') ›
+      script
+        $('.carousel').carousel()
   .footer
