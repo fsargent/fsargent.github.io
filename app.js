@@ -8,22 +8,13 @@ var express = require('express'),
     user = require('./routes/user'),
     fs = require('fs'),
     http = require('http'),
-    https = require('https'),
     helmet = require('helmet'),
     path = require('path');
 
-var app = express(),
-    insecure_app = express();
-
-var credentials = {
-  ca: fs.readFileSync('felixsargent_com.ca-bundle'),
-  key: fs.readFileSync('felixsargent_com.key'),
-  cert: fs.readFileSync('felixsargent_com.crt')
-};
-
+var app = express()
 
 app.configure(function(){
-  app.set('port', 8443);
+  app.set('port', 8080);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
@@ -43,16 +34,6 @@ app.get('/', routes.index);
 app.get('/coffee', routes.coffee);
 app.get('/users', user.list);
 
-https.createServer(credentials, app).listen(app.get('port'), function(){
+http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
-});
-
-
-insecure_app.get('*',function(req, res){
-    console.log('Redirected to secure https://' + req.headers.host + req.url);
-    res.redirect('https://' + req.headers.host + req.url);
-});
-
-http.createServer(insecure_app).listen(8080, function(){
-    console.log("Insecure server listening on port 8080");
 });
