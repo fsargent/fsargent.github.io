@@ -1,27 +1,28 @@
-doctype 5
+!!! 5
 html
   head
     title= title
-    link(href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css", rel="stylesheet")
+    link(href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css', rel='stylesheet')
+    link(href='//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css', rel='stylesheet')
     link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
-    link(href='//coderwall.com/stylesheets/jquery.coderwall.css', media='all', rel='stylesheet', type='text/css')
-    link(href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css", rel="stylesheet")
-    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js')
-    script(src='//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js')
-    script(src='//coderwall.com/javascripts/jquery.coderwall.js')
-    script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js")
-  .navbar.navbar-fixed-top
-    .navbar-inner
-      .container
-        a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
-        a.brand(href='/') Felix Sargent
-        .nav-collapse
-          ul.nav
-            li
-              a(href='/') Resume
-            li
-              a(href='/coffee') Coffee
-            li
-              a(href='http://blog.felixsargent.com') Blog
+    script(src='//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
+  .navbar.navbar-fixed-top.navbar-default
+    .container
+      .navbar-header
+        a.navbar-brand(href='/') Felix Sargent
+      .collapse.navbar-collapse.navbar-ex1-collapse
+        ul.nav.navbar-nav
+          li
+            a(href='//blog.felixsargent.com')
+              i.glyphicon.glyphicon-comment
+          li
+            a(href='mailto:felix.sargent@gmail.com')
+              i.icon-envelope.icon-large
+          li
+            a(href='//github.com/fsargent')
+              i.icon-github.icon-large
+          li
+            a(href='//linkedin.com/in/felixsargent/')
+              i.icon-linkedin-sign.icon-large
   body
     block content
