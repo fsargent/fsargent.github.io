@@ -1,0 +1,70 @@
+==================================================================
+https://keybase.io/fsargent
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://felixsargent.com
+  * I am fsargent (https://keybase.io/fsargent) on keybase.
+  * I have a public key with fingerprint 3EFF CE31 E3B3 2271 A6C7  C101 9008 B930 360A 1950
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "3effce31e3b32271a6c7c1019008b930360a1950",
+            "host": "keybase.io",
+            "key_id": "9008B930360A1950",
+            "uid": "b3a2ddc8d2b7bc12820d99085e535b00",
+            "username": "fsargent"
+        },
+        "service": {
+            "hostname": "felixsargent.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1400867564,
+    "expire_in": 157680000,
+    "prev": "07774f55aca4b0b173cb22d3059bd5ca463b7d712b3174ea505502b03e066a3c",
+    "seqno": 8,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+Comment: GPGTools - http://gpgtools.org
+
+owGbwMvMwMQ4gWOngRmXZADj6QNfkxiC67veVCsl5adUKllVK2Wngqm0zLz01KKC
+osy8EiUrJePUtLTkVGPDVOMkYyMjc8NEs2TzZEMDQ0sDA4skS2MDYzODRENLUwMl
+HaWM/GKQDqAxSYnFqXqZ+UAxICc+MwUoClLvBFHvCFVfCpZIMk40SklJtkgxSjJP
+SjY0sjAySLG0NLAwTTU1Nk0yACssTi3KS8xNBapOK04sSk8FuqxWRwkoWpaZnApy
+M8hqmIrUnMwKqCq95PxcoP6CovyS/OT8HKBsRklJgRVIc0llAUh1eWpSPNSc+KTM
+vBSg34EaylKLijPz85SsDIEqk0syQQYbmgB9YGZuamaio5RaUZBZlBqfCVJham5m
+YQAEIGtSy4BGGpibm5ukmZomJieaJBkkGZobJycZGaUYG5haJqWYAgXNjJPMU8wN
+jZKMDc1NUhNNDUxNDYySDIxTDczMEo2TlUA+K8zLV7KyADozMR1oZHFmel5iSWlR
+qlJtJ5MMCwMjEwMbKxMo9hi4OAVgcZpzl/9/3cUjN4xuPi2rVGNc8P7f+k3c9968
+nPrfs/nT68wo1z1Karx3j+733bp/wounvksFLt324UhvFrIJK+fbdfZErEdgzd21
+UV1WC8smfJnp59vH27mk+154/Yp/L60NfN7eWB/MnfMjRW3ja5/VJkfX9JcL1Ryy
+nvtK8FXV45tdbT5rmk6YbcpjeFe+WeB5x7uMsEMLt6v8dy+L++WqoxXop8VgOvPk
+CRsZ4XP//39/atT8VVFX4/Tc+j7P7Alv2baoSj+LOJtt9GRK75rd3PuKtFmvMZuH
+dwb89Pz6Q6Tb+NMF/lS3uxZ7TuuqBWxRaW63Uz918M5Nl5e/f14JPbnt6L8LreFd
+tapKOWu/Pa5bGxPkoLz6yYzlc/jKvhfyr1slKhYX+kf6VFZyaZtQ8Y1N6jEX/xw2
+fHA15kld114WRu6l4sc6wzsc+iZk3inMmakoLp412+lT+M598xorPY542rtxvd/l
+6BwTueXLx53Ft8zuCnAGKVw8PkukYxXngoOXN596v/GH/uoa//J5l+c3JdzPaOtS
+/nNRZFu3yPXDU1KfvuPeuYN1/Yc9Pbdv3BCTV5iyd1Ijf3Z2a4Ii08lP+nuO7HGP
+e/zyhlzWgg33hJTt984//dV6w/wIJaY7Z7SvLjv581xQ6+vk2gU7lD8uT9t2v/xL
+XePs5X6nw4M7Tpue0mt3DTNgNC69xhoZ0bFq/pGTq4Qycvtu7SwUagYA
+=3V1s
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/fsargent
+
+==================================================================
