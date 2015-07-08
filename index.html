@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Felix Sargent's Resume</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/paper/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style">
     <style>
+    @grid-float-breakpoint: 0px;
     body {
         padding-top: 70px;
     }
@@ -16,6 +17,27 @@
         margin-top: 50px;
         border-top: 1px solid #e5e5e5;
         background-color: #f5f5f5;
+    }
+    
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+    }
+    
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CrYjSnGjrRCn0pd9VQsnFOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+    }
+    
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
     }
     </style>
 </head>
@@ -42,10 +64,9 @@
     })(window, document, 'script', 'dataLayer', 'GTM-M7K4TR');
     </script>
     <!-- End Google Tag Manager -->
-    <div class="navbar navbar-fixed-top navbar-default">
+    <nav class="navbar navbar-fixed-top navbar-default">
         <div class="container">
-            <div class="navbar-header"></div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="https://medium.com/@antagonist/">
@@ -85,10 +106,10 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </nav>
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="text-right">
                     <h1>Felix Sargent
                         <p>
@@ -97,14 +118,11 @@
                     </h1>
                 </div>
             </div>
-            <div class="col-md-6">
-                </a>
-            </div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 <div class="text-right">
-                    <p class="lead">Experience</p>
+                    <h4>Experience</h4>
                 </div>
             </div>
             <div class="col-md-6">
@@ -187,7 +205,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="text-right">
-                    <p class="lead">Skills</p>
+                    <h4>Skills</h4>
                 </div>
             </div>
             <div class="col-md-6">
@@ -228,7 +246,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="text-right">
-                    <p class="lead">Education</p>
+                    <h4>Education</h4>
                 </div>
             </div>
             <div class="col-md-6">
@@ -247,7 +265,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="text-right">
-                    <p class="lead">Personal</p>
+                    <h4>Personal</h4>
                 </div>
             </div>
             <div class="col-md-6">
