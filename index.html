@@ -40,6 +40,20 @@
         font-weight: 500;
         src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
     }
+
+    @media print {
+         a[href]:after {
+        content: none !important;
+      }
+
+      body {
+        padding-top: 0px;
+      }
+
+      .text-right {
+        text-align: left;
+      }
+
     </style>
 </head>
 
@@ -184,24 +198,26 @@
                     <li>Built the office&nbsp;<a href="https://www.sdtimes.com/link/36702">Kegerator</a>
                     </li>
                 </ul>
-                <blockquote>
-                    <p>Linux Infrastructure Engineer @<a href="https://www.salesforce.com/">Salesforce.com</a>
-                        <small>August 2010 - August 2011</small>
-                    </p>
-                </blockquote>
-                <ul>
-                    <li>Created Ubuntu corporate image currently deployed worldwide to Salesforce.com Developers</li>
-                    <li>Built Corporate Puppet infrastructure, scaled to 500+ nodes, monitored with Puppet Dashboard
-                    </li>
-                </ul>
-                <blockquote>
-                    <p>Support Engineer @<a href="https://www.google.com/">Google</a> (<a href="https://www.astreya.com/">Astreya</a>)
-                        <small>August 2009 - August 2010</small>
-                    </p>
-                </blockquote>
-                <ul>
-                    <li>Technical Support to Google Engineers</li>
-                </ul>
+                <div class="hidden-print">
+                    <blockquote>
+                        <p>Linux Infrastructure Engineer @<a href="https://www.salesforce.com/">Salesforce.com</a>
+                            <small>August 2010 - August 2011</small>
+                        </p>
+                    </blockquote>
+                    <ul>
+                        <li>Created Ubuntu corporate image currently deployed worldwide to Salesforce.com Developers</li>
+                        <li>Built Corporate Puppet infrastructure, scaled to 500+ nodes, monitored with Puppet Dashboard
+                        </li>
+                    </ul>
+                    <blockquote>
+                        <p>Support Engineer @<a href="https://www.google.com/">Google</a> (<a href="https://www.astreya.com/">Astreya</a>)
+                            <small>August 2009 - August 2010</small>
+                        </p>
+                    </blockquote>
+                    <ul>
+                        <li>Technical Support to Google Engineers</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -280,7 +296,7 @@
             </div>
         </div>
     </div>
-    <div class="footer">
+    <div class="footer hidden-print">
         <div class="container text-center">
             <a href="/docs/Felix%20Sargent%20Resume.pdf" download="Felix Sargent Resume.pdf">
                 <button type="button" class="btn btn-default btn-lg">Save as PDF <i class="fa fa-floppy-o"></i> </button>
