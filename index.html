@@ -81,29 +81,6 @@
 </head>
 
 <body>
-    <!-- Google Tag Manager -->
-    <noscript>
-        <iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-M7K4TR" style="display:none;visibility:hidden"
-            width="0"></iframe>
-    </noscript>
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-M7K4TR');
-    </script>
-    <!-- End Google Tag Manager -->
-
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
         <a class="navbar-brand icon-label" href="https://www.felixsargent.com"><i class="fas fa-home"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -149,9 +126,9 @@
                     </a>
                 </li>
             </ul>
-            <button class="btn btn-primary my-2 mr-1" onclick="window.print()">
+            <a class="btn btn-primary my-2 mr-1" onclick="window.print()">
                 <div class="d-sm-block">Print<i class="fas fa-file-pdf"></i></div>
-            </button>
+            </a>
             <a class="btn btn-primary my-2 mr-1" download="Felix Sargent Resume.pdf" role=button
                 href="/docs/Felix%20Sargent%20Resume.pdf">
                 <div class="d-sm-block">Save as PDF<i class="fas fa-file-pdf"></i></div>
