@@ -63,6 +63,10 @@
                 padding-top: 0px;
             }
 
+            .container {
+                width: 100%;
+            }
+
             .text-right {
                 text-align: left;
             }
@@ -141,20 +145,31 @@
                     <a class="nav-link" href="https://keybase.io/fsargent">
                         <div class="icon-label d-none d-sm-block"><i class="fab fa-keybase"></i></div>
                         <div class="icon-label d-sm-none"><i class="fab fa-keybase"></i> Keybase</div>
-
                     </a>
                 </li class="nav-item">
 
-            </ul><a class="btn btn-primary my-2 my-sm-0" download="Felix Sargent Resume.pdf" role=button
+            </ul>
+            <button class="btn btn-primary my-2 mr-1" onclick="window.print()">
+                <div class="d-sm-block">Print<i class="fas fa-file-pdf"></i></div>
+            </button>
+            <a class="btn btn-primary my-2 mr-1" download="Felix Sargent Resume.pdf" role=button
                 href="/docs/Felix%20Sargent%20Resume.pdf">
                 <div class="d-sm-block">Save as PDF<i class="fas fa-file-pdf"></i></div>
             </a>
+
         </div>
     </nav>
     <div class="container">
         <div class="row">
-            <div class="mt-0 col-md-8 offset-md-2 text-right">
-
+            <div class="col-md-2">
+                <img class="img-fluid d-print-block d-none" alt="QR Code link to this site."
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAIAAAAiOjnJAAAABmJLR0QA/wD/AP+gvaeTAAADkElEQVR4nO3dS24kIRBAwemR739lzwlYIOUbwI5Y2lL174lFiqI+fx7x/f09cp3P5/Mjr3+bv6ffAD+TsEgIi4SwSAiLhLBICIvE1+ofU3OXXVNzmlfmPVNzr9t+LysWCWGREBYJYZEQFglhkRAWieUca2VqPnRq7rKy+7lW73/191NztVO/lxWLhLBICIuEsEgIi4SwSAiLxPYc6zZT86fd6+/uo7ptvlWzYpEQFglhkRAWCWGREBYJYZF4fo61MjWv+m3zpylWLBLCIiEsEsIiISwSwiIhLBLbc6zb7gc8Na+a+h7q7/PU72XFIiEsEsIiISwSwiIhLBLCIrGcY72y36ieM+06NSe77feyYpEQFglhkRAWCWGREBYJYZH43La/qnbqPK1dr/8uViwSwiIhLBLCIiEsEsIiISwS20OXqflKPe955byrel5Vz+1WrFgkhEVCWCSERUJYJIRFQlgkvnbnOvVcpJ4z1fOqU3OyU9/P6vNasUgIi4SwSAiLhLBICIuEsEiMPa+w3qdV77s6dc77ytQ8qb7O6u9WLBLCIiEsEsIiISwSwiIhLBL58wpvmwNN7Q+b8sr+sN3rWLFICIuEsEgIi4SwSAiLhLBIfNX3o/22udfKbed41d+nFYuEsEgIi4SwSAiLhLBICIvEcj9WfZ/dK+ew76r3OZ26/3H3+lYsEsIiISwSwiIhLBLCIiEsEsuhy9Rcavf6t+03euWcqilTr2vFIiEsEsIiISwSwiIhLBLCIrE9x7ptn9CU297nqfPrV5yPxRWERUJYJIRFQlgkhEVCWCTGnlc45fX9WLXd93NqvmXFIiEsEsIiISwSwiIhLBLCIvG5bV/ULufLn73+ihWLhLBICIuEsEgIi4SwSAiLxNjzCmv1eV27pvYtTb3ubfc/WrFICIuEsEgIi4SwSAiLhLBIbD+vsFbfVzg1B9q9/m33S+7yvEKuICwSwiIhLBLCIiEsEsIisX0+1m3zmPq5fqf2q73+ulYsEsIiISwSwiIhLBLCIiEsEted8z5lar/UK+fFn5oLuq+Q/0pYJIRFQlgkhEVCWCSEReLHzrFuOz+9fj7grqnXNcfivxIWCWGREBYJYZEQFglhkdieY932fMP6/sHduVTttvs6V6xYJIRFQlgkhEVCWCSERUJYJJZzrFeeY7gytf/p1PMB63Pq689lxSIhLBLCIiEsEsIiISwSwiLxD2oOVM+bNXlsAAAAAElFTkSuQmCC">
+            </div>
+            <div class="col-md-2">
+                <div class="d-print-block d-none">Got a printed version of this resume? <br />Scan to visit
+                    resume.felixsargent.com</div>
+            </div>
+            <div class="mt-0 col-md-4 offset-md-2 text-right">
                 <h1 class="mt-5 display-4">
                     Felix Sargent<br />
 
@@ -202,11 +217,13 @@
                 </h3>
                 <ul>
                     <li>
-                        Led the product team with a philosophy of servant leadership to encourage discussion, healthy
+                        Led the product team with a philosophy of servant leadership to encourage discussion,
+                        healthy
                         debate, and clear communication
                     </li>
                     <li>
-                        Created product strategy and worked with CEO to set roadmap to replace unreliable legacy systems
+                        Created product strategy and worked with CEO to set roadmap to replace unreliable legacy
+                        systems
                     </li>
                     <li>
                         Re-established trust between engineering and sales teams by creating consistent outcomes and
@@ -214,7 +231,8 @@
                         bugs identified per week down by 90%
                     </li>
                     <li>
-                        Developed process for account management team to triage and prioritize customer issues bringing
+                        Developed process for account management team to triage and prioritize customer issues
+                        bringing
                         median resolution time down
                         by 80%, and increasing customer NPS scores by 60%
                     </li>
@@ -241,22 +259,26 @@
                 </h3>
                 <ul>
                     <li>
-                        Product owner for Bloomberg Vault Surveillance, the communications monitoring and auditing tool
+                        Product owner for Bloomberg Vault Surveillance, the communications monitoring and auditing
+                        tool
                         for the Bloomberg Terminal
                         (MCMP, BVTP)
                     </li>
                     <li>
-                        Implemented technology and policies to capture communications to prevent Market Abuse, Insider
+                        Implemented technology and policies to capture communications to prevent Market Abuse,
+                        Insider
                         Trading, Harassment, and Data
                         Loss
                     </li>
                     <li>
-                        Coordinated a team working on the latest and greatest technology stack including Scala, Play,
+                        Coordinated a team working on the latest and greatest technology stack including Scala,
+                        Play,
                         Accumulo, &amp; Akka running
                         on a Mesos infrastructure
                     </li>
                     <li>
-                        Worked with Compliance and Security Officers to ensure the data integrity of our clients, and
+                        Worked with Compliance and Security Officers to ensure the data integrity of our clients,
+                        and
                         the Bloomberg Terminal
                     </li>
                 </ul>
@@ -272,7 +294,8 @@
                 </b>
                 <ul>
                     <li>
-                        Product owner for Repose, the API Middleware Platform. Repose handles Authentication (Openstack
+                        Product owner for Repose, the API Middleware Platform. Repose handles Authentication
+                        (Openstack
                         Keystone), Security, Rate
                         Limiting, and Content Normalization for nearly all Rackspace APIs
                     </li>
@@ -287,7 +310,8 @@
                     </li>
                     <li>
                         Presented
-                        <a href="https://www.youtube.com/watch?v=w_l6-MYEb5U">Repose, the Openstack API Filter</a> at
+                        <a href="https://www.youtube.com/watch?v=w_l6-MYEb5U">Repose, the Openstack API Filter</a>
+                        at
                         OpenStack 2014
                     </li>
                 </ul>
@@ -320,7 +344,8 @@
                         HEAT
                     </li>
                     <li>
-                        <a href="https://www.rackspace.com/blog/tea-time-because-we-wont-stand-for-a-standup/">Created a
+                        <a href="https://www.rackspace.com/blog/tea-time-because-we-wont-stand-for-a-standup/">Created
+                            a
                             culture of a tea time at Rackspace</a>
                     </li>
                     <li>
@@ -374,7 +399,8 @@
                 </p>
                 <ul>
                     <li>Helped modernize the organization's website</li>
-                    <li>Recruit new board members, coordinate strategic donors, and raise grants for the organization
+                    <li>Recruit new board members, coordinate strategic donors, and raise grants for the
+                        organization
                     </li>
                     <li>Wrote <a
                             href="https://www.berkeleyside.com/2019/06/19/opinion-berkeleys-city-councils-switch-to-re-weighted-range-voting-adds-fairness-to-the-system">
@@ -476,7 +502,8 @@
             </div>
         </div>
     </div>
-    <div class="footer hidden-print">
+
+    <div class="footer d-print-none">
         <div class="container text-center">
             <a download="Felix Sargent Resume.pdf" href="/docs/Felix%20Sargent%20Resume.pdf">
                 <button class="btn btn-primary " type="button">Save as PDF
