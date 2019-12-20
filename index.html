@@ -13,16 +13,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
     <link href="https://bootswatch.com/4/slate/bootstrap.min.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
     <style>
-        @grid-float-breakpoint: 0px;
-
         i.fab {
             margin: 5px;
-            font-size: 3em;
         }
 
         i.fas {
             margin: 5px;
-            font-size: 3em;
+        }
+
+        .icon-label {
+            font-size: 2em;
         }
 
         .footer {
@@ -99,42 +99,55 @@
     </script>
     <!-- End Google Tag Manager -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="collapse navbar-collapse">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="https://medium.com/@antagonist/">
-                        <i class="fab fa-medium"></i> </a>
+                        <div class="icon-label d-none d-lg-block"><i class="fab fa-medium"></i></div>
+                        <div class="icon-label d-lg-none"><i class="fab fa-medium"></i>Medium</div>
+
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link"
                         href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=felix.sargent@gmail.com"
                         target="_blank">
-                        <i class="fas fa-envelope"></i>
+                        <div class="icon-label d-none d-lg-block"><i class="fas fa-envelope"></i></div>
+                        <div class="icon-label d-lg-none"><i class="fas fa-envelope"></i>Email</div>
+
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://github.com/fsargent">
-                        <i class="fab fa-github"></i>
+                        <div class="icon-label d-none d-lg-block"><i class="fab fa-github"></i></div>
+                        <div class="icon-label d-lg-none"><i class="fab fa-github"></i>Github</div>
+
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://linkedin.com/in/felixsargent/">
-                        <i class="fab fa-linkedin-in"></i> </a>
+                        <div class="icon-label d-none d-lg-block"><i class="fab fa-linkedin-in"></i></div>
+                        <div class="icon-label d-lg-none"><i class="fab fa-linkedin"></i>Linkedin</div>
+
+                    </a>
                 </li class="nav-item">
                 <li class="nav-item">
                     <a class="nav-link" href="https://keybase.io/fsargent">
-                        <i class="fab fa-keybase"></i> </a>
-                </li class="nav-item">
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a download="Felix Sargent Resume.pdf" href="/docs/Felix%20Sargent%20Resume.pdf">
-                        <button class="btn btn-primary " type="button">Save as PDF
-                            <i class="fas fa-file-download"></i>
-                        </button>
+                        <div class="icon-label d-none d-lg-block"><i class="fab fa-keybase"></i></div>
+                        <div class="icon-label d-lg-none"><i class="fab fa-keybase"></i>Keybase</div>
+
                     </a>
-                </li>
-            </ul>
+                </li class="nav-item">
+
+            </ul><a download="Felix Sargent Resume.pdf" href="/docs/Felix%20Sargent%20Resume.pdf">
+                <button class="btn btn-primary" type="button">Save as PDF
+                    <i class="fas fa-file-download"></i>
+                </button>
+            </a>
         </div>
     </nav>
     <div class="container">
@@ -484,6 +497,15 @@
             </a>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
