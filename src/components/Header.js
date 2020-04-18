@@ -1,13 +1,13 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import felixthecat from '../assets/favicons/android-chrome-192x192.png'
+import PropTypes from "prop-types";
+import React from "react";
+import felixthecat from "../assets/favicons/android-chrome-192x192.png";
 
-const Header = props => (
-  <header id="header" style={props.timeout ? { display: 'none' } : {}}>
+const Header = (props) => (
+  <header id="header" style={props.timeout ? { display: "none" } : {}}>
     <div className="logo">
-      <span className="image fit">
+      {/* <span className="image fit">
         <img src={felixthecat} alt="" />
-      </span>
+      </span> */}
       {/* <span className="icon fa-diamond"></span> */}
     </div>
     <div className="content">
@@ -21,7 +21,7 @@ const Header = props => (
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('intro')
+              props.onOpenArticle("intro");
             }}
           >
             Projects
@@ -30,7 +30,7 @@ const Header = props => (
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('work')
+              props.onOpenArticle("work");
             }}
           >
             Work
@@ -39,7 +39,7 @@ const Header = props => (
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('about')
+              props.onOpenArticle("about");
             }}
           >
             About
@@ -48,7 +48,7 @@ const Header = props => (
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('contact')
+              props.onOpenArticle("contact");
             }}
           >
             Contact
@@ -57,11 +57,11 @@ const Header = props => (
       </ul>
     </nav>
   </header>
-)
+);
 
 Header.propTypes = {
   onOpenArticle: PropTypes.func,
   timeout: PropTypes.bool,
-}
+};
 
-export default Header
+export default Header;

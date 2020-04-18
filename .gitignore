@@ -19,3 +19,18 @@ settings.js
 npm-debug.log
 
 felixsargent_com.*
+# Local Netlify folder
+.netlify
+
+
+# Project dependencies
+.cache
+node_modules
+yarn-error.log
+
+# Build directory
+/public
+.DS_Store
+
+# Local Netlify folder
+.netlify
