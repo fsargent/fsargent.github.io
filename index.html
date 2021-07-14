@@ -2,327 +2,333 @@
 <html lang="en">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64880879-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64880879-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-        gtag('config', 'UA-64880879-1');
-    </script>
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <meta name="description" content="Felix Sargent's Resume">
-    <title> Felix Sargent's Resume </title>
-    <link href="https://bootswatch.com/4/cosmo/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://bootswatch.com/4/cosmo/bootstrap.css" rel="stylesheet" media="(prefers-color-scheme: light)" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
-    <link href="https://bootswatch.com/4/slate/bootstrap.min.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
-    <style>
-        i.fab {
-            margin: 5px;
-        }
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-        i.fas {
-            margin: 5px;
-        }
+    gtag('config', 'UA-64880879-1');
+  </script>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <meta name="description" content="Felix Sargent's Resume">
+  <title> Felix Sargent's Resume </title>
+  <link href="https://bootswatch.com/4/cosmo/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://bootswatch.com/4/cosmo/bootstrap.css" rel="stylesheet" media="(prefers-color-scheme: light)" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+  <link href="https://bootswatch.com/4/slate/bootstrap.min.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
+  <style>
+    i.fab {
+      margin: 5px;
+    }
 
-        .icon-label {
-            font-size: 2em;
-        }
+    i.fas {
+      margin: 5px;
+    }
 
-        .footer {
-            padding: 25px 0px 50px 0px;
-            margin-top: 50px;
-        }
+    .icon-label {
+      font-size: 2em;
+    }
 
-        @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 300;
-            font-display: swap;
-            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
-        }
+    .footer {
+      padding: 25px 0px 50px 0px;
+      margin-top: 50px;
+    }
 
-        @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CrYjSnGjrRCn0pd9VQsnFOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
-        }
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+    }
 
-        @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 500;
-            font-display: swap;
-            src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
-        }
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CrYjSnGjrRCn0pd9VQsnFOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+    }
 
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #000000;
-            }
-        }
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+    }
 
-        @media print {
-            a[href]:after {
-                content: none !important;
-            }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #000000;
+      }
+    }
 
-            body {
-                padding-top: 0px;
-            }
+    @media print {
+      a[href]:after {
+        content: none !important;
+      }
 
-            .container {
-                width: 100%;
-            }
+      body {
+        padding-top: 0px;
+      }
 
-            .text-right {
-                text-align: left;
-            }
-        }
-    </style>
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="favicons/" sizes="32x32">
-    <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="favicons/manifest.json">
-    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
+      .container {
+        width: 100%;
+      }
+
+      .text-right {
+        text-align: left;
+      }
+    }
+  </style>
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="favicons/" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="favicons/manifest.json">
+  <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-primary"> <a class="navbar-brand icon-label"
-            href="https://www.felixsargent.com"><i class="fas fa-home"></i></a> <button class="navbar-toggler"
-            type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span
-                class="navbar-toggler-icon"></span> </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"> <a class="nav-link" href="https://medium.com/@antagonist/">
-                        <div class="icon-label d-none d-sm-block"><i class="fab fa-medium"></i></div>
-                        <div class="icon-label d-sm-none"><i class="fab fa-medium"></i> Articles</div>
-                    </a></li>
-                <li class="nav-item"> <a class="nav-link"
-                        href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=felix.sargent@gmail.com"
-                        target="_blank" rel="noopener">
-                        <div class="icon-label d-none d-sm-block"><i class="fas fa-envelope"></i></div>
-                        <div class="icon-label d-sm-none"><i class="fas fa-envelope"></i> Email</div>
-                    </a></li>
-                <li class="nav-item"> <a class="nav-link" href="https://github.com/fsargent">
-                        <div class="icon-label d-none d-sm-block"><i class="fab fa-github"></i></div>
-                        <div class="icon-label d-sm-none"><i class="fab fa-github"></i> Github</div>
-                    </a></li>
-                <li class="nav-item"> <a class="nav-link" href="https://linkedin.com/in/felixsargent/">
-                        <div class="icon-label d-none d-sm-block"><i class="fab fa-linkedin-in"></i></div>
-                        <div class="icon-label d-sm-none"><i class="fab fa-linkedin"></i> Linkedin</div>
-                    </a></li>
-                <li class="nav-item"> <a class="nav-link" href="https://keybase.io/fsargent">
-                        <div class="icon-label d-none d-sm-block"><i class="fab fa-keybase"></i></div>
-                        <div class="icon-label d-sm-none"><i class="fab fa-keybase"></i> Keybase</div>
-                    </a></li>
-            </ul>
-            <a class="btn btn-primary my-2 mr-1" role="button" href="#" onclick="window.print()">
-                <div class="d-sm-block">Print<i class="fas fa-print"></i></div>
-            </a>
-            <!-- <a class="btn btn-primary my-2 mr-1" download="Felix Sargent Resume.pdf" role=button
+  <nav class="navbar navbar-expand-sm navbar-dark bg-primary"> <a class="navbar-brand icon-label"
+      href="https://www.felixsargent.com"><i class="fas fa-home"></i></a> <button class="navbar-toggler" type="button"
+      data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"> <a class="nav-link" href="https://medium.com/@antagonist/">
+            <div class="icon-label d-none d-sm-block"><i class="fab fa-medium"></i></div>
+            <div class="icon-label d-sm-none"><i class="fab fa-medium"></i> Articles</div>
+          </a></li>
+        <li class="nav-item"> <a class="nav-link"
+            href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=felix.sargent@gmail.com" target="_blank"
+            rel="noopener">
+            <div class="icon-label d-none d-sm-block"><i class="fas fa-envelope"></i></div>
+            <div class="icon-label d-sm-none"><i class="fas fa-envelope"></i> Email</div>
+          </a></li>
+        <li class="nav-item"> <a class="nav-link" href="https://github.com/fsargent">
+            <div class="icon-label d-none d-sm-block"><i class="fab fa-github"></i></div>
+            <div class="icon-label d-sm-none"><i class="fab fa-github"></i> Github</div>
+          </a></li>
+        <li class="nav-item"> <a class="nav-link" href="https://linkedin.com/in/felixsargent/">
+            <div class="icon-label d-none d-sm-block"><i class="fab fa-linkedin-in"></i></div>
+            <div class="icon-label d-sm-none"><i class="fab fa-linkedin"></i> Linkedin</div>
+          </a></li>
+        <li class="nav-item"> <a class="nav-link" href="https://keybase.io/fsargent">
+            <div class="icon-label d-none d-sm-block"><i class="fab fa-keybase"></i></div>
+            <div class="icon-label d-sm-none"><i class="fab fa-keybase"></i> Keybase</div>
+          </a></li>
+      </ul>
+      <a class="btn btn-primary my-2 mr-1" role="button" href="#" onclick="window.print()">
+        <div class="d-sm-block">Print<i class="fas fa-print"></i></div>
+      </a>
+      <!-- <a class="btn btn-primary my-2 mr-1" download="Felix Sargent Resume.pdf" role=button
                 href="/docs/Felix%20Sargent%20Resume.pdf">
                 <div class="d-sm-block">Save as PDF<i class="fas fa-file-pdf"></i></div>
             </a> -->
-        </div>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="mt-0 col-lg-4">
-                <h1 class="mt-5 display-4 float-lg-right"> Felix Sargent<br /> </h1>
-                <h1> <small class="text-muted float-lg-right"> Oakland, CA </small> </h1>
-            </div>
-
-
-
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <h2 class="float-lg-right"> Experience </h2>
-            </div>
-            <div class="col-lg-8">
-                <h3> Engineering Manager, University @ <a href="//www.atlassian.com/">Atlassian</a><br /> <small> May 2020
-                    - In Progress </small> </h3>
-                <ul>
-                    <li>Technical Architect of <a href="//university.atlassian.com">Atlassian University</a>, Atlassian's customer education platform</li>
-                    <li>Team lead for the <a href="//marketplace.atlassian.com/apps/1217110/training-for-jira?hosting=cloud&tab=overview&_ga=2.144862263.2023568312.1626284325-1744967892.1620837084">Training for Jira</a> marketplace addon team</li>
-                </ul>
-                <h3> Director of Engineering, Campaigns &amp; API Usability @ <a href="//www.mediamath.com/">MediaMath</a><br /> <small> November 2016
-                        - April 2020 </small> </h3>
-                <ul>
-                    <li>Owner of API Usability division, managing backend common technology services</li>
-                    <li>Refurbished legacy systems to CI/CD model, reducing test and deployment time from days to
-                        minutes and reducing server costs for QA environments by 85%</li>
-                    <li>Revamped authentication services to OAuth2 across the platform, eliminating cookie auth, MFA,
-                        improving security and customer experience</li>
-                    <li>Implemented Feature Flagging services, enabling faster product deployments and increasing
-                        reliability of test suites</li>
-                    <li>Created OASv2 API documentation portal revamping REST API customer experience, with fanatically
-                        positive responses</li>
-                    <li>Implemented Open Source license compliance regulatory schemes with Fossa.io enabling the close
-                        of multi-million-dollar credit facility</li>
-                    <li>Established and used KPIs to prioritize projects to improve DB performance by 30% and lower
-                        infrastructure costs by 50%</li>
-
-                </ul>
-                <h3> VP of Product @ <a href="//www.seamlessdocs.com/">SeamlessDocs</a><br /><small> November 2015 -
-                        November 2016 </small> </h3>
-                <ul>
-                    <li>Led the product team with a philosophy of servant leadership to encourage discussion, healthy
-                        debate, and clear communication</li>
-                    <li>Created product strategy and worked with CEO to set the roadmap to replace unreliable legacy
-                        systems</li>
-                    <li>Re-established trust between engineering and sales teams by creating consistent outcomes and
-                        stabilizing the platform, bringing bugs identified per week down by 90%</li>
-                    <li>Developed process for the account management team to triage and prioritize customer issues
-                        bringing median resolution time down by 80%, and increasing customer NPS scores by 60%</li>
-                    <li>Conducted extensive user research with government officials to refine product features and
-                        specifications</li>
-                    <li>Re-negotiated contractual obligations with customers to reduce commitments, and align
-                        engineering roadmap with company direction</li>
-                </ul>
-                <h3> Sr. Product Manager, <a href="https://bloomberg.com/vault">Vault</a> @ <a
-                        href="//www.bloomberg.com/">Bloomberg</a><br /> <small> October 2014 - November 2015 </small>
-                </h3>
-                <ul>
-                    <li>Product owner for Bloomberg Vault Surveillance, the communications monitoring and auditing tool
-                        for the Bloomberg Terminal (MCMP, BVTP)</li>
-                    <li>Implemented technology and policies to capture communications to prevent Market Abuse, Insider
-                        Trading, Harassment, and Data Loss</li>
-                    <li>Coordinated a team working on the latest and greatest technology stack including Scala, Play,
-                        Accumulo, &amp; Akka running on a Mesos infrastructure</li>
-                    <li>Worked with Compliance and Security Officers to ensure the data integrity of our clients, and
-                        the Bloomberg Terminal</li>
-                </ul>
-                <h3> Product Manager, Repose &amp; Autoscale @ <a href="https://www.rackspace.com/">Rackspace</a><br />
-                    <small> August 2011 - October 2014 </small> </h3>
-                <ul>
-                    <li>Product owner for <a href="http://www.rackspace.com/cloud/auto-scale/">Rackspace
-                            Autoscale</a>, an API to dynamically scale cloud infrastructure based on monitoring
-                        alerts</li>
-                    <li>Defined the product strategy, roadmap, user stories, KPIs, and priorities</li>
-                    <li>Product owner for <a href="https://openrepose.org/">Repose</a>, the API Middleware Platform.
-                        Repose handles Authentication
-                        (Openstack Keystone), Security, Rate Limiting, and Content Normalization for nearly all
-                        Rackspace APIs</li>
-                    <li>Presented <a href="https://www.youtube.com/watch?v=w_l6-MYEb5U">Repose, the Openstack API
-                            Filter</a> at OpenStack 2014</li>
-                    <li>Redefined product strategy to focus on external customers</li>
-                    <li>Enabled agile development, continuous integration, deployment, and testing</li>
-                    <li>Built the office <a href="https://www.sdtimes.com/link/36702">Kegerator</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 float-lg-right">
-                <h2 class="float-lg-right"> Projects </h2>
-            </div>
-            <div class="col-lg-8">
-                <ul class="list-unstyled">
-                    <li><a href="https://github.com/fsargent/BARTSign">BARTSign</a>&nbsp;- Raspberry Pi Based Transit
-                        Board</li>
-                    <li class="c5"><a class="c2" href="https://github.com/fsargent/Fippi">Fippi</a>&nbsp;- Physical
-                        internet radio, and Air Quality Monitor</li>
-                    <li><a
-                            href="https://medium.com/@antagonist/my-voice-is-my-passport-verify-me-condo-access-via-twilio-voice-d889b5193646">My
-                            Voice is My Passport</a>&nbsp;(eg 1992 movie <a
-                            href="https://www.youtube.com/watch?v=-zVgWpVXb64&feature=emb_title">Sneakers</a>) - Voice
-                        Recognition Passwords for Condo Entry</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 ">
-                <h2 class="float-lg-right"> Volunteer Work </h2>
-            </div>
-            <div class="col-lg-8">
-                <h3>Chair of the Board @ <a class="c2" href="http://electionscience.org">Center for Election
-                        Science</a><br /><small>2017 - Current</small></h3> <i>A non-profit organization dedicated to
-                    improving the way we vote</i>
-                <ul>
-                    <li>Helped modernize the organization's website</li>
-                    <li>Recruit new board members, coordinate strategic donors, and raise grants for the organization
-                    </li>
-                    <li>Wrote <a
-                            href="https://www.berkeleyside.com/2019/06/19/opinion-berkeleys-city-councils-switch-to-re-weighted-range-voting-adds-fairness-to-the-system">
-                            Berkeley's City Council's switch to 're-weighted range voting' adds fairness to the
-                            system</a> (Berkeleyside)</li>
-                </ul>
-                <h3>Mentor @ <a href="http://www.meetup.com/TheProductGroup/">The Product Group</a><br /><small>2015 -
-                        2017</small> </h3>
-                <ul>
-                    <li>Recognized with the <a href="http://www.theproductmentor.com/recognition.html">Outstanding
-                            Product Mentor Award</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=Lv3ewdddD8g">Managing Technical Debt</a> (July
-                        17, 2016)</li>
-                    <li><a href="https://www.youtube.com/watch?v=2rNhGUZea2U">How to Interview a Product
-                            Manager</a> (February 7, 2016)</li>
-                    <li><a href="https://www.youtube.com/watch?v=GnQnsDHQGj0">Inheriting a Project</a> (July 8,
-                        2015)</li>
-                </ul>
-                <h3>Founded the <a href="http://codeforsanfrancisco.org/">San Francisco Brigade</a> @ Code for
-                    America<br /><small>2013</small></h3>
-                <ul>
-                    <li>Reformed the way <a href="https://sfgov.org/ofe/find-safe-bank-account">San Francisco Citizens
-                            without bank accounts get access to financial services</a></li>
-                    <li>Brought the <a href="https://codeforsanfrancisco.org/projects/sf-admin-code/">City
-                            Administrative Code</a> online</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <h2 class="float-lg-right"> Education </h2>
-            </div>
-            <div class="col-lg-8">
-                <h3> BA, Economics @ <a href="https://sfsu.edu/">San Francisco State University</a><br /> </h3>
-                <ul class="list-unstyled">
-                    <li>President, Economics Students Association</li>
-                    <li>Treasurer, Pre-Law Society</li>
-                    <li>Varsity Intercollegiate Policy Debate Team</li>
-                </ul>
-            </div>
-        </div>
-        <div class="mt-5 d-print-block d-none">
-            <div class="media">
-                <img class="align-self-center mr-3" alt="QR Code link to this site."
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAIAAAAiOjnJAAAABmJLR0QA/wD/AP+gvaeTAAADkElEQVR4nO3dS24kIRBAwemR739lzwlYIOUbwI5Y2lL174lFiqI+fx7x/f09cp3P5/Mjr3+bv6ffAD+TsEgIi4SwSAiLhLBICIvE1+ofU3OXXVNzmlfmPVNzr9t+LysWCWGREBYJYZEQFglhkRAWieUca2VqPnRq7rKy+7lW73/191NztVO/lxWLhLBICIuEsEgIi4SwSAiLxPYc6zZT86fd6+/uo7ptvlWzYpEQFglhkRAWCWGREBYJYZF4fo61MjWv+m3zpylWLBLCIiEsEsIiISwSwiIhLBLbc6zb7gc8Na+a+h7q7/PU72XFIiEsEsIiISwSwiIhLBLCIrGcY72y36ieM+06NSe77feyYpEQFglhkRAWCWGREBYJYZH43La/qnbqPK1dr/8uViwSwiIhLBLCIiEsEsIiISwS20OXqflKPe955byrel5Vz+1WrFgkhEVCWCSERUJYJIRFQlgkvnbnOvVcpJ4z1fOqU3OyU9/P6vNasUgIi4SwSAiLhLBICIuEsEiMPa+w3qdV77s6dc77ytQ8qb7O6u9WLBLCIiEsEsIiISwSwiIhLBL58wpvmwNN7Q+b8sr+sN3rWLFICIuEsEgIi4SwSAiLhLBIfNX3o/22udfKbed41d+nFYuEsEgIi4SwSAiLhLBICIvEcj9WfZ/dK+ew76r3OZ26/3H3+lYsEsIiISwSwiIhLBLCIiEsEsuhy9Rcavf6t+03euWcqilTr2vFIiEsEsIiISwSwiIhLBLCIrE9x7ptn9CU297nqfPrV5yPxRWERUJYJIRFQlgkhEVCWCTGnlc45fX9WLXd93NqvmXFIiEsEsIiISwSwiIhLBLCIvG5bV/ULufLn73+ihWLhLBICIuEsEgIi4SwSAiLxNjzCmv1eV27pvYtTb3ubfc/WrFICIuEsEgIi4SwSAiLhLBIbD+vsFbfVzg1B9q9/m33S+7yvEKuICwSwiIhLBLCIiEsEsIisX0+1m3zmPq5fqf2q73+ulYsEsIiISwSwiIhLBLCIiEsEted8z5lar/UK+fFn5oLuq+Q/0pYJIRFQlgkhEVCWCSEReLHzrFuOz+9fj7grqnXNcfivxIWCWGREBYJYZEQFglhkdieY932fMP6/sHduVTttvs6V6xYJIRFQlgkhEVCWCSERUJYJJZzrFeeY7gytf/p1PMB63Pq689lxSIhLBLCIiEsEsIiISwSwiLxD2oOVM+bNXlsAAAAAElFTkSuQmCC">
-                <div class="media-body">
-                    <h5 class="mt-0">Got a printed version of this resume? </h5>
-                    <br />Scan to visit
-                    resume.felixsargent.com
-                </div>
-            </div>
-        </div>
     </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="mt-0 col-lg-4">
+        <h1 class="mt-5 display-4 float-lg-right"> Felix Sargent<br /> </h1>
+        <h1> <small class="text-muted float-lg-right"> Oakland, CA </small> </h1>
+      </div>
 
-    <div class=" footer d-print-none">
-        <div class="container text-center"> <a class="btn btn-primary my-2 mr-1" role="button" href="#"
-                onclick="window.print()">
-                <div class="d-sm-block">Print<i class="fas fa-print"></i></div>
-            </a> <a class="btn btn-primary my-2 mr-1" download="Felix Sargent Resume.pdf" role="button"
-                href="/docs/Felix%20Sargent%20Resume.pdf">
-                <div class="d-sm-block">Save as PDF<i class="fas fa-file-pdf"></i></div>
-            </a>
-            <dark-mode-toggle id="dark-mode-toggle-1" permanent="true"></dark-mode-toggle>
 
-        </div>
+
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"
-        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
-    <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
+    <div class="row">
+      <div class="col-lg-4">
+        <h2 class="float-lg-right"> Experience </h2>
+      </div>
+      <div class="col-lg-8">
+        <h3> Engineering Manager, University @ <a href="//www.atlassian.com/">Atlassian</a><br /> <small> May 2020
+            - In Progress </small> </h3>
+        <ul>
+          <li>Technical Architect of <a href="//university.atlassian.com">Atlassian University</a>, Atlassian's customer
+            education platform</li>
+          <li>Team lead for the <a
+              href="//marketplace.atlassian.com/apps/1217110/training-for-jira?hosting=cloud&tab=overview&_ga=2.144862263.2023568312.1626284325-1744967892.1620837084">Training
+              for Jira</a> marketplace addon team</li>
+        </ul>
+        <h3> Director of Engineering, Campaigns &amp; API Usability @ <a href="//www.mediamath.com/">MediaMath</a><br />
+          <small> November 2016
+            - April 2020 </small> </h3>
+        <ul>
+          <li>Owner of API Usability division, managing backend common technology services</li>
+          <li>Refurbished legacy systems to CI/CD model, reducing test and deployment time from days to
+            minutes and reducing server costs for QA environments by 85%</li>
+          <li>Revamped authentication services to OAuth2 across the platform, eliminating cookie auth, MFA,
+            improving security and customer experience</li>
+          <li>Implemented Feature Flagging services, enabling faster product deployments and increasing
+            reliability of test suites</li>
+          <li>Created OASv2 API documentation portal revamping REST API customer experience, with fanatically
+            positive responses</li>
+          <li>Implemented Open Source license compliance regulatory schemes with Fossa.io enabling the close
+            of multi-million-dollar credit facility</li>
+          <li>Established and used KPIs to prioritize projects to improve DB performance by 30% and lower
+            infrastructure costs by 50%</li>
+
+        </ul>
+        <h3> VP of Product @ <a href="//www.seamlessdocs.com/">SeamlessDocs</a><br /><small> November 2015 -
+            November 2016 </small> </h3>
+        <ul>
+          <li>Led the product team with a philosophy of servant leadership to encourage discussion, healthy
+            debate, and clear communication</li>
+          <li>Created product strategy and worked with CEO to set the roadmap to replace unreliable legacy
+            systems</li>
+          <li>Re-established trust between engineering and sales teams by creating consistent outcomes and
+            stabilizing the platform, bringing bugs identified per week down by 90%</li>
+          <li>Developed process for the account management team to triage and prioritize customer issues
+            bringing median resolution time down by 80%, and increasing customer NPS scores by 60%</li>
+          <li>Conducted extensive user research with government officials to refine product features and
+            specifications</li>
+          <li>Re-negotiated contractual obligations with customers to reduce commitments, and align
+            engineering roadmap with company direction</li>
+        </ul>
+        <h3> Sr. Product Manager, <a href="https://bloomberg.com/vault">Vault</a> @ <a
+            href="//www.bloomberg.com/">Bloomberg</a><br /> <small> October 2014 - November 2015 </small>
+        </h3>
+        <ul>
+          <li>Product owner for Bloomberg Vault Surveillance, the communications monitoring and auditing tool
+            for the Bloomberg Terminal (MCMP, BVTP)</li>
+          <li>Implemented technology and policies to capture communications to prevent Market Abuse, Insider
+            Trading, Harassment, and Data Loss</li>
+          <li>Coordinated a team working on the latest and greatest technology stack including Scala, Play,
+            Accumulo, &amp; Akka running on a Mesos infrastructure</li>
+          <li>Worked with Compliance and Security Officers to ensure the data integrity of our clients, and
+            the Bloomberg Terminal</li>
+        </ul>
+        <h3> Product Manager, Repose &amp; Autoscale @ <a href="https://www.rackspace.com/">Rackspace</a><br />
+          <small> August 2011 - October 2014 </small> </h3>
+        <ul>
+          <li>Product owner for <a href="http://www.rackspace.com/cloud/auto-scale/">Rackspace
+              Autoscale</a>, an API to dynamically scale cloud infrastructure based on monitoring
+            alerts</li>
+          <li>Defined the product strategy, roadmap, user stories, KPIs, and priorities</li>
+          <li>Product owner for <a href="https://openrepose.org/">Repose</a>, the API Middleware Platform.
+            Repose handles Authentication
+            (Openstack Keystone), Security, Rate Limiting, and Content Normalization for nearly all
+            Rackspace APIs</li>
+          <li>Presented <a href="https://www.youtube.com/watch?v=w_l6-MYEb5U">Repose, the Openstack API
+              Filter</a> at OpenStack 2014</li>
+          <li>Redefined product strategy to focus on external customers</li>
+          <li>Enabled agile development, continuous integration, deployment, and testing</li>
+          <li>Built the office <a href="https://www.sdtimes.com/link/36702">Kegerator</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 float-lg-right">
+        <h2 class="float-lg-right"> Projects </h2>
+      </div>
+      <div class="col-lg-8">
+        <ul class="list-unstyled">
+          <li><a href="https://github.com/fsargent/BARTSign">BARTSign</a>&nbsp;- Raspberry Pi Based Transit
+            Board</li>
+          <li class="c5"><a class="c2" href="https://github.com/fsargent/Fippi">Fippi</a>&nbsp;- Physical
+            internet radio, and Air Quality Monitor</li>
+          <li><a
+              href="https://medium.com/@antagonist/my-voice-is-my-passport-verify-me-condo-access-via-twilio-voice-d889b5193646">My
+              Voice is My Passport</a>&nbsp;(eg 1992 movie <a
+              href="https://www.youtube.com/watch?v=-zVgWpVXb64&feature=emb_title">Sneakers</a>) - Voice
+            Recognition Passwords for Condo Entry</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 ">
+        <h2 class="float-lg-right"> Volunteer Work </h2>
+      </div>
+      <div class="col-lg-8">
+        <h3>Chair of the Board @ <a class="c2" href="http://electionscience.org">Center for Election
+            Science</a><br /><small>2017 - Current</small></h3> <i>A non-profit organization dedicated to
+          improving the way we vote</i>
+        <ul>
+          <li>Helped modernize the organization's website</li>
+          <li>Recruit new board members, coordinate strategic donors, and raise grants for the organization
+          </li>
+          <li>Wrote <a
+              href="https://www.berkeleyside.com/2019/06/19/opinion-berkeleys-city-councils-switch-to-re-weighted-range-voting-adds-fairness-to-the-system">
+              Berkeley's City Council's switch to 're-weighted range voting' adds fairness to the
+              system</a> (Berkeleyside)</li>
+        </ul>
+        <h3>Mentor @ <a href="http://www.meetup.com/TheProductGroup/">The Product Group</a><br /><small>2015 -
+            2017</small> </h3>
+        <ul>
+          <li>Recognized with the <a href="http://www.theproductmentor.com/recognition.html">Outstanding
+              Product Mentor Award</a></li>
+          <li><a href="https://www.youtube.com/watch?v=Lv3ewdddD8g">Managing Technical Debt</a> (July
+            17, 2016)</li>
+          <li><a href="https://www.youtube.com/watch?v=2rNhGUZea2U">How to Interview a Product
+              Manager</a> (February 7, 2016)</li>
+          <li><a href="https://www.youtube.com/watch?v=GnQnsDHQGj0">Inheriting a Project</a> (July 8,
+            2015)</li>
+        </ul>
+        <h3>Founded the <a href="http://codeforsanfrancisco.org/">San Francisco Brigade</a> @ Code for
+          America<br /><small>2013</small></h3>
+        <ul>
+          <li>Reformed the way <a href="https://sfgov.org/ofe/find-safe-bank-account">San Francisco Citizens
+              without bank accounts get access to financial services</a></li>
+          <li>Brought the <a href="https://codeforsanfrancisco.org/projects/sf-admin-code/">City
+              Administrative Code</a> online</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <h2 class="float-lg-right"> Education </h2>
+      </div>
+      <div class="col-lg-8">
+        <h3> BA, Economics @ <a href="https://sfsu.edu/">San Francisco State University</a><br /> </h3>
+        <ul class="list-unstyled">
+          <li>President, Economics Students Association</li>
+          <li>Treasurer, Pre-Law Society</li>
+          <li>Varsity Intercollegiate Policy Debate Team</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-5 d-print-block d-none">
+      <div class="media">
+        <img class="align-self-center mr-3" alt="QR Code link to this site."
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAIAAAAiOjnJAAAABmJLR0QA/wD/AP+gvaeTAAADkElEQVR4nO3dS24kIRBAwemR739lzwlYIOUbwI5Y2lL174lFiqI+fx7x/f09cp3P5/Mjr3+bv6ffAD+TsEgIi4SwSAiLhLBICIvE1+ofU3OXXVNzmlfmPVNzr9t+LysWCWGREBYJYZEQFglhkRAWieUca2VqPnRq7rKy+7lW73/191NztVO/lxWLhLBICIuEsEgIi4SwSAiLxPYc6zZT86fd6+/uo7ptvlWzYpEQFglhkRAWCWGREBYJYZF4fo61MjWv+m3zpylWLBLCIiEsEsIiISwSwiIhLBLbc6zb7gc8Na+a+h7q7/PU72XFIiEsEsIiISwSwiIhLBLCIrGcY72y36ieM+06NSe77feyYpEQFglhkRAWCWGREBYJYZH43La/qnbqPK1dr/8uViwSwiIhLBLCIiEsEsIiISwS20OXqflKPe955byrel5Vz+1WrFgkhEVCWCSERUJYJIRFQlgkvnbnOvVcpJ4z1fOqU3OyU9/P6vNasUgIi4SwSAiLhLBICIuEsEiMPa+w3qdV77s6dc77ytQ8qb7O6u9WLBLCIiEsEsIiISwSwiIhLBL58wpvmwNN7Q+b8sr+sN3rWLFICIuEsEgIi4SwSAiLhLBIfNX3o/22udfKbed41d+nFYuEsEgIi4SwSAiLhLBICIvEcj9WfZ/dK+ew76r3OZ26/3H3+lYsEsIiISwSwiIhLBLCIiEsEsuhy9Rcavf6t+03euWcqilTr2vFIiEsEsIiISwSwiIhLBLCIrE9x7ptn9CU297nqfPrV5yPxRWERUJYJIRFQlgkhEVCWCTGnlc45fX9WLXd93NqvmXFIiEsEsIiISwSwiIhLBLCIvG5bV/ULufLn73+ihWLhLBICIuEsEgIi4SwSAiLxNjzCmv1eV27pvYtTb3ubfc/WrFICIuEsEgIi4SwSAiLhLBIbD+vsFbfVzg1B9q9/m33S+7yvEKuICwSwiIhLBLCIiEsEsIisX0+1m3zmPq5fqf2q73+ulYsEsIiISwSwiIhLBLCIiEsEted8z5lar/UK+fFn5oLuq+Q/0pYJIRFQlgkhEVCWCSEReLHzrFuOz+9fj7grqnXNcfivxIWCWGREBYJYZEQFglhkdieY932fMP6/sHduVTttvs6V6xYJIRFQlgkhEVCWCSERUJYJJZzrFeeY7gytf/p1PMB63Pq689lxSIhLBLCIiEsEsIiISwSwiLxD2oOVM+bNXlsAAAAAElFTkSuQmCC">
+        <div class="media-body">
+          <h5 class="mt-0">Got a printed version of this resume? </h5>
+          <br />Scan to visit
+          resume.felixsargent.com
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class=" footer d-print-none">
+    <div class="container text-center"> <a class="btn btn-primary my-2 mr-1" role="button" href="#"
+        onclick="window.print()">
+        <div class="d-sm-block">Print<i class="fas fa-print"></i></div>
+      </a> <a class="btn btn-primary my-2 mr-1" download="Felix Sargent Resume.pdf" role="button"
+        href="/docs/Felix%20Sargent%20Resume.pdf">
+        <div class="d-sm-block">Save as PDF<i class="fas fa-file-pdf"></i></div>
+      </a>
+      <dark-mode-toggle id="dark-mode-toggle-1" permanent="true"></dark-mode-toggle>
+
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
 
 
 </body>
