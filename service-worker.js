@@ -6,7 +6,6 @@ let urlsToCache = [
     "/",
     "/index.html",
     "/components",
-    "/components/images",
     "/components/images/felix.png", 
     "/components/scripts",
     "/components/scripts/pwa-handler.js",
