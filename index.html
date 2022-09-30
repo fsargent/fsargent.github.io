@@ -2,30 +2,22 @@
 <html lang="en">
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64880879-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-64880879-1');
-  </script>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
   <meta name="description" content="Felix Sargent's Resume">
   <title> Felix Sargent's Resume </title>
-  <link href="https://bootswatch.com/4/cosmo/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://bootswatch.com/4/cosmo/bootstrap.css" rel="stylesheet" media="(prefers-color-scheme: light)" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
-  <link href="https://bootswatch.com/4/slate/bootstrap.min.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
+  <link href="/components/styles/cosmo-bootstrap.css" rel="stylesheet" />
+  <link href="/components/styles/cosmo-bootstrap.css" rel="stylesheet" media="(prefers-color-scheme: light)" />
+  <link href="/components/styles/slate-bootstrap.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
   <style>
     @media print {
-    .pagebreak { page-break-before: always; } /* page-break-after works, as well */
+      .pagebreak {
+        page-break-before: always;
+      }
+
+      /* page-break-after works, as well */
     }
+
     i.fab {
       margin: 5px;
     }
@@ -91,42 +83,51 @@
       }
     }
   </style>
-  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="favicons/" sizes="32x32">
-  <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="favicons/manifest.json">
-  <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="apple-touch-icon" sizes="180x180" href="components/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="components/images/" sizes="32x32">
+  <link rel="icon" type="image/png" href="components/images/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="components/images/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-primary"> <a class="navbar-brand icon-label"
+  <nav class="navbar navbar-expand-sm navbar-dark bg-primary"> <a class="navbar-brand icon-label" aria-label="home"
       href="https://www.felixsargent.com"><i class="fas fa-home"></i></a> <button class="navbar-toggler" type="button"
       data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item"> <a class="nav-link" href="https://medium.com/@antagonist/">
-            <div class="icon-label d-none d-sm-block"><i class="fab fa-medium"></i></div>
-            <div class="icon-label d-sm-none"><i class="fab fa-medium"></i> Articles</div>
+        <li class="nav-item"> <a class="nav-link" href="https://medium.com/@antagonist/" aria-label="Medium Blog">
+            <div class="icon-label d-none d-sm-block"><i class="fab fa-medium"></i>
+            </div>
+            <div class="icon-label d-sm-none"><i class="fab fa-medium"></i> Articles
+            </div>
           </a></li>
-        <li class="nav-item"> <a class="nav-link"
+        <li class="nav-item"> <a class="nav-link" aria-label="email"
             href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=felix.sargent@gmail.com" target="_blank"
             rel="noopener">
             <div class="icon-label d-none d-sm-block"><i class="fas fa-envelope"></i></div>
-            <div class="icon-label d-sm-none"><i class="fas fa-envelope"></i> Email</div>
+            <div class="icon-label d-sm-none"><i class="fas fa-envelope"></i> Email
+            </div>
           </a></li>
-        <li class="nav-item"> <a class="nav-link" href="https://github.com/fsargent">
-            <div class="icon-label d-none d-sm-block"><i class="fab fa-github"></i></div>
-            <div class="icon-label d-sm-none"><i class="fab fa-github"></i> Github</div>
+        <li class="nav-item"> <a class="nav-link" href="https://github.com/fsargent" aria-label="Github">
+            <div class="icon-label d-none d-sm-block"><i class="fab fa-github"></i>
+            </div>
+            <div class="icon-label d-sm-none"><i class="fab fa-github"></i> Github
+            </div>
           </a></li>
-        <li class="nav-item"> <a class="nav-link" href="https://linkedin.com/in/felixsargent/">
+        <li class="nav-item"> <a class="nav-link" href="https://linkedin.com/in/felixsargent/" aria-label="LinkedIn">
             <div class="icon-label d-none d-sm-block"><i class="fab fa-linkedin-in"></i></div>
-            <div class="icon-label d-sm-none"><i class="fab fa-linkedin"></i> Linkedin</div>
+            <div class="icon-label d-sm-none"><i class="fab fa-linkedin"></i>
+              Linkedin</div>
           </a></li>
-        <li class="nav-item"> <a class="nav-link" href="https://keybase.io/fsargent">
-            <div class="icon-label d-none d-sm-block"><i class="fab fa-keybase"></i></div>
-            <div class="icon-label d-sm-none"><i class="fab fa-keybase"></i> Keybase</div>
+        <li class="nav-item"> <a class="nav-link" href="https://keybase.io/fsargent" aria-label="Keybase">
+            <div class="icon-label d-none d-sm-block"><i class="fab fa-keybase"></i>
+            </div>
+            <div class="icon-label d-sm-none"><i class="fab fa-keybase"></i> Keybase
+            </div>
           </a></li>
       </ul>
       <a class="btn btn-primary my-2 mr-1" role="button" href="#" onclick="window.print()">
@@ -138,7 +139,9 @@
     <div class="row">
       <div class="mt-0 col-lg-4">
         <h1 class="mt-5 display-4 float-lg-right"> Felix Sargent<br /> </h1>
-        <h1> <small class="text-muted float-lg-right"> San Francisco, CA <div class="d-none d-print-block">felix.sargent@gmail.com - 415-860-6970</div> </small> </h1>
+        <h1> <small class="text-muted float-lg-right"> San Francisco, CA <div class="d-none d-print-block">
+              felix.sargent@gmail.com -
+              415-860-6970</div> </small> </h1>
       </div>
     </div>
     <div class="row">
@@ -147,13 +150,17 @@
       </div>
       <div class="col-lg-8">
         <p>
-          I’m Felix Sargent, an experienced Engineering manager. Since working at Rackspace as a Software Engineer, I
-          have focused on managing and growing productive, highly-collaborative teams. I believe teams work best when
+          I&#39;m Felix Sargent, an experienced Engineering manager. Since working at
+          Rackspace as a Software Engineer, I
+          have focused on managing and growing productive, highly-collaborative teams. I
+          believe teams work best when
           they feel safe, and are well equipped for their challenging work.
         </p>
         <p>
-          I specialize in engineering management around platform infrastructure, developer tools and product backends. I
-          personally code in Javascript/Typescript and Python, but I am comfortable leading a team in any language.
+          I specialize in engineering management around platform infrastructure, developer
+          tools and product backends. I
+          personally code in Javascript/Typescript and Python, but I am comfortable
+          leading a team in any language.
         </p>
       </div>
     </div>
@@ -162,25 +169,40 @@
         <h2 class="display-6 float-lg-right"> Experience </h2>
       </div>
       <div class="col-lg-8">
-        <h3>Sr. Engineering Manager @ <a href="//www.truework.com/">Truework</a><br /> <small> Oct 2021
+        <h3>Sr. Engineering Manager @ <a href="//www.truework.com/">Truework</a><br /> <small>
+            Oct 2021
             - In Progress </small> </h3>
-        <ul><li>In progress</li></ul>
-        <h3> Engineering Manager, University @ <a href="//www.atlassian.com/">Atlassian</a><br /> <small> May 2020
+        <ul>
+          <li>Managed the Interfaces (API, TrueworkJS, Encompass and App) and Infrastructure teams, a total of 10 engineers (Django Python BE, Typescript React FE)</li>
+          <li>Lead the "API First" strategic initiative to create a first class external developer experience</li>
+          <li>Renegotiated contracts to keep costs lean as we expanded the team</li>
+          <li>Revamped Front End and Backend recruiting, interviews structure, and hiring processes</li>
+          <li>Transitioned a hard working but unstructured team to use modern agile processes</li>
+          <li>Coached underperforming team members up and through promotion</li>
+        </ul>
+        <h3> Sr. Engineering Manager, University @ <a href="//www.atlassian.com/">Atlassian</a><br /> <small> May 2020
             - Oct 2021 </small> </h3>
         <ul>
-          <b>
-            Technical Architect of <a href="//university.atlassian.com">Atlassian University</a>, Atlassian's customer
-            education platform (<a href="https://intellum.com">Intellum</a>)
-          </b>
-          <li>Performed market research on the e-learning space, working with vendors and gathering detailed
+          <li><strong>
+              Technical Architect of <a href="//university.atlassian.com">Atlassian
+                University</a>, Atlassian's customer
+              education platform (<a href="https://intellum.com">Intellum</a>)
+            </strong></li>
+          <li>Performed market research on the e-learning space, working with vendors and
+            gathering detailed
             requirements to migrate from legacy system to new vendor</li>
-          <li>Worked to a hard deadline to migrate existing learning data to our new platform, developing
+          <li>Worked to a hard deadline to migrate existing learning data to our new
+            platform, developing
             integrations with Atlassian's existing system</li>
-          <li>When needed, I dived into the code (Python, with Pandas and API integrations)</li>
-          <b>Engineering Manager for the <a href="//marketplace.atlassian.com/apps/1217110/training-for-jira">Training
-              for Jira</a> marketplace addon</b>
-          <li>Managed a team of contractors to deliver the Training for Jira marketplace add-on.</li>
-          <li>Worked with cross-functional teams to migrate a legacy project to a new system. Used analytics to
+          <li>When needed, I dived into the code (Python, with Pandas and API
+            integrations)</li>
+          <li><strong>Engineering Manager for the <a
+                href="//marketplace.atlassian.com/apps/1217110/training-for-jira">Training
+                for Jira</a> marketplace addon</strong></li>
+          <li>Managed a team of contractors to deliver the Training for Jira marketplace
+            add-on.</li>
+          <li>Worked with cross-functional teams to migrate a legacy project to a new
+            system. Used analytics to
             prioritize work, and liased with multiple third parties.</li>
         </ul>
         <h3> Director of Engineering, Campaigns &amp; API Usability @ <a href="//www.mediamath.com/">MediaMath</a><br />
@@ -188,11 +210,14 @@
             - April 2020 </small> </h3>
         <ul>
           <li>Managed 15 Engineers over two teams (Perl, NodeJS, Python)</li>
-          <li>Supported the team's migration to CI/CD, reducing test and deployment time from days to
+          <li>Supported the team's migration to CI/CD, reducing test and deployment time
+            from days to
             minutes and reducing server costs for QA environments by 85%</li>
-          <li>Facilitated the migration of authentication services to OAuth across the platform, enabling MFA, and
+          <li>Facilitated the migration of authentication services to OAuth across the
+            platform, enabling MFA, and
             improving security and customer experience</li>
-          <li>Advocated for and implemented <a href="https://launchdarkly.com">Feature Flagging</a> platform wide</li>
+          <li>Advocated for and implemented <a href="https://launchdarkly.com">Feature
+              Flagging</a> platform wide</li>
           <li>Oversaw the transformation of the <a href="https://apidocs.mediamath.com/">MediaMath API portal</a>,
             transforming REST API customer experience with fanatically
             positive response</li>
@@ -200,53 +225,74 @@
             enabling the close
             of multi-million-dollar credit facility from Goldman Sachs</li>
         </ul>
-        <h3> VP of Product @ <a href="//www.govos.com/">GovOS</a> (SeamlessDocs)<br /><small> November 2015 -
+        <h3> VP of Product @ <a href="//www.govos.com/">GovOS</a> (SeamlessDocs)<br /><small>
+            November 2015 -
             November 2016 </small> </h3>
         <ul>
-          <li>Led the product team with a philosophy of servant leadership to encourage discussion, healthy
+          <li>Led the product team with a philosophy of servant leadership to encourage
+            discussion, healthy
             debate, and clear communication</li>
-          <li>Created product strategy and worked with CEO and VP Eng. to set the road map to replace unreliable legacy
+          <li>Created product strategy and worked with CEO and VP Eng. to set the road map
+            to replace unreliable legacy
             systems (PHP -&gt; Scala, JS/React)</li>
-          <li>Managed recruiting and hiring for the Engineering team, scaling from 3 to 15 engineers</li>
-          <li>Re-established trust between engineering and sales teams by establishing consistency,
+          <li>Managed recruiting and hiring for the Engineering team, scaling from 3 to 15
+            engineers</li>
+          <li>Re-established trust between engineering and sales teams by establishing
+            consistency,
             stabilizing the platform, and getting bugs closed</li>
-          <li>Developed process for the account management team to triage and prioritize customer issues
-            bringing median resolution time down by 80%, and increasing customer NPS scores by 60%</li>
-          <li>Conducted extensive user research with government officials to refine product features and
+          <li>Developed process for the account management team to triage and prioritize
+            customer issues
+            bringing median resolution time down by 80%, and increasing customer NPS
+            scores by 60%</li>
+          <li>Conducted extensive user research with government officials to refine
+            product features and
             specifications</li>
-          <li>Re-negotiated contractual obligations with customers to reduce commitments, and align
+          <li>Re-negotiated contractual obligations with customers to reduce commitments,
+            and align
             engineering road map with company direction</li>
         </ul>
         <h3> Sr. Product Manager, <a href="https://bloomberg.com/vault">Vault</a> @ <a
-            href="//www.bloomberg.com/">Bloomberg</a><br /> <small> October 2014 - November 2015 </small>
+            href="//www.bloomberg.com/">Bloomberg</a><br /> <small> October 2014 -
+            November 2015 </small>
         </h3>
         <ul>
-          <li>Product owner for Bloomberg Vault Surveillance, the communications monitoring and auditing tool
+          <li>Product owner for Bloomberg Vault Surveillance, the communications
+            monitoring and auditing tool
             for the Bloomberg Terminal (MCMP, BVTP)</li>
-          <li>Implemented technology and policies to capture communications to prevent Market Abuse, Insider
+          <li>Implemented technology and policies to capture communications to prevent
+            Market Abuse, Insider
             Trading, Harassment, and Data Loss</li>
-          <li>Coordinated a team working on the latest and greatest technology stack including Scala, Play,
+          <li>Coordinated a team working on the latest and greatest technology stack
+            including Scala, Play,
             Accumulo, &amp; Akka running on a Mesos infrastructure</li>
-          <li>Worked with Compliance and Security Officers to ensure the data integrity of our clients, and
+          <li>Worked with Compliance and Security Officers to ensure the data integrity of
+            our clients, and
             the Bloomberg Terminal</li>
         </ul>
         <div class="pagebreak">
         </div>
-        <h3>Engineer / Product Manager@ <a
-            href="https://www.rackspace.com/">Rackspace</a><br />
+        <h3>Engineer / Product Manager@ <a href="https://www.rackspace.com/">Rackspace</a><br />
           <small> August 2011 - October 2014 </small> </h3>
         <ul>
-          <b>Product owner for <a href="http://www.rackspace.com/cloud/auto-scale/">Rackspace
-            Autoscale</a> (Python, Twisted)</b>
-          <li>Initially an Engineer on the Autoscale team, and was promoted to Technical PM</li>
-          <li>Defined the product strategy, roadmap, user stories, KPIs, and priorities</li>
-          <b>Product owner for <a href="https://openrepose.org/">Repose</a> (Java), an API Middleware Platform</b>
+          <li>
+            <strong>Product owner for <a href="http://www.rackspace.com/cloud/auto-scale/">Rackspace
+                Autoscale</a> (Python, Twisted)</strong>
+          </li>
+          <li>Initially an Engineer on the Autoscale team, and was promoted to Technical
+            PM</li>
+          <li>Defined the product strategy, roadmap, user stories, KPIs, and priorities
+          </li>
+          <li><strong>Product owner for <a href="https://openrepose.org/">Repose</a>
+              (Java), an API Middleware Platform</strong></li>
           <li>Repose handles Authentication
-            (Openstack Keystone), Security, Rate Limiting, and Content Normalization for nearly all
+            (Openstack Keystone), Security, Rate Limiting, and Content Normalization
+            for nearly all
             Rackspace APIs</li>
-          <li>Presented <a href="https://www.youtube.com/watch?v=w_l6-MYEb5U">Repose, the Openstack API
+          <li>Presented <a href="https://www.youtube.com/watch?v=w_l6-MYEb5U">Repose, the
+              Openstack API
               Filter</a> at OpenStack 2014</li>
-          <li>Built the office <a href="https://www.sdtimes.com/link/36702">Kegerator</a></li>
+          <li>Built the office <a href="https://www.sdtimes.com/link/36702">Kegerator</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -256,16 +302,20 @@
       </div>
       <div class="col-lg-8">
         <ul class="list-unstyled">
-          <li><a href="https://imgur.com/gallery/u9bqyB3">Mechanical Keyboards</a>&nbsp;- So many mechanical keyboards.
+          <li><a href="https://imgur.com/gallery/u9bqyB3">Mechanical Keyboards</a>&nbsp;-
+            So many mechanical keyboards.
           </li>
-          <li><a href="https://github.com/fsargent/BARTSign">BARTSign</a>&nbsp;- Raspberry Pi Based Transit
+          <li><a href="https://github.com/fsargent/BARTSign">BARTSign</a>&nbsp;- Raspberry
+            Pi Based Transit
             Board</li>
-          <li class="c5"><a class="c2" href="https://github.com/fsargent/Fippi">Fippi</a>&nbsp;- Physical
+          <li class="c5"><a class="c2" href="https://github.com/fsargent/Fippi">Fippi</a>&nbsp;-
+            Physical
             internet radio, and Air Quality Monitor</li>
           <li><a
               href="https://medium.com/@antagonist/my-voice-is-my-passport-verify-me-condo-access-via-twilio-voice-d889b5193646">My
               Voice is My Passport</a>&nbsp;(eg 1992 movie <a
-              href="https://www.youtube.com/watch?v=-zVgWpVXb64&feature=emb_title">Sneakers</a>) - Voice
+              href="https://www.youtube.com/watch?v=-zVgWpVXb64&feature=emb_title">Sneakers</a>)
+            - Voice
             Recognition Passwords for Condo Entry</li>
         </ul>
       </div>
@@ -275,8 +325,10 @@
         <h2 class="display-6 float-lg-right"> Volunteer Work </h2>
       </div>
       <div class="col-lg-8">
-        <h3>Chair of the Board @ <a class="c2" href="http://electionscience.org">Center for Election
-            Science</a><br /><small>2017 - Current</small></h3> <i>A non-profit organization dedicated to
+        <h3>Chair of the Board @ <a class="c2" href="http://electionscience.org">Center for
+            Election
+            Science</a><br /><small>2017 - Current</small></h3> <i>A non-profit
+          organization dedicated to
           improving the way we vote</i>
         <ul>
           <li>CES changed the way <a
@@ -284,29 +336,37 @@
               ND</a>, and <a
               href="https://fivethirtyeight.com/features/in-st-louis-voters-will-get-to-vote-for-as-many-candidates-as-they-want/">St.
               Louis, MO</a> elect their leaders</li>
-          <li>Recruit new board members, coordinate strategic donors, and raise grants for the organization
+          <li>Recruit new board members, coordinate strategic donors, and raise grants for
+            the organization
           </li>
           <li>Wrote <a
               href="https://www.berkeleyside.com/2019/06/19/opinion-berkeleys-city-councils-switch-to-re-weighted-range-voting-adds-fairness-to-the-system">
-              Berkeley's City Council's switch to 're-weighted range voting' adds fairness to the
+              Berkeley's City Council's switch to 're-weighted range voting'
+              adds fairness to the
               system</a> (Berkeleyside)</li>
         </ul>
-        <h3>Mentor @ <a href="http://www.meetup.com/TheProductGroup/">The Product Group</a><br /><small>2015 -
+        <h3>Mentor @ <a href="http://www.meetup.com/TheProductGroup/">The Product
+            Group</a><br /><small>2015 -
             2017</small> </h3>
         <ul>
           <li>Recognized with the <a href="http://www.theproductmentor.com/recognition.html">Outstanding
               Product Mentor Award</a></li>
-          <li><a href="https://www.youtube.com/watch?v=Lv3ewdddD8g">Managing Technical Debt</a> (July
+          <li><a href="https://www.youtube.com/watch?v=Lv3ewdddD8g">Managing Technical
+              Debt</a> (July
             17, 2016)</li>
-          <li><a href="https://www.youtube.com/watch?v=2rNhGUZea2U">How to Interview a Product
+          <li><a href="https://www.youtube.com/watch?v=2rNhGUZea2U">How to Interview a
+              Product
               Manager</a> (February 7, 2016)</li>
-          <li><a href="https://www.youtube.com/watch?v=GnQnsDHQGj0">Inheriting a Project</a> (July 8,
+          <li><a href="https://www.youtube.com/watch?v=GnQnsDHQGj0">Inheriting a
+              Project</a> (July 8,
             2015)</li>
         </ul>
-        <h3>Founded the <a href="http://codeforsanfrancisco.org/">San Francisco Brigade</a> @ Code for
+        <h3>Founded the <a href="http://codeforsanfrancisco.org/">San Francisco Brigade</a> @
+          Code for
           America<br /><small>2013</small></h3>
         <ul>
-          <li>Reformed the way <a href="https://sfgov.org/ofe/find-safe-bank-account">San Francisco Citizens
+          <li>Reformed the way <a href="https://sfgov.org/ofe/find-safe-bank-account">San
+              Francisco Citizens
               without bank accounts get access to financial services</a></li>
           <li>Brought the <a href="https://codeforsanfrancisco.org/projects/sf-admin-code/">City
               Administrative Code</a> online</li>
@@ -318,7 +378,8 @@
         <h2 class="display-6 float-lg-right"> Education </h2>
       </div>
       <div class="col-lg-8">
-        <h3> BA, Economics @ <a href="https://sfsu.edu/">San Francisco State University</a><br /> </h3>
+        <h3> BA, Economics @ <a href="https://sfsu.edu/">San Francisco State
+            University</a><br /> </h3>
         <ul class="list-unstyled">
           <li>President, Economics Students Association</li>
           <li>Treasurer, Pre-Law Society</li>
@@ -332,10 +393,14 @@
       </div>
       <div class="col-lg-8">
         <ul class="list-unstyled">
-          <li>Github: <a href="https://github.com/fsargent">https://github.com/fsargent</a></li>
-          <li>Blog: <a href="https://medium.com/@antagonist/">https://medium.com/@antagonist/</a></li>
-          <li>LinkedIn: <a href="https://linkedin.com/in/felixsargent/">https://linkedin.com/in/felixsargent/</a></li>
-          <li>Keybase: <a href="https://keybase.io/fsargent">https://keybase.io/fsargent</a></li>
+          <li>Github: <a href="https://github.com/fsargent">https://github.com/fsargent</a>
+          </li>
+          <li>Blog: <a href="https://medium.com/@antagonist/">https://medium.com/@antagonist/</a>
+          </li>
+          <li>LinkedIn: <a href="https://linkedin.com/in/felixsargent/">https://linkedin.com/in/felixsargent/</a>
+          </li>
+          <li>Keybase: <a href="https://keybase.io/fsargent">https://keybase.io/fsargent</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -364,16 +429,17 @@
 
     </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"
-    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.slim.min.js"
+    integrity="sha512-yBpuflZmP5lwMzZ03hiCLzA94N0K2vgBtJgqQ2E1meJzmIBfjbb7k4Y23k2i2c/rIeSUGc7jojyIY5waK3ZxCQ=="
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
   <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
-
-
+  <script src="https://kit.fontawesome.com/1e9d235f16.js" crossorigin="anonymous"></script>
+  <script src="/components/scripts/pwa-handler.js"></script>
 </body>
 
 </html>
