@@ -14,6 +14,7 @@
       .pagebreak {
         page-break-before: always;
       }
+
       #subheader {
         font-size: 1rem !important;
       }
@@ -62,7 +63,7 @@
       src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
     }
 
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: light) {
       body {
         background-color: #000000;
       }
@@ -101,7 +102,7 @@
       aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto ">
         <li class="nav-item"> <a class="nav-link" href="https://medium.com/@antagonist/" aria-label="Medium Blog">
             <div class="icon-label d-none d-sm-block"><i class="fab fa-medium"></i>
             </div>
@@ -127,26 +128,27 @@
               Linkedin</div>
           </a></li>
         <li class="nav-item"> <a class="nav-link" href="https://keybase.io/fsargent" aria-label="Keybase">
-            <div class="icon-label d-none d-sm-block"><i class="fab fa-keybase"></i>
+            <div class="icon-label d-none d-sm-block"><i class="fa fa-key"></i>
             </div>
-            <div class="icon-label d-sm-none"><i class="fab fa-keybase"></i> Keybase
+            <div class="icon-label d-sm-none"><i class="fa fa-key"></i> Keybase
             </div>
           </a></li>
       </ul>
-      <!-- <a class="btn btn-primary my-2 mr-1" role="button" href="#" onclick="window.print()">
-        <div class="d-sm-block">Save / Print as PDF<i class="fas fa-print"></i></div>
-      </a> -->
-      
-      <a class="btn btn-primary my-2 mr-1" role="button" href="./docs/Felix%20Sargent%20Resume.pdf" download>
-        <div class="d-sm-block">Save PDF<i class="fas fa-save"></i></div>
-      </a>
+      <a class="nav-link" href="./docs/Felix%20Sargent%20Resume.pdf" download
+      aria-label="Download PDF Resume">
+      <div class="icon-label d-none d-sm-block"><i class="fas fa-save"></i>
+      </div>
+      <div class="icon-label d-sm-none"><i class="fas fa-save"></i> Save PDF
+      </div>
+    </a>
     </div>
   </nav>
   <div class="container">
     <div class="row">
       <div class="mt-0 col-lg-4">
         <h1 id="title" class="mt-5 display-4 float-lg-right"> Felix Sargent<br /> </h1>
-        <h1 id="subheader"> <small class="text-muted float-lg-right"> San Francisco, CA <div class="d-none d-print-block">
+        <h1 id="subheader"> <small class="text-muted float-lg-right"> San Francisco, CA <div
+              class="d-none d-print-block">
               felix.sargent@gmail.com -
               415-860-6970 - https://felixsargent.com</div> </small> </h1>
       </div>
@@ -179,7 +181,8 @@
             Oct 2021
             - In Progress </small> </h3>
         <ul>
-          <li>Managed the Interfaces (API, TrueworkJS, Encompass, and App) and Infrastructure teams, a total of 10 engineers (Django Python BE, Typescript React FE)</li>
+          <li>Managed the Interfaces (API, TrueworkJS, Encompass, and App) and Infrastructure teams, a total of 10
+            engineers (Django Python BE, Typescript React FE)</li>
           <li>Led the "API First" strategic initiative to create a first-class external developer experience</li>
           <li>Renegotiated contracts to keep costs lean as we expanded the team</li>
           <li>Revamped Front End and Backend recruiting, interviews structure, and hiring processes</li>
@@ -258,24 +261,24 @@
             engineering road map with company direction</li>
         </ul>
         <div class="pagebreak">
-        <h3> Sr. Product Manager, <a href="https://bloomberg.com/vault">Vault</a> @ <a
-            href="//www.bloomberg.com/">Bloomberg</a><br /> <small> October 2014 -
-            November 2015 </small>
-        </h3>
-        <ul>
-          <li>Product owner for Bloomberg Vault Surveillance, the communications
-            monitoring and auditing tool
-            for the Bloomberg Terminal (MCMP, BVTP)</li>
-          <li>Implemented technology and policies to capture communications to prevent
-            Market Abuse, Insider
-            Trading, Harassment, and Data Loss</li>
-          <li>Coordinated a team working on the latest and greatest technology stack
-            including Scala, Play,
-            Accumulo, &amp; Akka running on a Mesos infrastructure</li>
-          <li>Worked with Compliance and Security Officers to ensure the data integrity of
-            our clients, and
-            the Bloomberg Terminal</li>
-        </ul>
+          <h3> Sr. Product Manager, <a href="https://bloomberg.com/vault">Vault</a> @ <a
+              href="//www.bloomberg.com/">Bloomberg</a><br /> <small> October 2014 -
+              November 2015 </small>
+          </h3>
+          <ul>
+            <li>Product owner for Bloomberg Vault Surveillance, the communications
+              monitoring and auditing tool
+              for the Bloomberg Terminal (MCMP, BVTP)</li>
+            <li>Implemented technology and policies to capture communications to prevent
+              Market Abuse, Insider
+              Trading, Harassment, and Data Loss</li>
+            <li>Coordinated a team working on the latest and greatest technology stack
+              including Scala, Play,
+              Accumulo, &amp; Akka running on a Mesos infrastructure</li>
+            <li>Worked with Compliance and Security Officers to ensure the data integrity of
+              our clients, and
+              the Bloomberg Terminal</li>
+          </ul>
         </div>
         <h3>Engineer / Product Manager@ <a href="https://www.rackspace.com/">Rackspace</a><br />
           <small> August 2011 - October 2014 </small> </h3>
@@ -413,10 +416,13 @@
   </div>
 
   <div class="footer d-print-none">
-    <div class="container text-center"> <a class="btn btn-primary my-2 mr-1" role="button" href="#"
-        onclick="window.print()">
-        <div class="d-sm-block">Save / Print as PDF<i class="fas fa-print"></i></div>
-      </a>
+    <div class="container text-center">  <a class="nav-link" href="./docs/Felix%20Sargent%20Resume.pdf" download
+      aria-label="Download PDF Resume">
+      <div class="icon-label d-none d-sm-block"><i class="fas fa-save"></i> Save PDF
+      </div>
+      <div class="icon-label d-sm-none"><i class="fas fa-save"></i> Save PDF
+      </div>
+    </a>
       <dark-mode-toggle id="dark-mode-toggle-1" permanent="true"></dark-mode-toggle>
 
     </div>
