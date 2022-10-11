@@ -63,11 +63,6 @@
       src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
     }
 
-    @media (prefers-color-scheme: light) {
-      body {
-        background-color: #000000;
-      }
-    }
 
     @media print {
       a[href]:after {
@@ -134,13 +129,14 @@
             </div>
           </a></li>
       </ul>
-      <a class="nav-link" href="./docs/Felix%20Sargent%20Resume.pdf" download
-      aria-label="Download PDF Resume">
-      <div class="icon-label d-none d-sm-block"><i class="fas fa-save"></i>
-      </div>
-      <div class="icon-label d-sm-none"><i class="fas fa-save"></i> Save PDF
-      </div>
-    </a>
+      <ul class="navbar-nav float-md-end ">
+        <li class="nav-item"> <a class="nav-link" href="./docs/Felix%20Sargent%20Resume.pdf" download aria-label="Download PDF Resume">
+          <div class="icon-label d-none d-sm-block"><i class="fas fa-save"></i> Save PDF
+            </div>
+            <div class="icon-label d-sm-none"><i class="fas fa-save"></i> Save PDF
+            </div>
+          </a></li>
+      </ul>
     </div>
   </nav>
   <div class="container">
@@ -179,9 +175,10 @@
       <div class="col-lg-8">
         <h3>Sr. Engineering Manager @ <a href="//www.truework.com/">Truework</a><br /> <small>
             Oct 2021
-            - In Progress </small> </h3>
+            - Present </small> </h3>
         <ul>
-          <li>Managed the Interfaces (API, TrueworkJS, Encompass, and App) and Infrastructure teams, a total of 10
+          <li>Managed the Interfaces (FE App, API, TrueworkJS Widget (like Plaid), Encompass Integration) and
+            Infrastructure teams, a total of 10
             engineers (Django Python BE, Typescript React FE)</li>
           <li>Led the "API First" strategic initiative to create a first-class external developer experience</li>
           <li>Renegotiated contracts to keep costs lean as we expanded the team</li>
@@ -416,13 +413,13 @@
   </div>
 
   <div class="footer d-print-none">
-    <div class="container text-center">  <a class="nav-link" href="./docs/Felix%20Sargent%20Resume.pdf" download
-      aria-label="Download PDF Resume">
-      <div class="icon-label d-none d-sm-block"><i class="fas fa-save"></i> Save PDF
-      </div>
-      <div class="icon-label d-sm-none"><i class="fas fa-save"></i> Save PDF
-      </div>
-    </a>
+    <div class="container text-center"> <a class="nav-link" href="./docs/Felix%20Sargent%20Resume.pdf" download
+        aria-label="Download PDF Resume">
+        <div class="icon-label d-none d-sm-block"><i class="fas fa-save"></i> Save PDF
+        </div>
+        <div class="icon-label d-sm-none"><i class="fas fa-save"></i> Save PDF
+        </div>
+      </a>
       <dark-mode-toggle id="dark-mode-toggle-1" permanent="true"></dark-mode-toggle>
 
     </div>
