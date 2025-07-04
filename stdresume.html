@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<style>
+		/* Copied and modified from https://fonts.googleapis.com/css2?family=Inter:wght@400..700 */
+		/* latin-ext */
+		@font-face {
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 100 900;
+			font-display: swap;
+			src: url(https://assets.standardresume.co/raw/upload/v1613930712/fonts/inter-var-latin-ext_e4rknq.woff2) format('woff2');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Inter';
+			font-style: normal;
+			font-weight: 100 900;
+			font-display: swap;
+			src: url(https://assets.standardresume.co/raw/upload/v1613930712/fonts/inter-var-latin_slr2rc.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* italic latin-ext */
+		@font-face {
+			font-family: 'Inter';
+			font-style: italic;
+			font-weight: 100 900;
+			font-display: swap;
+			src: url(https://assets.standardresume.co/raw/upload/v1628265386/fonts/inter-italic-var-latin-ext_nenjsi.woff2) format('woff2');
+			unicode-range: U+0100-0149, U+014A-01C4, U+01C5-0250, U+0259,
+				U+1E00-1F00, U+2020, U+20A0-20AC, U+20AD-20C0, U+2113, U+2C7C, U+2C7F,
+				U+A7FF;
+			font-named-instance: 'Italic';
+		}
+
+		/* italic latin */
+		@font-face {
+			font-family: 'Inter';
+			font-style: italic;
+			font-weight: 100 900;
+			font-display: swap;
+			src: url(https://assets.standardresume.co/raw/upload/v1628265386/fonts/inter-italic-var-latin_qedl54.woff2) format('woff2');
+			unicode-range: U+0000-007F, U+00A0-0100, U+0131, U+0152-0154,
+				U+02BB-02BD, U+02C6, U+02DA, U+02DC, U+2000-200C, U+2010-2028,
+				U+202F-2060, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+FEFF;
+			font-named-instance: 'Italic';
+		}
+	</style>
+	<style>
+		/* https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500&display=swap */
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'IBM Plex Mono';
+			font-style: normal;
+			font-weight: 300;
+			font-display: swap;
+			src: url(https://assets.standardresume.co/raw/upload/v1613933475/fonts/ibm-plex-300-latin-ext_yk9mx1.woff2) format('woff2');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'IBM Plex Mono';
+			font-style: normal;
+			font-weight: 300;
+			font-display: swap;
+			src: url(https://assets.standardresume.co/raw/upload/v1613933475/fonts/ibm-plex-300-latin_niyzcs.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'IBM Plex Mono';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://assets.standardresume.co/raw/upload/v1613933474/fonts/ibm-plex-500-latin-ext_hryzso.woff2) format('woff2');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'IBM Plex Mono';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://assets.standardresume.co/raw/upload/v1613933474/fonts/ibm-plex-500-latin_mu9ky0.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+	</style>
+	<link rel="icon shortcut" type="image/x-icon" href="/icons/favicon.ico" />
+	<link rel="icon" type="image/png" href="/icons/favicon-192.png" sizes="192x192" />
+	<link rel="icon" type="image/png" href="/icons/favicon-128.png" sizes="128x128" />
+	<link rel="icon" type="image/png" href="/icons/favicon-64.png" sizes="64x64" />
+	<link rel="icon" type="image/png" href="/icons/favicon-32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="/icons/favicon-32.png" sizes="32x32" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180.png" />
+	<link rel="apple-touch-icon" sizes="167x167" href="/icons/apple-icon-167.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120.png" />
+	<link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#000000" />
+	<meta name="apple-mobile-web-app-title" content="Standard Resume" />
+	<meta name="theme-color" content="#2a3ffb" />
+	<meta name="msapplication-TileColor" content="#2a3ffb" />
+	<script>
+		(function (f, b) {
+			if (!b.__SV) {
+				var e, g, i, h; window.mixpanel = b; b._i = []; b.init = function (e, f, c) {
+					function g(a, d) { var b = d.split("."); 2 == b.length && (a = a[b[0]], d = b[1]); a[d] = function () { a.push([d].concat(Array.prototype.slice.call(arguments, 0))) } } var a = b; "undefined" !== typeof c ? a = b[c] = [] : c = "mixpanel"; a.people = a.people || []; a.toString = function (a) { var d = "mixpanel"; "mixpanel" !== c && (d += "." + c); a || (d += " (stub)"); return d }; a.people.toString = function () { return a.toString(1) + ".people (stub)" }; i = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ")
+					for (h = 0; h < i.length; h++)g(a, i[h]); var j = "set set_once union unset remove delete".split(" "); a.get_group = function () { function b(c) { d[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); a.push([e, call2]) } } for (var d = {}, e = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < j.length; c++)b(j[c]); return d }; b._i.push([e, f, c])
+				}; b.__SV = 1.2; e = f.createElement("script"); e.type = "text/javascript"; e.async = !0; e.src = "https://mpp.standardresume.co/lib.min.js"; g = f.getElementsByTagName("script")[0]; g.parentNode.insertBefore(e, g)
+			}
+		})(document, window.mixpanel || [])
+		mixpanel.init("1ec9f8876d01e8d7e5c56338b9d732b7", { api_host: "https://mpp.standardresume.co", ignore_dnt: true });
+	</script>
+	<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-C6ZF5M2GL8"></script>
+	<script>
+		window.dataLayer = window.dataLayer || []
+		function gtag() { dataLayer.push(arguments) }
+		gtag('js', new Date())
+		gtag('config', 'G-C6ZF5M2GL8');
+	</script>
+	<script>
+		(function (h, o, t, j, a, r) {
+			h.hj =
+				h.hj ||
+				function () {
+					(h.hj.q = h.hj.q || []).push(arguments)
+				}
+			h._hjSettings = { hjid: 1923769, hjsv: 6 }
+			a = o.getElementsByTagName('head')[0]
+			r = o.createElement('script')
+			r.async = 1
+			r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv
+			a.appendChild(r)
+		})(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+	</script>
+	<meta name="viewport" content="width=device-width" />
+	<meta charSet="utf-8" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@standardresume" />
+	<meta property="og:url" content="https://standardresume.co/r/felixsargent" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:site_name" content="Standard Resume" />
+	<link rel="canonical" href="https://standardresume.co/r/felixsargent" />
+	<title>Felix Sargent&#x27;s Resume | Head of Engineering / Staff Engineer at Recruitbot</title>
+	<meta name="robots" content="index,follow" />
+	<meta name="googlebot" content="index,follow" />
+	<meta name="description" content="View Felix Sargent&#x27;s web resume on Standard Resume." />
+	<meta property="og:title"
+		content="Felix Sargent&#x27;s Resume | Head of Engineering / Staff Engineer at Recruitbot" />
+	<meta property="og:description" content="View Felix Sargent&#x27;s web resume on Standard Resume." />
+	<meta property="og:type" content="profile" />
+	<meta property="profile:first_name" content="Felix" />
+	<meta property="profile:last_name" content="Sargent" />
+	<meta property="og:image" content="https://app.standardresume.co/assets-api/v2/preview/ZCUsT9HeACWm_0YsCinid" />
+	<meta property="og:image:width" content="2400" />
+	<meta property="og:image:height" content="1260" />
+	<script
+		type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://standardresume.co/r/felixsargent/#person","mainEntityOfPage":{"@type":"WebPage","@id":"https://standardresume.co/r/felixsargent"},"name":"Felix Sargent","address":{"@type":"PostalAddress","addressLocality":"London","addressRegion":"UK"},"worksFor":{"@type":"Organization","name":"Recruitbot","url":"recruitbot.com"},"jobTitle":"Head of Engineering / Staff Engineer","sameAs":"https://linkedin.com/in/felixsargent","alumniOf":{"@type":"CollegeOrUniversity","name":["San Francisco State University"]},"knowsAbout":["15y Python","6y Typescript","3y Scala","DevOps","Full Stack Software Development","Observability","AWS / Google Cloud","Servant Leader","US/UK Citizenship","TDD/BDD/DDD","Agile / SCRUM"]}</script>
+	<script
+		type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":"https://standardresume.co","name":"Web Resumes"},{"@type":"ListItem","position":2,"item":"https://standardresume.co/r/felixsargent","name":"Felix Sargent"}]}</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="anonymous" />
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous" />
+	<meta name="next-head-count" content="24" /><noscript data-n-css=""></noscript>
+	<script defer="" nomodule="" src="/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script>
+	<script src="/_next/static/chunks/webpack-2fb9ef688ed2915b.js" defer=""></script>
+	<script src="/_next/static/chunks/framework-74d52deaea161fc3.js" defer=""></script>
+	<script src="/_next/static/chunks/main-1d4e917f6a9e0f4f.js" defer=""></script>
+	<script src="/_next/static/chunks/pages/_app-5013f46895e50ac5.js" defer=""></script>
+	<script src="/_next/static/chunks/2176-9a70a640fc0c7c2c.js" defer=""></script>
+	<script src="/_next/static/chunks/7105-aba476705e757e84.js" defer=""></script>
+	<script src="/_next/static/chunks/36-7a771c98db6fe26d.js" defer=""></script>
+	<script src="/_next/static/chunks/6808-bbd73fdfb385b9c7.js" defer=""></script>
+	<script src="/_next/static/chunks/3488-85478d9917cdcfbb.js" defer=""></script>
+	<script src="/_next/static/chunks/2616-a3801cf3ec2f3178.js" defer=""></script>
+	<script src="/_next/static/chunks/pages/r/%5Bslug%5D-a21045304dcd8cd4.js" defer=""></script>
+	<script src="/_next/static/soLbHqzlJ6IqnpmIchPbD/_buildManifest.js" defer=""></script>
+	<script src="/_next/static/soLbHqzlJ6IqnpmIchPbD/_ssgManifest.js" defer=""></script>
+	<script src="/_next/static/soLbHqzlJ6IqnpmIchPbD/_middlewareManifest.js" defer=""></script>
+</head>
+
+<body>
+	<div id="__next" data-reactroot="">
+		<style data-emotion-css="18bnnuq">
+			body {
+				color: rgba(0, 0, 0, 1);
+				background-color: rgba(242, 247, 252, 1);
+			}
+		</style>
+		<style data-emotion-css="1xwpiaj">
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+				font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+				color: rgba(0, 0, 0, 1);
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 1.5;
+				background-color: rgba(242, 247, 252, 1);
+				font-feature-settings: 'case' 1, 'rlig' 1, 'calt' 1, 'kern' 1;
+				text-rendering: optimizeLegibility;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				font-variant-ligatures: contextual common-ligatures;
+				font-kerning: normal;
+			}
+
+			@media screen and (min-width:768px) {
+				body {
+					font-size: 14px;
+				}
+			}
+
+			@media screen and (min-width:1024px) {
+				body {
+					font-size: 15px;
+				}
+			}
+		</style>
+		<style data-emotion-css="be9d8r">
+			.css-be9d8r {
+				box-sizing: border-box;
+				margin: 0;
+				min-width: 0;
+				background-color: #e4ebf1;
+				min-height: 100vh;
+				min-widht: 100vw;
+			}
+		</style>
+		<div class="css-be9d8r">
+			<style data-emotion-css="1jmx1h9">
+				.css-1jmx1h9 {
+					box-sizing: border-box;
+					margin: 0;
+					min-width: 0;
+					padding-left: 0;
+					padding-right: 0;
+					margin-left: auto;
+					margin-right: auto;
+					max-width: 1084px;
+					padding-bottom: 0;
+				}
+
+				@media screen and (min-width:768px) {
+					.css-1jmx1h9 {
+						padding-left: 0;
+						padding-right: 0;
+						padding-bottom: 0;
+					}
+				}
+
+				@media screen and (min-width:1024px) {
+					.css-1jmx1h9 {
+						padding-left: 42px;
+						padding-right: 42px;
+						padding-bottom: 42px;
+					}
+				}
+			</style>
+			<div class="css-1jmx1h9">
+				<style data-emotion-css="1qbz534">
+					.css-1qbz534 {
+						box-sizing: border-box;
+						margin: 0;
+						min-width: 0;
+						display: -webkit-box;
+						display: -webkit-flex;
+						display: -ms-flexbox;
+						display: flex;
+						-webkit-box-pack: justify;
+						-webkit-justify-content: space-between;
+						-ms-flex-pack: justify;
+						justify-content: space-between;
+						-webkit-align-items: center;
+						-webkit-box-align: center;
+						-ms-flex-align: center;
+						align-items: center;
+						padding-left: 16px;
+						padding-right: 16px;
+						min-height: 0;
+					}
+
+					@media screen and (min-width:768px) {
+						.css-1qbz534 {
+							padding-left: 16px;
+							padding-right: 16px;
+							min-height: 0;
+						}
+					}
+
+					@media screen and (min-width:1024px) {
+						.css-1qbz534 {
+							padding-left: 0;
+							padding-right: 0;
+							min-height: 42px;
+						}
+					}
+				</style>
+				<div class="css-1qbz534">
+					<style data-emotion-css="vurnku">
+						.css-vurnku {
+							box-sizing: border-box;
+							margin: 0;
+							min-width: 0;
+						}
+					</style>
+					<div class="css-vurnku"></div>
+					<style data-emotion-css="1yqdrc0">
+						.css-1yqdrc0 {
+							box-sizing: border-box;
+							margin: 0;
+							min-width: 0;
+							-webkit-text-decoration: none;
+							text-decoration: none;
+							font-size: 15px;
+							font-weight: 400;
+							color: rgba(0, 0, 0, 0.5);
+						}
+
+						@media (hover:hover) {
+							.css-1yqdrc0:hover {
+								-webkit-text-decoration: none;
+								text-decoration: none;
+								-webkit-transform: none;
+								-ms-transform: none;
+								transform: none;
+							}
+						}
+					</style><a href="https://standardresume.co" class="css-1yqdrc0">
+						<style data-emotion-css="10nf7hq">
+							.css-10nf7hq {
+								box-sizing: border-box;
+								margin: 0;
+								min-width: 0;
+								display: -webkit-box;
+								display: -webkit-flex;
+								display: -ms-flexbox;
+								display: flex;
+								-webkit-align-items: center;
+								-webkit-box-align: center;
+								-ms-flex-align: center;
+								align-items: center;
+							}
+						</style>
+						<div class="css-10nf7hq">Learn more<!-- -->
+							<style data-emotion-css="rcrn2l">
+								.css-rcrn2l {
+									box-sizing: border-box;
+									margin: 0;
+									min-width: 0;
+									stroke: rgba(0, 0, 0, 0.5);
+									fill: none;
+									margin-left: 8px;
+								}
+
+								.css-rcrn2l path {
+									stroke-width: 1;
+								}
+							</style><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img"
+								aria-label="Arrow pointing right" class="css-rcrn2l">
+								<path d="M18.6667 9.33325L25.3333 15.9999L18.6667 22.6666M5.33334 15.9999L25 15.9999" stroke-width="2">
+								</path>
+							</svg>
+						</div>
+					</a>
+				</div>
+				<style data-emotion-css="uf4v46">
+					.css-uf4v46 {
+						box-sizing: border-box;
+						margin: 0;
+						min-width: 0;
+						margin: 0 auto;
+						width: 100%;
+						max-width: 1000px;
+						background-color: #EFF6FF;
+						overflow: hidden;
+						min-height: auto;
+					}
+				</style>
+				<div class="css-uf4v46">
+					<style data-emotion-css="1jleruk">
+						.css-1jleruk {
+							box-sizing: border-box;
+							margin: 0;
+							min-width: 0;
+							margin: 0 auto;
+							width: 100%;
+							max-width: 990px;
+							padding-left: 24px;
+							padding-right: 24px;
+							padding-top: 40px;
+							padding-bottom: 40px;
+						}
+
+						@media screen and (min-width:768px) {
+							.css-1jleruk {
+								padding-left: 60px;
+								padding-right: 60px;
+								padding-top: 60px;
+								padding-bottom: 60px;
+							}
+						}
+					</style>
+					<div class="css-1jleruk">
+						<style>
+							@font-face {
+								font-family: &#x27;
+								Overpass Mono&#x27;
+								;
+								font-style: normal;
+								font-weight: 400;
+								font-display: swap;
+								src: url(&#x27;https://assets.standardresume.co/raw/upload/fonts/overpass-mono/latin-regular.woff2&#x27;) format(&quot; woff2&quot; ),
+									url(&#x27;https://assets.standardresume.co/raw/upload/fonts/overpass-mono/latin-regular.woff&#x27;) format(&quot; woff&quot; );
+							}
+
+							@font-face {
+								font-family: &#x27;
+								Overpass Mono&#x27;
+								;
+								font-style: normal;
+								font-weight: 700;
+								font-display: swap;
+								src: url(&#x27;https://assets.standardresume.co/raw/upload/fonts/overpass-mono/latin-bold.woff2&#x27;) format(&quot; woff2&quot; ),
+									url(&#x27;https://assets.standardresume.co/raw/upload/fonts/overpass-mono/latin-bold.woff&#x27;) format(&quot; woff&quot; );
+							}
+						</style>
+						<style data-emotion-css="1gi05x2">
+							.css-1gi05x2 {
+								box-sizing: border-box;
+								margin: 0;
+								min-width: 0;
+								margin-bottom: 24px;
+							}
+
+							@media screen and (min-width:768px) {
+								.css-1gi05x2 {
+									margin-bottom: 48px;
+								}
+							}
+						</style>
+						<header class="pdf-resume-header css-1gi05x2">
+							<style data-emotion-css="cb1r1a">
+								.css-cb1r1a {
+									box-sizing: border-box;
+									margin: 0;
+									min-width: 0;
+									display: -webkit-box;
+									display: -webkit-flex;
+									display: -ms-flexbox;
+									display: flex;
+									-webkit-flex-wrap: wrap;
+									-ms-flex-wrap: wrap;
+									flex-wrap: wrap;
+									margin-bottom: 30px;
+									position: relative;
+								}
+
+								@media screen and (min-width:768px) {
+									.css-cb1r1a {
+										-webkit-flex-wrap: nowrap;
+										-ms-flex-wrap: nowrap;
+										flex-wrap: nowrap;
+									}
+								}
+							</style>
+							<div class="css-cb1r1a">
+								<style data-emotion-css="tz1dd5">
+									.css-tz1dd5 {
+										box-sizing: border-box;
+										margin: 0;
+										min-width: 0;
+										-webkit-box-flex: 0;
+										-webkit-flex-grow: 0;
+										-ms-flex-positive: 0;
+										flex-grow: 0;
+										-webkit-flex-shrink: 0;
+										-ms-flex-negative: 0;
+										flex-shrink: 0;
+										width: 100%;
+										padding-right: 24px;
+										margin-top: 4px;
+									}
+
+									@media screen and (min-width:768px) {
+										.css-tz1dd5 {
+											width: 220px;
+										}
+									}
+								</style>
+								<div class="css-tz1dd5">
+									<style data-emotion-css="jllep1">
+										.css-jllep1 {
+											box-sizing: border-box;
+											margin: 0;
+											min-width: 0;
+											font-family: "Overpass Mono", monospace;
+											font-weight: 700;
+											line-height: 1.4;
+											color: #004F71;
+											font-weight: 700;
+											line-height: 1.4;
+											font-family: "Overpass Mono", monospace;
+											font-size: 14px;
+											margin-bottom: 6px;
+										}
+									</style>
+									<h1 class="css-jllep1">Felix Sargent</h1>
+									<style data-emotion-css="3czyqi">
+										.css-3czyqi {
+											box-sizing: border-box;
+											margin: 0;
+											min-width: 0;
+											font-family: "Overpass Mono", monospace;
+											line-height: 1.6;
+											font-weight: 400;
+											color: #004F71;
+											font-size: 14px;
+										}
+									</style>
+									<div class="css-3czyqi">Engineering Leader</div>
+								</div>
+								<style data-emotion-css="wcquo4">
+									.css-wcquo4 {
+										box-sizing: border-box;
+										margin: 0;
+										min-width: 0;
+										-webkit-box-flex: 1;
+										-webkit-flex-grow: 1;
+										-ms-flex-positive: 1;
+										flex-grow: 1;
+									}
+								</style>
+								<div class="css-wcquo4">
+									<style data-emotion-css="3j2kqe">
+										.css-3j2kqe {
+											box-sizing: border-box;
+											margin: 0;
+											min-width: 0;
+											display: -webkit-box;
+											display: -webkit-flex;
+											display: -ms-flexbox;
+											display: flex;
+											-webkit-box-pack: justify;
+											-webkit-justify-content: space-between;
+											-ms-flex-pack: justify;
+											justify-content: space-between;
+										}
+									</style>
+									<div class="css-3j2kqe">
+										<style data-emotion-css="1gagxax">
+											.css-1gagxax {
+												box-sizing: border-box;
+												margin: 0;
+												min-width: 0;
+												margin-top: 2px;
+												display: grid;
+												grid-auto-flow: row;
+												grid-template-rows: auto;
+												grid-column-gap: 48px;
+												grid-row-gap: 2px;
+											}
+
+											@media screen and (min-width:768px) {
+												.css-1gagxax {
+													grid-auto-flow: column;
+													grid-template-rows: 1fr 1fr;
+													grid-row-gap: 4px;
+												}
+											}
+										</style>
+										<div class="css-1gagxax">
+											<div class="css-3czyqi">London<!-- -->, <!-- -->UK</div>
+											<div class="css-3czyqi">
+												<style data-emotion-css="1cuak6k">
+													.css-1cuak6k {
+														box-sizing: border-box;
+														margin: 0;
+														min-width: 0;
+														color: inherit;
+														-webkit-text-decoration: inherit;
+														text-decoration: inherit;
+														font-size: inherit;
+														font-weight: inherit;
+														overflow-wrap: break-word;
+													}
+
+													.css-1cuak6k:hover {
+														opacity: 0.7;
+													}
+												</style><a href="https://linkedin.com/in/felixsargent" target="_blank"
+													rel="noopener noreferrer nofollow ugc" class="css-1cuak6k">linkedin.com/in/felixsargent</a>
+											</div>
+											<div class="css-3czyqi"><a href="https://felixsargent.com" target="_blank"
+													rel="noopener noreferrer nofollow ugc" class="css-1cuak6k">felixsargent.com</a></div>
+										</div>
+									</div>
+									<style data-emotion-css="1gw0mt1">
+										.css-1gw0mt1 {
+											box-sizing: border-box;
+											margin: 0;
+											min-width: 0;
+											color: #004F71;
+											font-weight: 700;
+											line-height: 1.4;
+											font-family: "Overpass Mono", monospace;
+											font-size: 14px;
+											margin-top: 28px;
+											padding-right: 0;
+										}
+
+										@media screen and (min-width:768px) {
+											.css-1gw0mt1 {
+												padding-right: 54px;
+											}
+										}
+									</style>
+									<div class="css-1gw0mt1">Engineering Manager and Programmer in Scala, Python, Typescript, with a love
+										for backend services, APIs, DevOps, type safety, observability, logging and testing. US, UK, AUS
+										Citizen.</div>
+								</div>
+							</div>
+						</header>
+						<div class="pdf-page-container css-vurnku">
+							<div class="pdf-page-column css-vurnku">
+								<style data-emotion-css="17iqz2r">
+									.css-17iqz2r {
+										box-sizing: border-box;
+										margin: 0;
+										min-width: 0;
+										margin-bottom: 60px;
+									}
+								</style>
+								<section class="css-17iqz2r">
+									<style data-emotion-css="1yc0a4z">
+										.css-1yc0a4z {
+											box-sizing: border-box;
+											margin: 0;
+											min-width: 0;
+											font-family: "Overpass Mono", monospace;
+											font-weight: 700;
+											line-height: 1.4;
+											color: #004F71;
+											font-weight: 700;
+											line-height: 1.4;
+											font-family: "Overpass Mono", monospace;
+											font-size: 14px;
+											margin-bottom: 24px;
+										}
+									</style>
+									<h2 class="css-1yc0a4z">Work Experience</h2>
+									<style data-emotion-css="2h9f0s">
+										.css-2h9f0s {
+											box-sizing: border-box;
+											margin: 0;
+											min-width: 0;
+											margin-bottom: 24px;
+											display: -webkit-box;
+											display: -webkit-flex;
+											display: -ms-flexbox;
+											display: flex;
+											-webkit-flex-direction: column;
+											-ms-flex-direction: column;
+											flex-direction: column;
+											page-break-inside: avoid;
+										}
+
+										@media screen and (min-width:768px) {
+											.css-2h9f0s {
+												-webkit-flex-direction: row;
+												-ms-flex-direction: row;
+												flex-direction: row;
+											}
+										}
+									</style>
+									<div class="css-2h9f0s">
+										<style data-emotion-css="spjjuq">
+											.css-spjjuq {
+												box-sizing: border-box;
+												margin: 0;
+												min-width: 0;
+												-webkit-box-flex: 0;
+												-webkit-flex-grow: 0;
+												-ms-flex-positive: 0;
+												flex-grow: 0;
+												-webkit-flex-shrink: 0;
+												-ms-flex-negative: 0;
+												flex-shrink: 0;
+												width: 100%;
+												padding-right: 24px;
+											}
+
+											@media screen and (min-width:768px) {
+												.css-spjjuq {
+													width: 220px;
+												}
+											}
+										</style>
+										<div class="css-spjjuq">
+											<style data-emotion-css="uz4czm">
+												.css-uz4czm {
+													box-sizing: border-box;
+													margin: 0;
+													min-width: 0;
+													font-family: "Overpass Mono", monospace;
+													font-weight: 700;
+													line-height: 1.4;
+													font-family: "Overpass Mono", monospace;
+													line-height: 1.6;
+													font-weight: 700;
+													color: #004F71;
+													font-size: 14px;
+													margin-bottom: 0;
+												}
+
+												@media screen and (min-width:768px) {
+													.css-uz4czm {
+														margin-bottom: 8px;
+													}
+												}
+											</style>
+											<h2 class="css-uz4czm">
+												<style data-emotion-css="1wafmg3">
+													.css-1wafmg3 {
+														box-sizing: border-box;
+														margin: 0;
+														min-width: 0;
+														color: inherit;
+														-webkit-text-decoration: inherit;
+														text-decoration: inherit;
+														font-size: inherit;
+														font-weight: inherit;
+													}
+
+													.css-1wafmg3:hover {
+														opacity: 0.7;
+													}
+												</style><a href="http://recruitbot.com" target="_blank" rel="noopener noreferrer nofollow ugc"
+													class="css-1wafmg3">Recruitbot</a>
+											</h2>
+											<style data-emotion-css="11fwfcr">
+												.css-11fwfcr {
+													box-sizing: border-box;
+													margin: 0;
+													min-width: 0;
+													font-family: "Overpass Mono", monospace;
+													line-height: 1.6;
+													font-weight: 400;
+													color: #004F71;
+													font-size: 14px;
+													margin-bottom: 8px;
+												}
+											</style>
+											<div class="css-11fwfcr"><span>Oct 2022<!-- --> - <!-- -->Current</span></div>
+										</div>
+										<div class="css-vurnku">
+											<style data-emotion-css="1jjz60s">
+												.css-1jjz60s {
+													box-sizing: border-box;
+													margin: 0;
+													min-width: 0;
+													color: #004F71;
+													font-weight: 700;
+													line-height: 1.4;
+													font-family: "Overpass Mono", monospace;
+													font-size: 14px;
+													margin-bottom: 4px;
+												}
+
+												@media screen and (min-width:768px) {
+													.css-1jjz60s {
+														margin-bottom: 10px;
+													}
+												}
+											</style>
+											<div class="css-1jjz60s">Head of Engineering / Staff Engineer</div>
+											<div class="css-vurnku">
+												<div class="css-vurnku">
+													<style data-emotion-css="1yh09yi">
+														.css-1yh09yi {
+															box-sizing: border-box;
+															margin: 0;
+															min-width: 0;
+															padding: 0;
+														}
+													</style>
+													<ul class="css-1yh09yi">
+														<style data-emotion-css="1ohba6i">
+															.css-1ohba6i {
+																box-sizing: border-box;
+																margin: 0;
+																min-width: 0;
+																font-family: "Overpass Mono", monospace;
+																line-height: 1.6;
+																font-weight: 400;
+																color: #004F71;
+																font-size: 14px;
+																margin-bottom: 4px;
+																margin-left: 16px;
+																padding-left: 0;
+															}
+														</style>
+														<li class="css-1ohba6i">Recruitbot is a powerful alternative to Linkedin Recruiter utilizing
+															AI and Machine Learning to find and contact the best candidates for your position.</li>
+														<li class="css-1ohba6i">Directed a team of 8 engineers across the Bay Area and Spain,
+															covering Frontend React, Backend, Machine Learning and Data.</li>
+														<li class="css-1ohba6i">Personally built headliner features using Play (Scala), Django
+															(Python), and React (Typescript)</li>
+														<li class="css-1ohba6i">Transitioned to CI/CD with GitHub actions, achieving a 60% reduction
+															in deployment times and enhancing release reliability.</li>
+														<li class="css-1ohba6i">Modernized AWS infrastructure, optimized search and reduced
+															operational costs by $10,000/month.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="css-2h9f0s">
+										<div class="css-spjjuq">
+											<h2 class="css-uz4czm"><a href="http://truework.com" target="_blank"
+													rel="noopener noreferrer nofollow ugc" class="css-1wafmg3">Truework</a></h2>
+											<div class="css-11fwfcr"><span>Oct 2021<!-- --> - <!-- -->Oct 2022</span></div>
+										</div>
+										<div class="css-vurnku">
+											<div class="css-1jjz60s">Senior Software Engineering Manager</div>
+											<div class="css-vurnku">
+												<div class="css-vurnku">
+													<ul class="css-1yh09yi">
+														<li class="css-1ohba6i">Managed the Interfaces (API and FE) and Operations/Infra teams,
+															enhancing system interoperability and user experience.</li>
+														<li class="css-1ohba6i">Expanded the engineering team, doubling its size by hiring 13 new
+															members within six months.</li>
+														<li class="css-1ohba6i">Transitioned the team to Agile methodologies, resulting in a 30%
+															improvement in project delivery times and better Product/Sales relations.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="css-2h9f0s">
+										<div class="css-spjjuq">
+											<h2 class="css-uz4czm"><a href="http://atlassian.com" target="_blank"
+													rel="noopener noreferrer nofollow ugc" class="css-1wafmg3">Atlassian</a></h2>
+											<div class="css-11fwfcr"><span>Jun 2020<!-- --> - <!-- -->Oct 2021</span></div>
+										</div>
+										<div class="css-vurnku">
+											<div class="css-1jjz60s">Senior Engineering Manager (Contract)</div>
+											<div class="css-vurnku">
+												<div class="css-vurnku">
+													<ul class="css-1yh09yi">
+														<li class="css-1ohba6i">Managed the implementation and migration of Atlassian University
+															Learning Management Platform to Intellum.</li>
+														<li class="css-1ohba6i">Collaborated with cross-functional teams to ensure seamless
+															transition and user experience.</li>
+														<li class="css-1ohba6i">Achieved successful integration resulting in improved efficiency and
+															user satisfaction.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="css-2h9f0s">
+										<div class="css-spjjuq">
+											<h2 class="css-uz4czm"><a href="http://mediamath.com" target="_blank"
+													rel="noopener noreferrer nofollow ugc" class="css-1wafmg3">Mediamath</a></h2>
+											<div class="css-11fwfcr"><span>Oct 2016<!-- --> - <!-- -->Jun 2020</span></div>
+										</div>
+										<div class="css-vurnku">
+											<div class="css-1jjz60s">Director of Engineering</div>
+											<div class="css-vurnku">
+												<div class="css-vurnku">
+													<ul class="css-1yh09yi">
+														<li class="css-1ohba6i">Managed the Developer Relations and core API services teams,
+															managing and stabilizing a Perl-based codebase while delivering new features for one of
+															the world’s largest advertising platforms.</li>
+														<li class="css-1ohba6i">Replaced legacy API key management tools with custom NGINX and
+															firewall solutions, significantly enhancing security and API efficiency.</li>
+														<li class="css-1ohba6i">Spearheaded the adoption of Auth0, implementing OAuth authentication
+															and multi-factor authentication, improving overall platform security and user
+															authentication processes.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="css-2h9f0s">
+										<div class="css-spjjuq">
+											<h2 class="css-uz4czm"><a href="http://govos.com" target="_blank"
+													rel="noopener noreferrer nofollow ugc" class="css-1wafmg3">GovOS</a></h2>
+											<div class="css-11fwfcr"><span>Sep 2014<!-- --> - <!-- -->Oct 2016</span></div>
+										</div>
+										<div class="css-vurnku">
+											<div class="css-1jjz60s">Vice President Product</div>
+											<div class="css-vurnku">
+												<div class="css-vurnku">
+													<ul class="css-1yh09yi">
+														<li class="css-1ohba6i">Spearheaded product strategy and development for a SaaS platform,
+															helping government agencies digitize paperwork into web forms and databases, streamlining
+															operations and reducing manual data entry.</li>
+														<li class="css-1ohba6i">Introduced Jira and agile methodologies, organizing a previously
+															disorganized team, improving development efficiency, and leading the recruiting pipeline
+															for the engineering team.</li>
+														<li class="css-1ohba6i">Established a structured approach to handling customer feedback,
+															ensuring product decisions were aligned with user needs while balancing CEO&#x27;s
+															expectations with resource constraints.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="css-2h9f0s">
+										<div class="css-spjjuq">
+											<h2 class="css-uz4czm"><a href="http://rackspace.com" target="_blank"
+													rel="noopener noreferrer nofollow ugc" class="css-1wafmg3">Rackspace</a></h2>
+											<div class="css-11fwfcr"><span>Aug 2011<!-- --> - <!-- -->Sep 2014</span></div>
+										</div>
+										<div class="css-vurnku">
+											<div class="css-1jjz60s">Technical Product Manager</div>
+											<div class="css-vurnku">
+												<div class="css-vurnku">
+													<ul class="css-1yh09yi">
+														<li class="css-1ohba6i">Hired as a Software Engineer, and after one year transitioned into
+															Technical PM for Rackspace Autoscale. Built Autoscale, later integrated into Openstack
+															HEAT.</li>
+														<li class="css-1ohba6i">Presented Repose at OpenStack 2014, showcasing API Middleware
+															Platform capabilities.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="css-2h9f0s">
+										<div class="css-spjjuq">
+											<h2 class="css-uz4czm"><a href="http://google.com" target="_blank"
+													rel="noopener noreferrer nofollow ugc" class="css-1wafmg3">Google</a></h2>
+											<div class="css-11fwfcr"><span>Aug 2009<!-- --> - <!-- -->Aug 2010</span></div>
+										</div>
+										<div class="css-vurnku">
+											<div class="css-1jjz60s">Technical Support Engineer</div>
+											<div class="css-vurnku">
+												<div class="css-vurnku">
+													<ul class="css-1yh09yi">
+														<li class="css-1ohba6i">Provided technical support to team members for computer and hardware
+															needs.</li>
+														<li class="css-1ohba6i">Utilized Python, Puppet, and software engineering skills to
+															troubleshoot and resolve issues.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+								<section class="css-17iqz2r">
+									<h2 class="css-1yc0a4z">Education</h2>
+									<div class="css-2h9f0s">
+										<div class="css-spjjuq">
+											<h2 class="css-uz4czm"><a href="http://sfsu.edu" target="_blank"
+													rel="noopener noreferrer nofollow ugc" class="css-1wafmg3">San Francisco State University</a>
+											</h2>
+											<div class="css-11fwfcr"><span>Jan 2007<!-- --> - <!-- -->2009</span></div>
+										</div>
+										<div class="css-vurnku">
+											<div class="css-1jjz60s">Bachelors Economics</div>
+											<div class="css-vurnku">
+												<div class="css-vurnku">
+													<ul class="css-1yh09yi">
+														<li class="css-1ohba6i">President, Economics Students Association</li>
+														<li class="css-1ohba6i">Treasurer, SFSU Pre-Law Society</li>
+														<li class="css-1ohba6i">Varsity Intercollegiate Policy Debate Team</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+								<style data-emotion-css="8j6afd">
+									.css-8j6afd {
+										box-sizing: border-box;
+										margin: 0;
+										min-width: 0;
+										margin-bottom: 60px;
+										display: -webkit-box;
+										display: -webkit-flex;
+										display: -ms-flexbox;
+										display: flex;
+										-webkit-flex-wrap: wrap;
+										-ms-flex-wrap: wrap;
+										flex-wrap: wrap;
+										page-break-inside: avoid;
+									}
+
+									@media screen and (min-width:768px) {
+										.css-8j6afd {
+											-webkit-flex-wrap: nowrap;
+											-ms-flex-wrap: nowrap;
+											flex-wrap: nowrap;
+										}
+									}
+								</style>
+								<section class="css-8j6afd">
+									<div class="css-spjjuq">
+										<h2 class="css-1yc0a4z">Skills</h2>
+									</div>
+									<style data-emotion-css="9bryss">
+										.css-9bryss {
+											box-sizing: border-box;
+											margin: 0;
+											min-width: 0;
+											list-style: none;
+											margin: 0;
+											padding: 0;
+											-webkit-box-flex: 1;
+											-webkit-flex-grow: 1;
+											-ms-flex-positive: 1;
+											flex-grow: 1;
+										}
+									</style>
+									<ul class="css-9bryss">
+										<style data-emotion-css="quptbt">
+											.css-quptbt {
+												box-sizing: border-box;
+												margin: 0;
+												min-width: 0;
+												font-family: "Overpass Mono", monospace;
+												line-height: 1.6;
+												font-weight: 400;
+												color: #004F71;
+												font-size: 14px;
+												margin-bottom: 4px;
+												display: inline-block;
+												border-width: 1px;
+												border-style: solid;
+												border-color: #004F71;
+												color: #004F71;
+												padding: 5px 18px;
+												margin-right: 3px;
+												margin-bottom: 12px;
+												font-size: 14px;
+											}
+										</style>
+										<li class="css-quptbt">15y Python</li>
+										<li class="css-quptbt">6y Typescript</li>
+										<li class="css-quptbt">3y Scala</li>
+										<li class="css-quptbt">DevOps</li>
+										<li class="css-quptbt">Full Stack Software Development</li>
+										<li class="css-quptbt">Observability</li>
+										<li class="css-quptbt">AWS / Google Cloud</li>
+										<li class="css-quptbt">Servant Leader</li>
+										<li class="css-quptbt">US/UK Citizenship</li>
+										<li class="css-quptbt">TDD/BDD/DDD</li>
+										<li class="css-quptbt">Agile / SCRUM</li>
+									</ul>
+								</section>
+								<section class="css-17iqz2r">
+									<h2 class="css-1yc0a4z">Volunteering</h2>
+									<div class="css-2h9f0s">
+										<div class="css-spjjuq">
+											<h2 class="css-uz4czm"><a href="https://electionscience.org" target="_blank"
+													rel="noopener noreferrer nofollow ugc" class="css-1wafmg3">Center for Election Science</a>
+											</h2>
+											<div class="css-11fwfcr"><span>2017<!-- --> - <!-- -->2024</span></div>
+										</div>
+										<div class="css-vurnku">
+											<div class="css-1jjz60s">Chair of the Board</div>
+											<div class="css-vurnku">
+												<div class="css-vurnku">
+													<style data-emotion-css="1793zek">
+														.css-1793zek {
+															box-sizing: border-box;
+															margin: 0;
+															min-width: 0;
+															font-family: "Overpass Mono", monospace;
+															line-height: 1.6;
+															font-weight: 400;
+															color: #004F71;
+															font-size: 14px;
+															margin-bottom: 6px;
+														}
+													</style>
+													<p class="css-1793zek">
+														<style data-emotion-css="mx8wl8">
+															.css-mx8wl8 {
+																box-sizing: border-box;
+																margin: 0;
+																min-width: 0;
+																font-style: italic;
+															}
+														</style><em class="css-mx8wl8">A non-profit organization dedicated to improving the way we
+															vote</em>
+													</p>
+													<ul class="css-1yh09yi">
+														<li class="css-1ohba6i">CES changed the way <style data-emotion-css="vz9a0t">
+																.css-vz9a0t {
+																	box-sizing: border-box;
+																	margin: 0;
+																	min-width: 0;
+																	color: inherit;
+																	-webkit-text-decoration: inherit;
+																	text-decoration: inherit;
+																	font-size: inherit;
+																	font-weight: inherit;
+																	-webkit-text-decoration: underline;
+																	text-decoration: underline;
+																}
+
+																.css-vz9a0t:hover {
+																	opacity: 0.7;
+																}
+															</style><a
+																href="https://www.publicnewsservice.org/2020-06-10/civic-engagement/fargo-becomes-first-u-s-city-to-try-approval-voting/a70495-1"
+																target="_blank" rel="noopener noreferrer nofollow ugc" class="css-vz9a0t">Fargo, ND</a>,
+															and <a
+																href="https://fivethirtyeight.com/features/in-st-louis-voters-will-get-to-vote-for-as-many-candidates-as-they-want/"
+																target="_blank" rel="noopener noreferrer nofollow ugc" class="css-vz9a0t">St. Louis,
+																MO</a> elect their leaders</li>
+														<li class="css-1ohba6i">Recruited new board members, coordinated strategic donors, and
+															raised grants for the organization</li>
+														<li class="css-1ohba6i">“Berkeley&#x27;s City Council&#x27;s switch to &#x27;re-weighted
+															range voting&#x27; adds fairness to the system” Opinion Piece in <a
+																href="https://www.berkeleyside.org/2019/06/19/opinion-berkeleys-city-councils-switch-to-re-weighted-range-voting-adds-fairness-to-the-system"
+																target="_blank" rel="noopener noreferrer nofollow ugc"
+																class="css-vz9a0t">Berkeleyside</a></li>
+														<li class="css-1ohba6i">Letter to the Editor in <a
+																href="https://www.linkedin.com/posts/felixsargent_my-letter-to-the-editor-was-published-in-activity-6650821338674057216-DRLo/?trk=public_profile_like_view"
+																target="_blank" rel="noopener noreferrer nofollow ugc" class="css-vz9a0t">The
+																Economist</a></li>
+														<li class="css-1ohba6i">“Chaos reigns in San Francisco’s redistricting. Here’s a better way
+															to do things” Opinion Piece in <a
+																href="https://www.sfchronicle.com/opinion/openforum/article/san-francisco-redistricting-17107719.php"
+																target="_blank" rel="noopener noreferrer nofollow ugc" class="css-vz9a0t">The San
+																Francisco Chronicle</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="css-2h9f0s">
+										<div class="css-spjjuq">
+											<h2 class="css-uz4czm"><a href="https://www.meetup.com/theproductgroup/" target="_blank"
+													rel="noopener noreferrer nofollow ugc" class="css-1wafmg3">The Product Group</a></h2>
+											<div class="css-11fwfcr"><span>2015<!-- --> - <!-- -->2017</span></div>
+										</div>
+										<div class="css-vurnku">
+											<div class="css-1jjz60s">Mentor</div>
+											<div class="css-vurnku">
+												<div class="css-vurnku">
+													<ul class="css-1yh09yi">
+														<li class="css-1ohba6i">Recognized with the <a
+																href="http://www.theproductmentor.com/recognition.html" target="_blank"
+																rel="noopener noreferrer nofollow ugc" class="css-vz9a0t">Outstanding Product Mentor
+																Award</a></li>
+														<li class="css-1ohba6i"><a href="https://www.youtube.com/watch?v=Lv3ewdddD8g"
+																target="_blank" rel="noopener noreferrer nofollow ugc" class="css-vz9a0t">Managing
+																Technical Debt</a> (July 17, 2016)</li>
+														<li class="css-1ohba6i"><a href="https://www.youtube.com/watch?v=2rNhGUZea2U"
+																target="_blank" rel="noopener noreferrer nofollow ugc" class="css-vz9a0t">How to
+																Interview a Product Manager</a> (February 7, 2016)</li>
+														<li class="css-1ohba6i"><a href="https://www.youtube.com/watch?v=GnQnsDHQGj0"
+																target="_blank" rel="noopener noreferrer nofollow ugc" class="css-vz9a0t">Inheriting a
+																Project</a> (July 8, 2015)</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+				<style data-emotion-css="1si0cz4">
+					.css-1si0cz4 {
+						box-sizing: border-box;
+						margin: 0;
+						min-width: 0;
+						display: -webkit-box;
+						display: -webkit-flex;
+						display: -ms-flexbox;
+						display: flex;
+						-webkit-align-items: center;
+						-webkit-box-align: center;
+						-ms-flex-align: center;
+						align-items: center;
+						-webkit-box-pack: center;
+						-webkit-justify-content: center;
+						-ms-flex-pack: center;
+						justify-content: center;
+						margin-top: 48px;
+						padding-bottom: 24px;
+					}
+
+					@media screen and (min-width:768px) {
+						.css-1si0cz4 {
+							margin-top: 120px;
+							padding-bottom: 0;
+						}
+					}
+				</style>
+				<nav class="css-1si0cz4">
+					<style data-emotion-css="1cjs9fo">
+						.css-1cjs9fo {
+							box-sizing: border-box;
+							margin: 0;
+							min-width: 0;
+							display: -webkit-inline-box;
+							display: -webkit-inline-flex;
+							display: -ms-inline-flexbox;
+							display: inline-flex;
+							color: rgba(42, 63, 251, 1);
+							-webkit-text-decoration: none;
+							text-decoration: none;
+							-webkit-transition: all 0.2s linear;
+							transition: all 0.2s linear;
+							font-size: 12px;
+							font-weight: 400;
+							color: rgba(0, 0, 0, 0.5);
+							padding-top: 6px;
+							padding-bottom: 6px;
+							padding-left: 8px;
+							padding-right: 8px;
+						}
+
+						@media (hover:hover) {
+							.css-1cjs9fo:hover {
+								-webkit-text-decoration: none;
+								text-decoration: none;
+								-webkit-transform: scale(1.05);
+								-ms-transform: scale(1.05);
+								transform: scale(1.05);
+								-webkit-filter: brightness(140%);
+								filter: brightness(140%);
+							}
+
+							.css-1cjs9fo:active {
+								-webkit-transform: scale(1);
+								-ms-transform: scale(1);
+								transform: scale(1);
+							}
+						}
+
+						@media screen and (min-width:768px) {
+							.css-1cjs9fo {
+								font-size: 13px;
+								padding-left: 12px;
+								padding-right: 12px;
+							}
+						}
+					</style>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<script id="__NEXT_DATA__"
+		type="application/json">{"props":{"pageProps":{"resumeInfo":{"resume":{"about":{"city":"London","email":"","firstName":"Felix","lastName":"Sargent","phone":"","state":"UK","summary":"Engineering Manager and Programmer in Scala, Python, Typescript, with a love for backend services, APIs, DevOps, type safety, observability, logging and testing. US, UK, AUS Citizen.","title":"Engineering Leader","website":"https://linkedin.com/in/felixsargent","website2":"https://felixsargent.com"},"dateCreated":1713221865800,"hideBranding":true,"hidePhoneAndEmail":true,"id":"ZCUsT9HeACWm_0YsCinid","isDefault":false,"name":"Felix Sargent Resume","owner":"2KPC9GEjd0OpbJl4Yp5LZx88UFs1","sections":{"-NvZ55f3k--TL9eXlHjt":{"contentType":"volunteering","items":{"-NvZ55gD3RUVZA4eWF6q":{"id":"-NvZ55gD3RUVZA4eWF6q","isCurrent":false,"startDate":{"year":2017},"stopDate":{"year":2024},"subtitle":"Chair of the Board","summary":"*A non-profit organization dedicated to improving the way we vote*\n\n- CES changed the way [Fargo, ND](https://www.publicnewsservice.org/2020-06-10/civic-engagement/fargo-becomes-first-u-s-city-to-try-approval-voting/a70495-1), and [St. Louis, MO](https://fivethirtyeight.com/features/in-st-louis-voters-will-get-to-vote-for-as-many-candidates-as-they-want/) elect their leaders\n- Recruited new board members, coordinated strategic donors, and raised grants for the organization\n- “Berkeley's City Council's switch to 're-weighted range voting' adds fairness to the system” Opinion Piece in [Berkeleyside](https://www.berkeleyside.org/2019/06/19/opinion-berkeleys-city-councils-switch-to-re-weighted-range-voting-adds-fairness-to-the-system)\n- Letter to the Editor in [The Economist](https://www.linkedin.com/posts/felixsargent_my-letter-to-the-editor-was-published-in-activity-6650821338674057216-DRLo/?trk=public_profile_like_view)\n- “Chaos reigns in San Francisco’s redistricting. Here’s a better way to do things” Opinion Piece in [The San Francisco Chronicle](https://www.sfchronicle.com/opinion/openforum/article/san-francisco-redistricting-17107719.php)\n","textType":"markdown","title":"Center for Election Science","type":"detail","website":"https://electionscience.org"},"-NvZ5faZsIZ0Wp0S6A2l":{"id":"-NvZ5faZsIZ0Wp0S6A2l","isCurrent":false,"startDate":{"year":2015},"stopDate":{"year":2017},"subtitle":"Mentor","summary":"- Recognized with the [Outstanding Product Mentor Award](http://www.theproductmentor.com/recognition.html)\n- [Managing Technical Debt](https://www.youtube.com/watch?v=Lv3ewdddD8g) (July 17, 2016)\n- [How to Interview a Product Manager](https://www.youtube.com/watch?v=2rNhGUZea2U) (February 7, 2016)\n- [Inheriting a Project](https://www.youtube.com/watch?v=GnQnsDHQGj0) (July 8, 2015)\n","textType":"markdown","title":"The Product Group","type":"detail","website":"https://www.meetup.com/theproductgroup/"}},"itemsOrder":["-NvZ55gD3RUVZA4eWF6q","-NvZ5faZsIZ0Wp0S6A2l"],"resumeId":"ZCUsT9HeACWm_0YsCinid","sectionId":"-NvZ55f3k--TL9eXlHjt","title":"Volunteering","type":"detail"},"_SlqsUBVI4NQLPLdT9zCc":{"contentType":"work-experience","items":{"0ZQD_ZFF7bZxk1fDdQBiX":{"id":"0ZQD_ZFF7bZxk1fDdQBiX","isCurrent":false,"startDate":{"month":6,"year":2020},"stopDate":{"month":10,"year":2021},"subtitle":"Senior Engineering Manager (Contract)","summary":"- Managed the implementation and migration of Atlassian University Learning Management Platform to Intellum.\n- Collaborated with cross-functional teams to ensure seamless transition and user experience.\n- Achieved successful integration resulting in improved efficiency and user satisfaction.\n","textType":"markdown","title":"Atlassian","type":"detail","website":"atlassian.com"},"5ZZZlbJUUigfERAYiLp74":{"id":"5ZZZlbJUUigfERAYiLp74","isCurrent":false,"startDate":{"month":9,"year":2014},"stopDate":{"month":10,"year":2016},"subtitle":"Vice President Product","summary":"- Spearheaded product strategy and development for a SaaS platform, helping government agencies digitize paperwork into web forms and databases, streamlining operations and reducing manual data entry.\n- Introduced Jira and agile methodologies, organizing a previously disorganized team, improving development efficiency, and leading the recruiting pipeline for the engineering team.\n- Established a structured approach to handling customer feedback, ensuring product decisions were aligned with user needs while balancing CEO's expectations with resource constraints.\n","textType":"markdown","title":"GovOS","type":"detail","website":"govos.com"},"9deB9NiUXzRyQ7Ro-SmCG":{"id":"9deB9NiUXzRyQ7Ro-SmCG","isCurrent":true,"startDate":{"month":10,"year":2022},"subtitle":"Head of Engineering / Staff Engineer","summary":"- Recruitbot is a powerful alternative to Linkedin Recruiter utilizing AI and Machine Learning to find and contact the best candidates for your position.\n- Directed a team of 8 engineers across the Bay Area and Spain, covering Frontend React, Backend, Machine Learning and Data.\n- Personally built headliner features using Play (Scala), Django (Python), and React (Typescript)\n- Transitioned to CI/CD with GitHub actions, achieving a 60% reduction in deployment times and enhancing release reliability.\n- Modernized AWS infrastructure, optimized search and reduced operational costs by $10,000/month.\n","textType":"markdown","title":"Recruitbot","type":"detail","website":"recruitbot.com"},"CoTgaIrkD1UE0E_fSaIUs":{"id":"CoTgaIrkD1UE0E_fSaIUs","isCurrent":false,"startDate":{"month":10,"year":2016},"stopDate":{"month":6,"year":2020},"subtitle":"Director of Engineering","summary":"- Managed the Developer Relations and core API services teams, managing and stabilizing a Perl-based codebase while delivering new features for one of the world’s largest advertising platforms.\n- Replaced legacy API key management tools with custom NGINX and firewall solutions, significantly enhancing security and API efficiency.\n- Spearheaded the adoption of Auth0, implementing OAuth authentication and multi-factor authentication, improving overall platform security and user authentication processes.\n","textType":"markdown","title":"Mediamath","type":"detail","website":"mediamath.com"},"XWLV7MEsNKHGPgoN0qDHe":{"id":"XWLV7MEsNKHGPgoN0qDHe","isCurrent":false,"startDate":{"month":8,"year":2009},"stopDate":{"month":8,"year":2010},"subtitle":"Technical Support Engineer","summary":"- Provided technical support to team members for computer and hardware needs.\n- Utilized Python, Puppet, and software engineering skills to troubleshoot and resolve issues.\n","textType":"markdown","title":"Google","type":"detail","website":"google.com"},"eol20eMiip1MVICN2bj0G":{"id":"eol20eMiip1MVICN2bj0G","isCurrent":false,"startDate":{"month":8,"year":2011},"stopDate":{"month":9,"year":2014},"subtitle":"Technical Product Manager","summary":"- Hired as a Software Engineer, and after one year transitioned into Technical PM for Rackspace Autoscale. Built Autoscale, later integrated into Openstack HEAT.\n- Presented Repose at OpenStack 2014, showcasing API Middleware Platform capabilities.\n","textType":"markdown","title":"Rackspace","type":"detail","website":"rackspace.com"},"ty66Wu99sQCjZHN9Lahv6":{"id":"ty66Wu99sQCjZHN9Lahv6","isCurrent":false,"startDate":{"month":10,"year":2021},"stopDate":{"month":10,"year":2022},"subtitle":"Senior Software Engineering Manager","summary":"- Managed the Interfaces (API and FE) and Operations/Infra teams, enhancing system interoperability and user experience.\n- Expanded the engineering team, doubling its size by hiring 13 new members within six months.\n- Transitioned the team to Agile methodologies, resulting in a 30% improvement in project delivery times and better Product/Sales relations.\n","textType":"markdown","title":"Truework","type":"detail","website":"truework.com"}},"itemsOrder":["9deB9NiUXzRyQ7Ro-SmCG","ty66Wu99sQCjZHN9Lahv6","0ZQD_ZFF7bZxk1fDdQBiX","CoTgaIrkD1UE0E_fSaIUs","5ZZZlbJUUigfERAYiLp74","eol20eMiip1MVICN2bj0G","XWLV7MEsNKHGPgoN0qDHe"],"resumeId":"ZCUsT9HeACWm_0YsCinid","sectionId":"_SlqsUBVI4NQLPLdT9zCc","title":"Work Experience","type":"detail"},"p_6-XwDJVTARcqhQy38gA":{"contentType":"skills","list":"15y Python\n6y Typescript\n3y Scala\nDevOps\nFull Stack Software Development\nObservability\nAWS / Google Cloud\nServant Leader\nUS/UK Citizenship\nTDD/BDD/DDD\nAgile / SCRUM","resumeId":"ZCUsT9HeACWm_0YsCinid","sectionId":"p_6-XwDJVTARcqhQy38gA","title":"Skills","type":"inline-list"},"wcYk2P1NFh06XOEJ8mLHY":{"contentType":"education","items":{"sF6zNPhg2X-Z5u-yoMIbM":{"id":"sF6zNPhg2X-Z5u-yoMIbM","isCurrent":false,"startDate":{"month":1,"year":2007},"stopDate":{"year":2009},"subtitle":"Bachelors Economics","summary":"- President, Economics Students Association\n- Treasurer, SFSU Pre-Law Society\n- Varsity Intercollegiate Policy Debate Team\n","textType":"markdown","title":"San Francisco State University","type":"detail","website":"sfsu.edu"}},"itemsOrder":["sF6zNPhg2X-Z5u-yoMIbM"],"resumeId":"ZCUsT9HeACWm_0YsCinid","sectionId":"wcYk2P1NFh06XOEJ8mLHY","title":"Education","type":"detail"}},"sectionsOrder":["_SlqsUBVI4NQLPLdT9zCc","wcYk2P1NFh06XOEJ8mLHY","p_6-XwDJVTARcqhQy38gA","-NvZ55f3k--TL9eXlHjt"],"slug":"felixsargent","style":{"activeTemplateId":"eton","customizations":{"eton":{"accent1":"#004F71","background":"#EFF6FF","baseSize":16,"text1":"#004F71","text2":"#004F71","text3":"#004F71"},"keefer":{"accent1":"#4F6AF6","accent2":"#4F6AF6","background":"#fff","baseSize":8.5,"text1":"#323336","text2":"#707678","text3":"#C1C5C7"},"san-juan":{"accent1":"#d14169","accent2":"#000000","background":"#fff","baseSize":16.5,"text1":"#323336","text2":"#707678","text3":"#A6AAAD"}}},"visibility":"public"},"isPro":false}},"__N_SSP":true},"page":"/r/[slug]","query":{"slug":"felixsargent"},"buildId":"soLbHqzlJ6IqnpmIchPbD","isFallback":false,"gssp":true,"scriptLoader":[]}</script>
+</body>
+
+</html>
