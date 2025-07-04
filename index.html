@@ -1,419 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-  <meta name="description" content="Felix Sargent - Resume">
-  <title> Felix Sargent - Resume </title>
-  <link href="/components/styles/cosmo-bootstrap.css" rel="stylesheet" />
-  <link href="/components/styles/cosmo-bootstrap.css" rel="stylesheet" media="(prefers-color-scheme: light)" />
-  <link href="/components/styles/slate-bootstrap.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
-  <style>
-    @media print {
-      .pagebreak {
-        page-break-before: always;
-      }
-
-      #subheader {
-        font-size: 1rem !important;
-      }
-
-      /* page-break-after works, as well */
-    }
-
-    i.fab {
-      margin: 5px;
-    }
-
-    i.fas {
-      margin: 5px;
-    }
-
-    .icon-label {
-      font-size: 2em;
-    }
-
-    .footer {
-      padding: 25px 0px 50px 0px;
-      margin-top: 50px;
-    }
-
-    @font-face {
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 300;
-      font-display: swap;
-      src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
-    }
-
-    @font-face {
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CrYjSnGjrRCn0pd9VQsnFOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
-    }
-
-    @font-face {
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 500;
-      font-display: swap;
-      src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
-    }
-
-
-    @media print {
-      a[href]:after {
-        content: none !important;
-      }
-
-      body {
-        padding-top: 0px;
-      }
-
-      .container {
-        width: 100%;
-      }
-
-      .text-right {
-        text-align: left;
-      }
-    }
-  </style>
-  <link rel="apple-touch-icon" sizes="180x180" href="components/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="components/images/" sizes="32x32">
-  <link rel="icon" type="image/png" href="components/images/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="mask-icon" href="components/images/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="theme-color" content="#ffffff">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felix Sargent</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-primary"> <a class="navbar-brand icon-label" aria-label="home"
-      href="https://www.felixsargent.com"><i class="fas fa-home"></i></a> <button class="navbar-toggler" type="button"
-      data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto ">
-        <li class="nav-item"> <a class="nav-link" href="https://medium.com/@antagonist/" aria-label="Medium Blog">
-            <div class="icon-label d-none d-sm-block"><i class="fab fa-medium"></i>
-            </div>
-            <div class="icon-label d-sm-none"><i class="fab fa-medium"></i> Articles
-            </div>
-          </a></li>
-        <li class="nav-item"> <a class="nav-link" aria-label="email"
-            href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=felix.sargent@gmail.com" target="_blank"
-            rel="noopener">
-            <div class="icon-label d-none d-sm-block"><i class="fas fa-envelope"></i></div>
-            <div class="icon-label d-sm-none"><i class="fas fa-envelope"></i> Email
-            </div>
-          </a></li>
-        <li class="nav-item"> <a class="nav-link" href="https://github.com/fsargent" aria-label="Github">
-            <div class="icon-label d-none d-sm-block"><i class="fab fa-github"></i>
-            </div>
-            <div class="icon-label d-sm-none"><i class="fab fa-github"></i> Github
-            </div>
-          </a></li>
-        <li class="nav-item"> <a class="nav-link" href="https://linkedin.com/in/felixsargent/" aria-label="LinkedIn">
-            <div class="icon-label d-none d-sm-block"><i class="fab fa-linkedin-in"></i></div>
-            <div class="icon-label d-sm-none"><i class="fab fa-linkedin"></i>
-              Linkedin</div>
-          </a></li>
-        <li class="nav-item"> <a class="nav-link" href="https://keybase.io/fsargent" aria-label="Keybase">
-            <div class="icon-label d-none d-sm-block"><i class="fa fa-key"></i>
-            </div>
-            <div class="icon-label d-sm-none"><i class="fa fa-key"></i> Keybase
-            </div>
-          </a></li>
-      </ul>
-      <ul class="navbar-nav float-md-end ">
-        <li class="nav-item"> <a class="nav-link" href="./docs/Felix%20Sargent%20Resume.pdf" download
-            aria-label="Download PDF Resume">
-            <div class="icon-label d-none d-sm-block"><i class="fas fa-save"></i> Save PDF
-            </div>
-            <div class="icon-label d-sm-none"><i class="fas fa-save"></i> Save PDF
-            </div>
-          </a></li>
-      </ul>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="mt-0 col-lg-4">
-        <h1 id="title" class="mt-5 display-4 float-lg-right"> Felix Sargent<br /> </h1>
-        <h1 id="subheader"> <small class="text-muted float-lg-right"> San Francisco, CA <div
-              class="d-none d-print-block">
-              felix.sargent@gmail.com -
-              415-860-6970 - https://felixsargent.com</div> </small> </h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4 float-lg-right">
-        <h2 class="display-6 float-lg-right"> Profile </h2>
-      </div>
-      <div class="col-lg-8">
-        <p>
-          Hey there! I'm Felix, a Head of Engineering with a talent for leading tech teams to greatness. Over the past
-          decade, I've been building and scaling software platforms that users love, all while building teams and
-          growing individuals.
-        </p>
-        <p>
-          I'm an expert programmer in Python, Javascript, and Scala with a love for type safety, observability, logging
-          and testing. I have a passion for optimizing my team's developer infrastructure, using automations and
-          developer tools to reduce busy work, and increase output.
-        </p>
-        <p>
-          I've had the privilege of guiding global engineering teams, turning complex problems into elegant solutions,
-          and ensuring our tech not only meets but exceeds business goals. At the heart of it, I'm all about fostering a
-          culture where innovation, open communication, and a bit of fun lead to extraordinary outcomes. Whether it's
-          enhancing user experiences or driving growth, I'm passionate about leveraging technology to make a real
-          impact.
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4">
-        <h2 class="display-6 float-lg-right"> Experience </h2>
-      </div>
-      <div class="col-lg-8">
-        <h3>Head of Engineering @ <a href="#">RecruitBot</a><br /> <small>
-            December 2022 - Current</small> </h3>
-        <ul>
-          <li>Directed a team of 9 engineers across the Bay Area and Spain, enhancing cross-functional collaboration and
-            productivity.</li>
-          <li>Championed the development of a sophisticated software platform, utilizing Scala Play, Django Python, and
-            React, which led to a 30% increase in platform efficiency.</li>
-          <li>Transitioned to CI/CD with GitHub actions, achieving a 40% reduction in deployment times and enhancing
-            feature reliability.</li>
-          <li>Modernized infrastructure to a Kubernetes-compatible system, improving scalability and reducing
-            operational costs by 60%.</li>
-          <li>Implemented Agile methodologies, improving project turnaround time by 25% and fostering a dynamic,
-            inclusive team environment.</li>
-          <li>Contributed to hands-on development and strategic planning, ensuring alignment with business goals and
-            customer satisfaction.</li>
-        </ul>
-        <h3>Sr. Engineering Manager @ <a href="//www.truework.com/">Truework</a><br /> <small>Oct 2021 - Oct
-            2022</small></h3>
-        <ul>
-          <li>Steered the Interfaces and Infrastructure teams, integrating Front End App, API, and Encompass
-            Integration, enhancing system interoperability and user experience.</li>
-          <li>Expanded the engineering team by recruiting 10 engineers and 3 interns, directly managing a diverse team
-            of 11 individual contributors.</li>
-          <li>Pioneered the "API First" initiative, significantly improving the external developer experience and
-            positioning Truework as a leader in API accessibility.</li>
-        </ul>
-        <h3> Sr. Engineering Manager, University @ <a href="//www.atlassian.com/">Atlassian</a><br /> <small> May 2020
-            - Oct 2021 </small> </h3>
-        <ul>
-          <li>
-              Technical Architect of <a href="//university.atlassian.com">Atlassian
-                University</a>, Atlassian's customer
-              education platform (<a href="https://intellum.com">Intellum</a>)
-            </li>
-          <li>Engineering Manager for the <a
-                href="//marketplace.atlassian.com/apps/1217110/training-for-jira">Training
-                for Jira</a> marketplace addon</li>
-        </ul>
-        <h3> Director of Engineering, Campaigns &amp; API Usability @ <a href="//www.mediamath.com/">MediaMath</a><br />
-          <small> November 2016
-            - April 2020 </small>
-        </h3>
-        <ul>
-          <li>Managed 15 Engineers over two teams, supporting the migration to CI/CD and OAuth authentication services,
-            significantly improving security and customer experience, and oversaw the transformation of the MediaMath
-            API portal, receiving positive customer feedback.</li>
-        </ul>
-        <h3> VP of Product @ <a href="//www.govos.com/">GovOS</a> (SeamlessDocs)<br /><small>
-            November 2015 -
-            November 2016 </small> </h3>
-        <ul>
-          <li>Led the product team with a servant leadership philosophy, created product strategy to replace legacy
-            systems, and re-established trust between engineering and sales teams, increasing customer NPS scores by
-            60%.</li>
-        </ul>
-        <h3> Sr. Product Manager, <a href="https://bloomberg.com/vault">Vault</a> @ <a
-            href="//www.bloomberg.com/">Bloomberg</a><br /> <small> October 2014 -
-            November 2015 </small>
-        </h3>
-        <ul>
-          <li>Acted as product owner for Bloomberg Vault Surveillance, implementing technology and policies to capture
-            communications, improving data integrity and security for Bloomberg Terminal users.</li>
+    <div class="container">
+        <header>
+            <img src="components/images/headshots/yellow circle2.jpeg" alt="Felix Sargent Headshot" style="width: 150px;">
+            <h1>Felix Sargent</h1>
+            <p>Software Engineering Leadership | Social Choice Theory</p>
+        </header>
+        <nav>
+            <a href="resume.html">Resume</a>
+        </nav>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I'm a seasoned engineering leader with a passion for building high-performing teams and scalable, robust software. With over a decade of experience spanning from individual contributor to Head of Engineering, I've honed my skills in Scala, Typescript, and Python, with a deep appreciation for type safety, observability, and comprehensive testing.
+            </p>
+            <p>
+                Outside of my professional life, I'm deeply passionate about improving democratic systems. As the former chair of the <a href="https://electionscience.org">Center for Election Science</a>, I've dedicated years to advocating for better voting methods. My writing on this topic, as well as on software engineering, reflects my commitment to solving complex problems and fostering positive change.
+            </p>
+            <p>
+                Want to chat? Happy to hop on a call, or better, let's get a coffee in London. I ask for a $50 donation to the <a href="https://electionscience.org">Center for Election Science</a> for a <a href="https://tidycal.com/felix.sargent">30 minute chat</a>. I'm available for speaking events on social choice theory, and mentoring in engineering management.
+            </p>
+        </section>
+        <section id="articles">
+            <h2>Articles</h2>
 
-        </ul>
-        <h3>Engineer / Product Manager@ <a href="https://www.rackspace.com/">Rackspace</a><br />
-          <small> August 2011 - October 2014 </small>
-        </h3>
-        <ul>
-          <li>Transitioned from Engineer to Technical PM for Rackspace Autoscale and Repose, defining product strategy
-            and roadmaps, and presented Repose at OpenStack 2014, showcasing API Middleware Platform capabilities.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4 float-lg-right">
-        <h2 class="display-6 float-lg-right"> Skills </h2>
-      </div>
-      <div class="col-lg-8">
-        <ul class="list-unstyled">
-          <h3>Technical Proficiencies:</h3>
-          <ul>
-            <li>Programming Languages & Frameworks: Python (Django, Celery), Scala (Play), JavaScript (React,
-              NodeJS)
-            </li>
-            <li>Database Management: Postgres, Redis</li>
-            <li>Cloud Technologies: AWS (RDS, ElasticBeanstalk, ECS, EC2, S3, Elasticache)</li>
-          </ul>
-          <h3>Leadership & Management:</h3>
-          <ul>
-            <li>Cross-Functional Team Leadership</li>
-            <li>Agile Methodologies</li>
-            <li>Strategic Planning & Execution</li>
-            <li>Talent Acquisition & Development</li>
-          </ul>
-          <h3>Communication & Collaboration:</h3>
-          <ul>
-            <li>Stakeholder Engagement</li>
-            <li>Problem-Solving</li>
-            <li>Customer-Centric Approach</li>
-          </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4 float-lg-right">
-        <h2 class="display-6 float-lg-right"> Projects </h2>
-      </div>
-      <div class="col-lg-8">
-        <ul class="list-unstyled">
-          <li><a href="https://imgur.com/gallery/u9bqyB3">Mechanical Keyboards</a>&nbsp;-
-            So many mechanical keyboards.
-          </li>
-          <li><a href="https://github.com/fsargent/BARTSign">BARTSign</a>&nbsp;- Raspberry
-            Pi Based Transit
-            Board</li>
-          <li class="c5"><a class="c2" href="https://github.com/fsargent/Fippi">Fippi</a>&nbsp;-
-            Physical
-            internet radio, and Air Quality Monitor</li>
-          <li><a
-              href="https://medium.com/@antagonist/my-voice-is-my-passport-verify-me-condo-access-via-twilio-voice-d889b5193646">My
-              Voice is My Passport</a>&nbsp;(eg 1992 movie <a
-              href="https://www.youtube.com/watch?v=-zVgWpVXb64&feature=emb_title">Sneakers</a>)
-            - Voice
-            Recognition Passwords for Condo Entry</li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4 ">
-        <h2 class="display-6 float-lg-right"> Volunteer Work </h2>
-      </div>
-      <div class="col-lg-8">
-        <h3>Chair of the Board @ <a class="c2" href="http://electionscience.org">Center for
-            Election
-            Science</a><br /><small>2017 - 2023</small></h3> <i>A non-profit
-          organization dedicated to
-          improving the way we vote</i>
-        <ul>
-          <li>CES changed the way <a
-              href="https://www.publicnewsservice.org/2020-06-10/civic-engagement/fargo-becomes-first-u-s-city-to-try-approval-voting/a70495-1">Fargo,
-              ND</a>, and <a
-              href="https://fivethirtyeight.com/features/in-st-louis-voters-will-get-to-vote-for-as-many-candidates-as-they-want/">St.
-              Louis, MO</a> elect their leaders</li>
-          <li>Recruited new board members, coordinated strategic donors, and raised grants for
-            the organization
-          </li>
-          <li>Wrote <a
-              href="https://www.berkeleyside.com/2019/06/19/opinion-berkeleys-city-councils-switch-to-re-weighted-range-voting-adds-fairness-to-the-system">
-              Berkeley's City Council's switch to 're-weighted range voting'
-              adds fairness to the
-              system</a> (Berkeleyside)</li>
-        </ul>
-        <h3>Mentor @ <a href="http://www.meetup.com/TheProductGroup/">The Product
-            Group</a><br /><small>2015 -
-            2017</small> </h3>
-        <ul>
-          <li>Recognized with the <a href="http://www.theproductmentor.com/recognition.html">Outstanding
-              Product Mentor Award</a></li>
-          <li><a href="https://www.youtube.com/watch?v=Lv3ewdddD8g">Managing Technical
-              Debt</a> (July
-            17, 2016)</li>
-          <li><a href="https://www.youtube.com/watch?v=2rNhGUZea2U">How to Interview a
-              Product
-              Manager</a> (February 7, 2016)</li>
-          <li><a href="https://www.youtube.com/watch?v=GnQnsDHQGj0">Inheriting a
-              Project</a> (July 8,
-            2015)</li>
-        </ul>
-        <h3>Founded the <a href="http://codeforsanfrancisco.org/">San Francisco Brigade</a> @
-          Code for
-          America<br /><small>2013</small></h3>
-        <ul>
-          <li>Reformed the way <a href="https://sfgov.org/ofe/find-safe-bank-account">San
-              Francisco Citizens
-              without bank accounts get access to financial services</a></li>
-          <li>Brought the <a href="https://codeforsanfrancisco.org/projects/sf-admin-code/">City
-              Administrative Code</a> online</li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4">
-        <h2 class="display-6 float-lg-right"> Education </h2>
-      </div>
-      <div class="col-lg-8">
-        <h3> BA, Economics @ <a href="https://sfsu.edu/">San Francisco State
-            University</a><br /> </h3>
-        <ul class="list-unstyled">
-          <li>President, Economics Students Association</li>
-          <li>Treasurer, Pre-Law Society</li>
-          <li>Varsity Intercollegiate Policy Debate Team</li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4">
-        <h2 class="display-6 float-lg-right"> Links </h2>
-      </div>
-      <div class="col-lg-8">
-        <ul class="list-unstyled">
-          <li>Github: <a href="https://github.com/fsargent">https://github.com/fsargent</a>
-          </li>
-          <li>Blog: <a href="https://medium.com/@antagonist/">https://medium.com/@antagonist/</a>
-          </li>
-          <li>LinkedIn: <a href="https://linkedin.com/in/felixsargent/">https://linkedin.com/in/felixsargent/</a>
-          </li>
-          <li>Keybase: <a href="https://keybase.io/fsargent">https://keybase.io/fsargent</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+            <h3>Democracy & Voting</h3>
+            <ul>
+                <li><a href="articles/sfchronicle-2022-04-21.html">Chaos reigns in San Francisco’s redistricting. Here’s a better way to do things</a></li>
+                <li><a href="articles/fairness-in-planning-2019-06-13.html">Fairness in Action— Re-weighted Range Voting and the Berkeley City Council</a></li>
+                <li><a href="articles/lvt-response-2017-05-04.html">Re: Shentrup’s LVT</a></li>
+            </ul>
 
-  <div class="footer d-print-none">
-    <div class="container text-center"> <a class="nav-link" href="./docs/Felix%20Sargent%20Resume.pdf" download
-        aria-label="Download PDF Resume">
-        <div class="icon-label d-none d-sm-block"><i class="fas fa-save"></i> Save PDF
-        </div>
-        <div class="icon-label d-sm-none"><i class="fas fa-save"></i> Save PDF
-        </div>
-      </a>
-      <dark-mode-toggle id="dark-mode-toggle-1" permanent="true"></dark-mode-toggle>
-
+            <h3>Software & Hacking</h3>
+            <ul>
+                <li><a href="articles/yubikey-gpg-2021-10-27.html">Sign your git commits using your Yubikey + GPG (OS X)</a></li>
+                <li><a href="articles/ca-vaccine-pass-2021-08-13.html">Get your CA Vaccine Pass into Apple Wallet</a></li>
+                <li><a href="articles/voice-passport-2019-03-11.html">My Voice is my Passport, Verify Me — Condo Access via Twilio+Voice</a></li>
+                <li><a href="articles/feature-flags-2019-03-11.html">Secure Client Side Feature Flags with Launch Darkly + Auth0 Webtasks</a></li>
+                <li><a href="articles/kong-jwt-2017-04-26.html">Kong for validating Auth0 JWTs</a></li>
+                <li><a href="articles/qa-pragmatic-marketing-2014-08-27.html">Q&amp;A with Pragmatic Marketing Magazine</a></li>
+                <li><a href="articles/cut-your-backlog-2014-08-13.html">Cull your backlog.</a></li>
+                <li><a href="articles/developer-to-product-manager-2014-08-12.html">Developer to Product Manager: Put the Kettle On</a></li>
+                <li><a href="articles/escape-the-tech-bubble-2014-08-12.html">Escape the Tech Bubble: Volunteer</a></li>
+                <li><a href="articles/keyless-entry-condo-2014-08-12.html">Keyless Entry to your Condo</a></li>
+                <li><a href="articles/spiced-ginger-beer-2014-08-12.html">Spiced Ginger Beer</a></li>
+                <li><a href="articles/a-bank-near-you-2014-04-08.html">A Bank Near You</a></li>
+            </ul>
+        </section>
+        <footer>
+            <p>
+                <a href="https://www.linkedin.com/in/felixsargent/">LinkedIn</a> |
+                <a href="https://github.com/fsargent">GitHub</a> |
+                <a href="https://twitter.com/felixsargent">Twitter</a> |
+                <a href="https://medium.com/@felix.sargent">Medium</a>
+            </p>
+        </footer>
     </div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.slim.min.js"
-    integrity="sha512-yBpuflZmP5lwMzZ03hiCLzA94N0K2vgBtJgqQ2E1meJzmIBfjbb7k4Y23k2i2c/rIeSUGc7jojyIY5waK3ZxCQ=="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
-  <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
-  <script src="https://kit.fontawesome.com/1e9d235f16.js" crossorigin="anonymous"></script>
-  <script src="/components/scripts/pwa-handler.js"></script>
 </body>
-
 </html>
