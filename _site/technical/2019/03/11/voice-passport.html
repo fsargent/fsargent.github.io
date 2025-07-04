@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Voice is my Passport, Verify Me — Condo Access via Twilio+Voice | Felix Sargent</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/components/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/components/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/components/images/favicon-16x16.png">
+    <link rel="manifest" href="/components/images/site.webmanifest">
+    <link rel="mask-icon" href="/components/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@felixsargent">
+    <meta name="twitter:title" content="Felix Sargent">
+    <meta name="twitter:description" content="Software Engineering Leadership | Social Choice Theory">
+    <meta name="twitter:image" content="https://felixsargent.com/components/images/headshots/felix-roughlinen-headshot.jpg">
+
+    <meta property="og:title" content="Felix Sargent" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://felixsargent.com/" />
+    <meta property="og:image" content="https://felixsargent.com/components/images/headshots/felix-roughlinen-headshot.jpg" />
+    <meta property="og:description" content="Software Engineering Leadership | Social Choice Theory" />
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/"><img src="/components/images/headshots/yellow circle2.jpeg" alt="Felix Sargent Headshot" style="width: 150px;"></a>
+            <h1><a href="/">Felix Sargent</a></h1>
+            <p>Software Engineering Leadership | Social Choice Theory</p>
+        </header>
+        <nav>
+            <a href="/resume.html">Resume</a>
+        </nav>
+
+        <section id="article">
+    <h2>My Voice is my Passport, Verify Me — Condo Access via Twilio+Voice</h2>
+    <p><em>March 11, 2019</em></p>
+    <p>It’s been raining a lot in Oakland recently, and somehow the keypad on the condo security panel shorted out and no longer works. This means that my old method of using Twilio to dial a passcode to let me into the building no longer works.</p>
+    <p>I can open a call to the Twilio number, but I can’t use dial tones — but what about voice? Surely there’s a solution for speech to text and then it can be like Sneakers!</p>
+    <p>Enter Twilio Autopilot. The quickstart is a great way to get up to speed. This article will give you everything you need from there to make the system work by leveraging Twimlets.</p>
+    <p>The requirements are:</p>
+    <ol>
+        <li>Let in callers who know the password by replying with a DTMF #9 dial tone.</li>
+        <li>If callers do not reply with the password, have them call my phone number (and I can validate them there).</li>
+        <li>Callers should be able to mention my partner’s name and it’ll ring their number instead.</li>
+    </ol>
+    <p>Once you have your Twilio account, navigate to h[ttps://www.twilio.com/console/autopilot](https://www.twilio.com/console/autopilot) and create an autopilot.</p>
+    <p>We’re going to build four tasks. Go to the Task Builder and create your first task “Answer”, “call-A”, “call-B”, and “open-door”</p>
+    <p>The secret sauce is in the Open Door script which plays a mp3 version of DTMF9.</p>
+    <p>Next, go to Defaults and ensure that assistant initiation is set to “answer” and the fallback will be to call you.</p>
+    <p>Next, go to the “Natural Language Router” and create four items, and link them to your tasks.</p>
+    <ul>
+        <li>“My voice is my passport, verify me” -&gt; Open Door</li>
+        <li>“Call Jane -&gt; Call A</li>
+        <li>“Call John -&gt; Call B</li>
+    </ul>
+    <p>To finish everything up, build the voice model in the Natural Language Router panel.</p>
+    <p>Give your system a run on the Overview page.</p>
+    <p>To connect this to your phone number, go to Channels and select Programmable Voice.</p>
+    <p>Create a new TwiML app here: [https://www.twilio.com/console/phone-numbers/runtime/twiml-apps](https://www.twilio.com/console/phone-numbers/runtime/twiml-apps)</p>
+    <p>Go to your phone number, and set Configure with to TwiML App, and select ‘open-door’.</p>
+    <p>Hit save, and you’re all set. Handoff that phone number to your HOA, and you’re done.</p>
+</section>
+
+
+        <footer>
+            <p>
+                <a href="https://www.linkedin.com/in/felixsargent/">LinkedIn</a> |
+                <a href="https://github.com/fsargent">GitHub</a> |
+                <a href="https://twitter.com/felixsargent">Twitter</a> |
+                <a href="https://medium.com/@felix.sargent">Medium</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

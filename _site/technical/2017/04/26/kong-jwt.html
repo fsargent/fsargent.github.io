@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kong for validating Auth0 JWTs | Felix Sargent</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/components/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/components/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/components/images/favicon-16x16.png">
+    <link rel="manifest" href="/components/images/site.webmanifest">
+    <link rel="mask-icon" href="/components/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@felixsargent">
+    <meta name="twitter:title" content="Felix Sargent">
+    <meta name="twitter:description" content="Software Engineering Leadership | Social Choice Theory">
+    <meta name="twitter:image" content="https://felixsargent.com/components/images/headshots/felix-roughlinen-headshot.jpg">
+
+    <meta property="og:title" content="Felix Sargent" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://felixsargent.com/" />
+    <meta property="og:image" content="https://felixsargent.com/components/images/headshots/felix-roughlinen-headshot.jpg" />
+    <meta property="og:description" content="Software Engineering Leadership | Social Choice Theory" />
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/"><img src="/components/images/headshots/yellow circle2.jpeg" alt="Felix Sargent Headshot" style="width: 150px;"></a>
+            <h1><a href="/">Felix Sargent</a></h1>
+            <p>Software Engineering Leadership | Social Choice Theory</p>
+        </header>
+        <nav>
+            <a href="/resume.html">Resume</a>
+        </nav>
+
+        <section id="article">
+    <h2>Kong for validating Auth0 JWTs</h2>
+    <p><em>April 26, 2017</em></p>
+    <p>Kong is pretty cool. Auth0 is pretty cool. They should work together. This guide details the fastest way to get your APIs to validate JWT tokens issued by Auth0.</p>
+    <h3>Pre-requisites:</h3>
+    <ul>
+        <li>Create a Auth0 account. The account name is referred to “COMPANYNAME” for the sake of the guide.</li>
+        <li>Setup a Kong instance on your machine. This guide assumes a brand new blank instance.</li>
+        <li>Install httpie — a http command line utility built for humans (unlike curl).</li>
+    </ul>
+    <h3>Setup</h3>
+    <ol>
+        <li>Create an API<br /><code>$ http POST :8001/apis name=example-api hosts=example.com upstream_url=http://httpbin.org</code></li>
+        <li>Add the JWT Plugin<br /><code>$ http POST :8001/apis/example-api/plugins name=jwt</code></li>
+        <li>Download your Auth0 account certificate<br /><code>$ http https://COMPANYNAME.auth0.com/pem --download</code></li>
+        <li>Transform the certificate into a public key.<br /><code>$ openssl x509 -pubkey -noout -in COMPANYNAME.pem &gt; pubkey.pem</code></li>
+        <li>Create a consumer with the Auth0 public key<br /><code>$ http post :8001/consumers/adama/jwt algorithm=RS256 rsa_public_key@./pubkey.pem key=https://COMPANYNAME.auth0.com/ -f</code></li>
+        <li>Success! Send requests through, only requests with valid tokens will work.<br /><code>$ http GET :8000 Host:example.com Authorization:"Bearer " -v</code></li>
+    </ol>
+    <p><em>Wow, that looked so simple, why did you write an article about this?</em></p>
+    <p>Becuase this is surprisingly obscure. Alternative solutions to Kong involve:</p>
+    <p>Integrating your middleware directly into your codebase. This is hell if you have many APIs. You have to audit each library for each programming language. Critical vulnerabilities in these libraries are common.</p>
+    <p>You could run a version of Nginx that supports LUA . Or you could sign up for Nginx-Plus.</p>
+    <p>Tyk may be a viable alternative, though their JWT documentation appears broken as of publication.</p>
+</section>
+
+
+        <footer>
+            <p>
+                <a href="https://www.linkedin.com/in/felixsargent/">LinkedIn</a> |
+                <a href="https://github.com/fsargent">GitHub</a> |
+                <a href="https://twitter.com/felixsargent">Twitter</a> |
+                <a href="https://medium.com/@felix.sargent">Medium</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

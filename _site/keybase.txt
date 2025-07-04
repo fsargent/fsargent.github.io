@@ -1,0 +1,53 @@
+https://keybase.io/fsargent
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://resume.felixsargent.com
+  * I am fsargent (https://keybase.io/fsargent) on keybase.
+  * I have a public key ASCNw7ga8WDRcwFz8O-0W02bQDKOG6F9R7106ahs8dRdXQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101a25e591e68288c22dc514684ae567bc89b377bb06a2860d972e3ac6d07c4a6430a",
+      "host": "keybase.io",
+      "kid": "01208dc3b81af160d1730173f0efb45b4d9b40328e1ba17d47bd74e9a86cf1d45d5d0a",
+      "uid": "b3a2ddc8d2b7bc12820d99085e535b00",
+      "username": "fsargent"
+    },
+    "merkle_root": {
+      "ctime": 1576828571,
+      "hash": "8ab3af324e603760e142e7d264c0bae884abdf9f117e05f9a9776a8d88018400edb6482b2514bfc71a7088279acf045d3828f6618fc9087bcfa35adcacc3a84b",
+      "hash_meta": "0cb48fe405099f2a1482f9885c157ad7d7be7b4c200119a03c7eb4d2ba6686fb",
+      "seqno": 13848988
+    },
+    "service": {
+      "entropy": "QDoXSUe470N3on81lQXo0sR8",
+      "hostname": "resume.felixsargent.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.0.0"
+  },
+  "ctime": 1576828569,
+  "expire_in": 504576000,
+  "prev": "79469ad45a7c3dd81ee4c67274f3870502e62a20465f06ec0131d1882c61b75a",
+  "seqno": 108,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgjcO4GvFg0XMBc/DvtFtNm0AyjhuhfUe9dOmobPHUXV0Kp3BheWxvYWTESpcCbMQgeUaa1Fp8Pdge5MZydPOHBQLmKiBGXwbsATHRiCxht1rEIIaCv7UwF72irkX3gPdKT4R3dj1B4cWKJmwGiQQ2APjRAgHCo3NpZ8RA15kVB2NsMt8+j8HsnUVeAVEH7ivWdR4MHMpDjPqR2EIhExhuVCXCtj2bgIhIsgzg9GPKz3MEucobx/NNHfEGBahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEICxVCZGZKRbYTFqnGBHvZeJCIaWNf/qNPZI1vSLqApxBo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/fsargent
