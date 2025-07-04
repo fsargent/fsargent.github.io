@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Fairness in Action — Re-weighted Range Voting and the Berkeley City Council"
+title: "Berkeleyside: Re-weighted Range Voting and the Berkeley City Council"
 date: 2019-06-13
 category: "Democracy"
 ---

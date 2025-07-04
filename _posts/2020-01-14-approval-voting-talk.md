@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Approval Voting Talk at RepresentUS Berkeley"
+title: "RepresentUS: Approval Voting"
 date: 2020-01-14
 category: "Democracy"
 ---
