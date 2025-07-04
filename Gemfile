@@ -1,0 +1,6 @@
+source "https://rubygems.org"
+gem "jekyll", "~> 4.2"
+gem "google-protobuf", "3.22.3"
+gem "sass-embedded"
+gem "bigdecimal"
+gem "minima"

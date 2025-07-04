@@ -8,7 +8,7 @@ body {
 
 .container {
     max-width: 800px;
-    margin: 2rem auto;
+    margin: auto;
     padding: 1rem;
     background: #fff;
 }
@@ -65,4 +65,84 @@ footer {
     border-top: 1px solid #eee;
     font-size: 0.9rem;
     color: #666;
+}
+
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #eee;
+    }
+
+    .container {
+        background: #1e1e1e;
+    }
+
+    header p {
+        color: #aaa;
+    }
+
+    a {
+        color: #8ab4f8;
+    }
+
+    h2 {
+        border-bottom-color: #333;
+    }
+
+    footer {
+        border-top-color: #333;
+        color: #aaa;
+    }
+
+    pre {
+        background: #2d2d2d;
+        border: 1px solid #444;
+        border-left: 3px solid #f36d33;
+        color: #ccc;
+    }
+}
+
+.headshot {
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.post-date {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }

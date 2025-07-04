@@ -1,67 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Felix Sargent</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <img src="components/images/headshots/yellow circle2.jpeg" alt="Felix Sargent Headshot" style="width: 150px;">
-            <h1>Felix Sargent</h1>
-            <p>Software Engineering Leadership | Social Choice Theory</p>
-        </header>
-        <nav>
-            <a href="resume.html">Resume</a>
-        </nav>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I'm a seasoned engineering leader with a passion for building high-performing teams and scalable, robust software. With over a decade of experience spanning from individual contributor to Head of Engineering, I've honed my skills in Scala, Typescript, and Python, with a deep appreciation for type safety, observability, and comprehensive testing.
-            </p>
-            <p>
-                Outside of my professional life, I'm deeply passionate about improving democratic systems. As the former chair of the <a href="https://electionscience.org">Center for Election Science</a>, I've dedicated years to advocating for better voting methods. My writing on this topic, as well as on software engineering, reflects my commitment to solving complex problems and fostering positive change.
-            </p>
-            <p>
-                Want to chat? Happy to hop on a call, or better, let's get a coffee in London. I ask for a $50 donation to the <a href="https://electionscience.org">Center for Election Science</a> for a <a href="https://tidycal.com/felix.sargent">30 minute chat</a>. I'm available for speaking events on social choice theory, and mentoring in engineering management.
-            </p>
-        </section>
-        <section id="articles">
-            <h2>Articles</h2>
-
-            <h3>Democracy & Voting</h3>
-            <ul>
-                <li><a href="articles/sfchronicle-2022-04-21.html">Chaos reigns in San Francisco’s redistricting. Here’s a better way to do things</a></li>
-                <li><a href="articles/fairness-in-planning-2019-06-13.html">Fairness in Action— Re-weighted Range Voting and the Berkeley City Council</a></li>
-                <li><a href="articles/lvt-response-2017-05-04.html">Re: Shentrup’s LVT</a></li>
-            </ul>
-
-            <h3>Software & Hacking</h3>
-            <ul>
-                <li><a href="articles/yubikey-gpg-2021-10-27.html">Sign your git commits using your Yubikey + GPG (OS X)</a></li>
-                <li><a href="articles/ca-vaccine-pass-2021-08-13.html">Get your CA Vaccine Pass into Apple Wallet</a></li>
-                <li><a href="articles/voice-passport-2019-03-11.html">My Voice is my Passport, Verify Me — Condo Access via Twilio+Voice</a></li>
-                <li><a href="articles/feature-flags-2019-03-11.html">Secure Client Side Feature Flags with Launch Darkly + Auth0 Webtasks</a></li>
-                <li><a href="articles/kong-jwt-2017-04-26.html">Kong for validating Auth0 JWTs</a></li>
-                <li><a href="articles/qa-pragmatic-marketing-2014-08-27.html">Q&amp;A with Pragmatic Marketing Magazine</a></li>
-                <li><a href="articles/cut-your-backlog-2014-08-13.html">Cull your backlog.</a></li>
-                <li><a href="articles/developer-to-product-manager-2014-08-12.html">Developer to Product Manager: Put the Kettle On</a></li>
-                <li><a href="articles/escape-the-tech-bubble-2014-08-12.html">Escape the Tech Bubble: Volunteer</a></li>
-                <li><a href="articles/keyless-entry-condo-2014-08-12.html">Keyless Entry to your Condo</a></li>
-                <li><a href="articles/spiced-ginger-beer-2014-08-12.html">Spiced Ginger Beer</a></li>
-                <li><a href="articles/a-bank-near-you-2014-04-08.html">A Bank Near You</a></li>
-            </ul>
-        </section>
-        <footer>
-            <p>
-                <a href="https://www.linkedin.com/in/felixsargent/">LinkedIn</a> |
-                <a href="https://github.com/fsargent">GitHub</a> |
-                <a href="https://twitter.com/felixsargent">Twitter</a> |
-                <a href="https://medium.com/@felix.sargent">Medium</a>
-            </p>
-        </footer>
-    </div>
-</body>
-</html>
+---
+layout: default
+title: Home
+---
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I'm a seasoned engineering leader. I enjoy building high-performing teams and scalable, robust software. I program in Scala, Typescript, and Python, with a deep appreciation for type safety, observability, and comprehensive testing.
+    </p>
+    <p>
+        Outside of my professional life, I'm passionate about improving democratic systems. As the former chair of the <a href="https://electionscience.org">Center for Election Science</a>, I've dedicated years to advocating for better voting methods.
+    </p>
+    <p>
+        Want to chat? Happy to hop on a call, or better, let's get a coffee in London. I ask for a $50 donation to the <a href="https://electionscience.org">Center for Election Science</a> for a <a href="https://tidycal.com/felix.sargent">30 minute chat</a>. I'm available to speak on social choice theory, and for engineering management mentorship.
+    </p>
+</section>
+<section id="articles">
+    <h2>Articles</h2>
+    {% for category in site.categories %}
+    <h3>{{ category | first }}</h3>
+    <ul>
+        {% for post in category.last %}
+        <li>
+            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span> <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</section>

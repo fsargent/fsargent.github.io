@@ -1,3 +1,12 @@
+# Standard Jekyll ignores
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+
+# Existing rules
 *.DS_Store
 wildcard*
 lib-cov
