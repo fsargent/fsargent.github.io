@@ -17,7 +17,7 @@ title: Home
 <section id="articles">
     <h2>Articles</h2>
     {% for category in site.categories %}
-    <h3>{{ category | first }}</h3>
+    <h3 id="{{ category | first }}">{{ category | first }}</h3>
     <ul>
         {% for post in category.last %}
         <li>
@@ -32,5 +32,6 @@ title: Home
     <ul>
         <li><a href="https://approval.vote">approval.vote</a></li>
         <li><a href="https://vote.electionscience.org">vote.electionscience.org</a></li>
+        <li><a href="https://approvalvoting.co.uk">approvalvoting.co.uk</a></li>
     </ul>
 </section>

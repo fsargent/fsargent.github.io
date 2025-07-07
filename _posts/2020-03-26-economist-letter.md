@@ -8,6 +8,9 @@ description: "My letter to the editor was published in The Economist! This is a 
 
 ## My letter to the editor was published in The Economist!
 
+*Originally published at [https://www.economist.com/letters/2020/03/26/letters-to-the-editor](https://www.economist.com/letters/2020/03/26/letters-to-the-editor)*
+
+
 This is a life goal achieved.
 
 The error is in the way we vote, the solution is approval voting.
@@ -26,4 +29,3 @@ Board of directors
 Centre for Election Science
 Oakland, California
 
-*Originally published at [https://www.economist.com/letters/2020/03/26/letters-to-the-editor](https://www.economist.com/letters/2020/03/26/letters-to-the-editor)*

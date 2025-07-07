@@ -4,38 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | Felix Sargent</title>
-    <meta name="description" content="{{ page.description | default: page.excerpt | default: 'Software Engineering Leadership | Social Choice Theory' | strip_html | normalize_whitespace | truncate: 160 }}">
+    <meta name="description" content="{{ page.description | default: page.excerpt | default: 'Software Engineering Leader | Social Choice Theorist' | strip_html | normalize_whitespace | truncate: 160 }}">
     <link rel="apple-touch-icon" sizes="180x180" href="/components/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/components/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/components/images/favicon-16x16.png">
     <link rel="manifest" href="/components/images/site.webmanifest">
     <link rel="mask-icon" href="/components/images/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1e1e1e" media="(prefers-color-scheme: dark)">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@felixsargent">
     <meta name="twitter:title" content="Felix Sargent">
-    <meta name="twitter:description" content="Software Engineering Leadership | Social Choice Theory">
+    <meta name="twitter:description" content="Software Engineering Leader | Social Choice Theorist">
     <meta name="twitter:image" content="https://felixsargent.com/components/images/headshots/felix-roughlinen-headshot.jpg">
 
     <meta property="og:title" content="Felix Sargent" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://felixsargent.com/" />
     <meta property="og:image" content="https://felixsargent.com/components/images/headshots/felix-roughlinen-headshot.jpg" />
-    <meta property="og:description" content="Software Engineering Leadership | Social Choice Theory" />
+    <meta property="og:description" content="Software Engineering Leader | Social Choice Theorist" />
 
     <link rel="stylesheet" href="/css/style.css">
+    <script src="/components/scripts/print.js"></script>
 </head>
 <body>
     <div class="container">
         <header>
-            <a href="/"><img src="/components/images/headshots/yellow circle2.jpeg" alt="Felix Sargent Headshot" class="headshot" style="width: 150px;"></a>
-            <h1><a href="/">Felix Sargent</a></h1>
-            <p>Software Engineering Leadership | Social Choice Theory</p>
+            <a href="/"><img src="/components/images/headshots/yellow circle2.jpeg" alt="Felix Sargent Headshot" class="headshot"></a>
+            <div class="header-text">
+                <h1><a href="/">Felix Sargent</a></h1>
+                <p>Software Engineering Leader | <span class="tooltip" title="Social choice theory is a branch of welfare economics that extends the theory of rational choice to collective decision-making.">Social Choice Theorist</span></p>
+            </div>
         </header>
         <nav>
-            <a href="/resume">Resume</a>
+            {% if page.url != '/resume/' %}
+                <a href="/resume/">Resume</a>
+            {% endif %}
         </nav>
 
         {{ content }}

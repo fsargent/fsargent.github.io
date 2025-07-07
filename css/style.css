@@ -152,6 +152,24 @@ pre {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
+.tooltip {
+    border-bottom: 1px dotted #333;
+    cursor: help;
+}
+
+#print-button {
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto 2rem;
+    padding: 0.5rem 1rem;
+    background: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 @media print {
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -169,11 +187,26 @@ pre {
     }
 
     header {
+        display: flex;
+        align-items: center;
         margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    header .headshot {
+        width: 80px;
+        height: 80px;
+        margin-right: 1rem;
+    }
+
+    header .header-text {
+        display: flex;
+        flex-direction: column;
     }
 
     header h1 {
         font-size: 2rem;
+        margin: 0;
     }
 
     header p {
@@ -196,6 +229,7 @@ pre {
 
     h3 {
         font-size: 1.1rem;
+        margin-top: 1rem;
         margin-bottom: 0.2rem;
     }
 
@@ -223,5 +257,19 @@ pre {
 
     .job, .volunteering-entry, .education-entry {
         page-break-inside: avoid;
+        margin-bottom: 0.5rem;
+    }
+
+    .two-column-layout {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .two-column-layout .column {
+        width: 48%;
+    }
+
+    #print-button {
+        display: none;
     }
 }

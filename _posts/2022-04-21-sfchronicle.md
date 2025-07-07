@@ -6,7 +6,7 @@ category: "Democracy"
 ---
 <section id="article">
     <h2>Chaos reigns in San Francisco’s redistricting. Here’s a better way to do things</h2>
-    <p><em>April 21, 2022</em></p>
+    <p><em>Originally published at https://www.sfchronicle.com on April 21, 2022.</em></p>
     <p>After nearly six months, San Francisco’s supposedly independent redistricting process was supposed to be done. Instead, after it had devolved into intense partisan squabbling, the city’s Redistricting Task Force took the unprecedented step of rejecting its final draft plan and blowing its city mandated deadline for setting new boundaries.</p>
     <p>The task force voted 5–4 on April 13 to continue working on a map, and it plans to meet Thursday to consider another draft. It has also been sued over the delay, which could lead to a judge setting new district boundaries.</p>
     <p>San Francisco’s district-based election system demands redrawing supervisorial boundaries every 10 years to account for population change to ensure each district has roughly the same number of people. San Francisco is split into 11 geographic districts. But many groups disagreed with the map that the task force drew. And they went so far as to try to remove three task force members who supported it.</p>
@@ -29,5 +29,4 @@ category: "Democracy"
     <p>My preferred method is proportional approval voting. Voters can pick as many candidates as they like on the ballot. The candidate with the most votes wins the first seat. As the voters for that seated candidate are represented, the voting power of their ballots are reduced. To determine who gets the next seat, the ballots are recounted, and the candidate with the most votes is seated. The process starts again until all seats on the board are filled. The result is a board that matches the voting demographics of the city exactly, rather than a poor approximation.</p>
     <p>Time will tell whether it’s politically viable to get rid of districts entirely, but a middle-ground solution would be to add more supervisors to the board and elect those new members proportionally. That would keep our existing districts while ensuring a true representation of San Francisco’s diversity.</p>
     <p><em>Felix Sargent is the chair of the Center for Election Science, a national nonprofit with the mission to empower people with voting methods that strengthen democracy.</em></p>
-    <p><em>Originally published at https://www.sfchronicle.com on April 21, 2022.</em></p>
 </section>
