@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Our Blighty newsletter on electoral reform prompted readers to respond"
+title: "The Economist: Responses to our Blighty newsletter on electoral reform"
 date: 2025-07-30
 category: "Democracy"
 description: "Response to the newsletter on electoral reform, advocating for empowerment over compulsion."
@@ -9,6 +9,7 @@ description: "Response to the newsletter on electoral reform, advocating for emp
 ## Response to the newsletter on electoral reform
 
 *Originally published at [https://www.economist.com/letters/2025/07/28/our-blighty-newsletter-on-electoral-reform-prompted-readers-to-respond](https://www.economist.com/letters/2025/07/28/our-blighty-newsletter-on-electoral-reform-prompted-readers-to-respond)*
+*In response to [https://www.economist.com/britain/2025/07/22/blighty-newsletter-can-electoral-reform-fix-britains-growth](Blighty newsletter: Can electoral reform fix Britain’s growth?)
 
 I appreciated Matthew Holehouse’s arguments on the case for mandatory voting. He correctly identifies the democratic risks of an electorate skewed towards older, wealthier homeowners, but the proposed solution addresses a symptom rather than the root cause.
 
