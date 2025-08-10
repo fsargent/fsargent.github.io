@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shareable Map List</title>
@@ -29,12 +29,12 @@
       name="twitter:description"
       content="Paste places, get a numbered, interactive map. Share via URL—no backend required."
     />
-
+    
     <!-- Leaflet CSS for map styling -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
 
@@ -42,19 +42,37 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-      #map {
-        height: 100%;
-        width: 100%;
-        border-radius: 0.5rem;
+      :root {
+        --bg: #f3f4f6;
+        --panel-bg: #ffffff;
+        --text: #111827;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --tag-border: #d1d5db;
       }
+      .dark {
+        --bg: #0f172a;
+        --panel-bg: #111827;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --border: #374151;
+        --tag-border: #374151;
+      }
+        #map { 
+            height: 100%; 
+            width: 100%;
+            border-radius: 0.5rem; 
+        }
       html,
       body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
+            height: 100%;
+            margin: 0;
+            padding: 0;
         font-family: "Inter", sans-serif;
-        background-color: #f3f4f6;
+        background-color: var(--bg);
+        color: var(--text);
       }
+      .panel { background-color: var(--panel-bg) !important; color: var(--text); border-color: var(--border); }
       /* iOS Safari viewport fix: ensure a concrete height on small screens */
       @media (max-width: 767px) {
         #map {
@@ -65,51 +83,47 @@
       }
       /* Style the textarea for location input */
       #locationsTextarea {
-        border: 1px solid #d1d5db; /* gray-300 */
-        border-radius: 0.5rem; /* rounded-lg */
-        padding: 0.75rem; /* p-3 */
-        min-height: 10rem; /* h-40 */
-        width: 100%;
-        transition: all 0.15s ease-in-out;
+        border: 1px solid var(--tag-border);
+        border-radius: 0.5rem;
+        padding: 0.75rem;
+        min-height: 10rem;
+            width: 100%;
+            transition: all 0.15s ease-in-out;
         resize: vertical;
-      }
+        background-color: var(--panel-bg);
+        color: var(--text);
+        }
       #locationsTextarea:focus {
-        outline: 2px solid transparent;
-        outline-offset: 2px;
-        --tw-ring-color: #3b82f6; /* blue-500 */
-        box-shadow: 0 0 0 2px var(--tw-ring-color);
-        border-color: #3b82f6;
-      }
-      /* Style for the individual location tags */
-      .location-tag {
-        display: flex; /* Changed from inline-flex to flex */
-        align-items: center;
-        padding: 4px 8px;
-        margin-bottom: 4px; /* Use margin-bottom for spacing */
-        border-radius: 16px;
-        font-size: 0.875rem;
-        cursor: default;
-        transition: all 0.3s ease;
-        width: fit-content; /* Ensure tag doesn't take full width */
-      }
-      .status-pending {
-        background-color: #e5e7eb;
-        color: #374151; /* gray-200 / gray-700 */
-      }
-      .status-success {
-        background-color: #d1fae5;
-        color: #065f46; /* green-100 / green-800 */
-      }
-      .status-error {
-        background-color: #fee2e2;
-        color: #991b1b; /* red-100 / red-800 */
-      }
-      .tag-remove-btn {
-        margin-left: 8px;
-        font-weight: bold;
-        cursor: pointer;
-        opacity: 0.5;
-      }
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            --tw-ring-color: #3b82f6; /* blue-500 */
+            box-shadow: 0 0 0 2px var(--tw-ring-color);
+            border-color: #3b82f6;
+        }
+        /* Style for the individual location tags */
+        .location-tag {
+            display: flex; /* Changed from inline-flex to flex */
+            align-items: center;
+            padding: 4px 8px;
+            margin-bottom: 4px; /* Use margin-bottom for spacing */
+            border-radius: 16px;
+            font-size: 0.875rem;
+            cursor: default;
+            transition: all 0.3s ease;
+            width: fit-content; /* Ensure tag doesn't take full width */
+        }
+      .status-pending { background-color: #e5e7eb; color: #374151; }
+      .status-success { background-color: #d1fae5; color: #065f46; }
+      .status-error { background-color: #fee2e2; color: #991b1b; }
+      .dark .status-pending { background-color: rgba(107,114,128,0.25); color: #d1d5db; }
+      .dark .status-success { background-color: rgba(16,185,129,0.22); color: #a7f3d0; }
+      .dark .status-error { background-color: rgba(239,68,68,0.22); color: #fecaca; }
+        .tag-remove-btn {
+            margin-left: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            opacity: 0.5;
+        }
       .tag-remove-btn:hover {
         opacity: 1;
       }
@@ -138,26 +152,26 @@
         opacity: 0.6;
       }
 
-      /* Style for the numbered map markers */
-      .numbered-marker {
-        background-color: #2563eb; /* blue-600 */
-        color: white;
-        border: 2px solid white;
-        border-radius: 50%;
-        width: 28px;
-        height: 28px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 14px;
+        /* Style for the numbered map markers */
+        .numbered-marker {
+            background-color: #2563eb; /* blue-600 */
+            color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        line-height: 1; /* Fix vertical alignment */
-      }
+            line-height: 1; /* Fix vertical alignment */
+        }
       /* Ensure map overlay controls are always above Leaflet panes */
       .map-overlay {
         z-index: 2000;
-      }
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -165,11 +179,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-  </head>
+</head>
   <body class="min-h-screen p-4 md:p-8">
     <div class="max-w-7xl mx-auto h-full grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Left Panel: Input and Controls -->
-      <div class="bg-white p-6 rounded-lg shadow-md flex flex-col h-full">
+        <!-- Left Panel: Input and Controls -->
+      <div class="panel p-6 rounded-lg shadow-md flex flex-col h-full">
         <div class="flex items-center justify-between mb-2">
           <h1 class="text-2xl font-bold text-gray-800">Numbered Plotter</h1>
           <div class="flex items-center gap-3">
@@ -179,6 +193,7 @@
             >
               Copy Link
             </button>
+            <button id="themeToggle" class="text-sm text-gray-600 hover:text-gray-900 underline">Theme</button>
             <button
               id="aboutButton"
               class="text-sm text-gray-600 hover:text-gray-900 underline"
@@ -194,10 +209,7 @@
 
         <textarea
           id="locationsTextarea"
-          placeholder="Buckingham Palace
-            10 Downing Street
-            A random place that won't be found
-            Eiffel Tower, Paris"
+          placeholder="Paste locations here… one per line. Add notes in parentheses, e.g., 'Buckinham Palace, UK (Our Hotel)'"
         ></textarea>
 
         <button
@@ -217,22 +229,20 @@
             class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition"
           >
             Copy Share Link
-          </button>
+                </button>
           <button
             id="clearButton"
             class="w-full bg-gray-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition"
           >
-            Clear All
-          </button>
+                    Clear All
+                </button>
+            </div>
+            <div id="status" class="mt-4 text-sm text-gray-500 h-5"></div>
         </div>
-        <div id="status" class="mt-4 text-sm text-gray-500 h-5"></div>
-      </div>
 
-      <!-- Right Panel: Map Display -->
-      <div
-        class="relative md:col-span-2 bg-white p-2 rounded-lg shadow-md h-full"
-      >
-        <div id="map"></div>
+        <!-- Right Panel: Map Display -->
+      <div class="relative md:col-span-2 panel p-2 rounded-lg shadow-md h-full">
+            <div id="map"></div>
         <div class="absolute map-overlay top-3 right-3 flex gap-2">
           <button
             id="fitAllButton"
@@ -241,13 +251,13 @@
             Zoom to Show All
           </button>
         </div>
-      </div>
+        </div>
     </div>
 
     <!-- Leaflet JS for map functionality -->
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
 
@@ -283,6 +293,11 @@
             <li>
               <b>Shareability</b>: Your list is encoded in the URL query string
               so you can refresh or share the link without any server.
+            </li>
+            <li>
+              <b>Notes</b>: Add optional notes in parentheses, e.g.
+              <code>Hotel La Milagrosa, Alicante (Our Hotel)</code>. Notes
+              appear italicized in the left list and in popups.
             </li>
             <li>
               <b>URL parameters</b>:
@@ -322,32 +337,33 @@
     </div>
 
     <script>
-      // --- DATA STORE ---
-      let locationsData = [];
+        // --- DATA STORE ---
+        let locationsData = [];
 
-      // --- MAP INITIALIZATION ---
+        // --- MAP INITIALIZATION ---
       const map = L.map("map").setView([48.8566, 2.3522], 4);
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
+            maxZoom: 19,
         attribution:
           '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-      }).addTo(map);
+        }).addTo(map);
 
-      // --- CUSTOM MARKER ICONS ---
-      const createNumberedIcon = (number) => {
-        return new L.DivIcon({
-          html: number,
+        // --- CUSTOM MARKER ICONS ---
+        const createNumberedIcon = (number) => {
+            return new L.DivIcon({
+                html: number,
           className: "numbered-marker",
-          iconSize: [28, 28],
+                iconSize: [28, 28],
           iconAnchor: [14, 14],
-        });
-      };
-
-      // --- DOM ELEMENT REFERENCES ---
+            });
+        };
+        
+        // --- DOM ELEMENT REFERENCES ---
       const plotButton = document.getElementById("plotButton");
       const fitAllButton = document.getElementById("fitAllButton");
       const shareButton = document.getElementById("shareButton");
       const shareButtonTop = document.getElementById("shareButtonTop");
+      const themeToggle = document.getElementById("themeToggle");
       const clearButton = document.getElementById("clearButton");
       const aboutButton = document.getElementById("aboutButton");
       const locationsTextarea = document.getElementById("locationsTextarea");
@@ -391,18 +407,20 @@
       function renderPopupHtml(loc) {
         const queryText = getGmapsQueryText(loc);
         const sanitized = queryText.replace(/\s+/g, " ").trim();
+        const { baseText, note } = parseNote(loc.text);
         const gmaps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(sanitized)}`;
-        const nameLine = `<b>${loc.number}. ${escapeHtml(loc.text)}</b>`;
+        const titleLine = `<b>${loc.number}. ${escapeHtml(baseText)}</b>`;
+        const noteLine = note ? `<br><i>${escapeHtml(note)}</i>` : "";
         const displayLine = loc.displayName
           ? `<br>${escapeHtml(loc.displayName)}`
           : "";
         const linkLine = `<br><a href="${gmaps}" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>`;
-        return `${nameLine}${displayLine}${linkLine}`;
+        return `${titleLine}${noteLine}${displayLine}${linkLine}`;
       }
 
       function getGmapsQueryText(loc) {
         if (loc && typeof loc.text === "string" && loc.text.trim().length > 0) {
-          return loc.text.trim();
+          return parseNote(loc.text).baseText;
         }
         if (
           loc &&
@@ -413,6 +431,16 @@
           return parts.slice(0, Math.min(parts.length, 4)).join(", ");
         }
         return "";
+      }
+
+      function parseNote(text) {
+        const match = /(.*)\(([^)]*)\)\s*$/.exec(text || "");
+        if (match) {
+          const baseText = match[1].trim().replace(/[\s,]+$/, "");
+          const note = match[2].trim();
+          return { baseText, note };
+        }
+        return { baseText: (text || "").trim(), note: "" };
       }
 
       function escapeHtml(s) {
@@ -482,65 +510,65 @@
         log.info("Cache set (error)", { query: key });
       }
       let lastNetworkGeocodeMs = 0;
+        
+        // --- CORE FUNCTIONS ---
 
-      // --- CORE FUNCTIONS ---
-
-      function clearAll() {
-        locationsData = [];
+        function clearAll() {
+            locationsData = [];
         if (tagsContainer) tagsContainer.innerHTML = "";
         if (locationsTextarea) locationsTextarea.value = "";
         map.eachLayer((layer) => {
-          if (layer instanceof L.Marker) {
-            map.removeLayer(layer);
-          }
-        });
+                if (layer instanceof L.Marker) {
+                    map.removeLayer(layer);
+                }
+            });
         statusDiv.textContent = "Map cleared.";
-        map.setView([48.8566, 2.3522], 4);
+            map.setView([48.8566, 2.3522], 4);
         updateShareUrl();
-      }
-
-      function removeLocation(id) {
-        const index = locationsData.findIndex((loc) => loc.id === id);
-        if (index > -1) {
-          const loc = locationsData[index];
-          if (loc.marker) map.removeLayer(loc.marker);
-
-          const tagElement = document.getElementById(loc.id);
-          if (tagElement) tagElement.remove();
-
-          locationsData.splice(index, 1);
-          renumberAll();
-          updateMapBounds();
-          updateShareUrl();
         }
-      }
 
-      function renumberAll() {
-        locationsData.forEach((loc, index) => {
-          loc.number = index + 1;
-          const tagElement = document.getElementById(loc.id);
-          if (tagElement) {
+        function removeLocation(id) {
+        const index = locationsData.findIndex((loc) => loc.id === id);
+            if (index > -1) {
+                const loc = locationsData[index];
+                if (loc.marker) map.removeLayer(loc.marker);
+                
+                const tagElement = document.getElementById(loc.id);
+                if (tagElement) tagElement.remove();
+                
+                locationsData.splice(index, 1);
+          renumberAll();
+                updateMapBounds();
+          updateShareUrl();
+            }
+        }
+
+        function renumberAll() {
+            locationsData.forEach((loc, index) => {
+                loc.number = index + 1;
+                const tagElement = document.getElementById(loc.id);
+                if (tagElement) {
             const numberEl = tagElement.querySelector(".tag-number");
             if (numberEl) numberEl.textContent = `${loc.number}.`;
-          }
-          if (loc.marker) {
-            loc.marker.setIcon(createNumberedIcon(loc.number));
+                }
+                if (loc.marker) {
+                    loc.marker.setIcon(createNumberedIcon(loc.number));
             loc.marker.bindPopup(renderPopupHtml(loc));
-          }
-        });
-      }
+                }
+            });
+        }
 
-      function updateMapBounds() {
-        const validPoints = locationsData
+        function updateMapBounds() {
+            const validPoints = locationsData
           .filter((loc) => loc.status === "success")
           .map((loc) => loc.coords);
-
-        if (validPoints.length > 0) {
-          map.fitBounds(validPoints, { padding: [50, 50], maxZoom: 16 });
-        } else {
-          map.setView([48.8566, 2.3522], 4);
+            
+            if (validPoints.length > 0) {
+                map.fitBounds(validPoints, { padding: [50, 50], maxZoom: 16 });
+            } else {
+                 map.setView([48.8566, 2.3522], 4);
+            }
         }
-      }
 
       function createOrUpdateTag(loc) {
         let tag = document.getElementById(loc.id);
@@ -552,19 +580,20 @@
               : "status-pending";
         if (!tag) {
           tag = document.createElement("div");
-          tag.id = loc.id;
+                tag.id = loc.id;
           tag.className = `location-tag ${statusClass}`;
-          tag.innerHTML = `
+                tag.innerHTML = `
                     <span class="tag-drag-handle" title="Drag to reorder">⠿</span>
                     <strong class="tag-number mr-1">${loc.number}.</strong>
-                    <span class="tag-text">${loc.text}</span>
+                    <span class="tag-note" style="font-style: italic; margin-right: 6px;"></span>
+                    <span class="tag-text"></span>
                     <span class="tag-edit-btn" title="Edit">✎</span>
                     <span class="tag-remove-btn" title="Remove">&times;</span>
                 `;
           tag.querySelector(".tag-remove-btn").onclick = (e) => {
             e.stopPropagation();
-            removeLocation(loc.id);
-          };
+                    removeLocation(loc.id);
+                };
           const editBtn = tag.querySelector(".tag-edit-btn");
           editBtn.style.display = loc.status === "error" ? "inline" : "none";
           editBtn.onclick = async (e) => {
@@ -608,6 +637,19 @@
           };
           attachDnDEvents(tag);
         }
+        // Update note/text split each time
+        (function updateTagText() {
+          const tag = document.getElementById(loc.id);
+          if (!tag) return;
+          const { baseText, note } = parseNote(loc.text);
+          const textEl = tag.querySelector('.tag-text');
+          const noteEl = tag.querySelector('.tag-note');
+          if (textEl) textEl.textContent = baseText;
+          if (noteEl) {
+            noteEl.textContent = note ? `*${note}*` : '';
+            noteEl.style.display = note ? 'inline' : 'none';
+          }
+        })();
       }
 
       async function editLocation(loc) {
@@ -888,6 +930,17 @@
       if (shareButtonTop)
         shareButtonTop.addEventListener("click", copyShareLink);
       clearButton.addEventListener("click", clearAll);
+      // theme toggle (persist in localStorage)
+      try {
+        const savedTheme = localStorage.getItem('sml_theme');
+        if (savedTheme === 'dark') document.documentElement.classList.add('dark');
+      } catch {}
+      function toggleTheme() {
+        const root = document.documentElement;
+        const isDark = root.classList.toggle('dark');
+        try { localStorage.setItem('sml_theme', isDark ? 'dark' : 'light'); } catch {}
+      }
+      if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
       const aboutModal = document.getElementById("aboutModal");
       const aboutClose = document.getElementById("aboutClose");
       const aboutOk = document.getElementById("aboutOk");
@@ -940,7 +993,7 @@
       });
       log.debug("Event listeners initialized");
     </script>
-  </body>
+</body>
 </html>
 <script>
   // On initial load, populate from URL param if present and auto-plot

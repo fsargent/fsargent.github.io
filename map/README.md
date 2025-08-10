@@ -3,7 +3,6 @@
 Turn a newline-separated list of places into a numbered, shareable map. Runs entirely in the browser; no backend.
 
 ## Features
-
 - Paste a list of locations; click "Add to Map" to geocode and plot numbered pins
 - Tags: success (green), failure (red), remove (×); drag to reorder and numbers update everywhere
 - Click a tag to pan and open its popup; popups include an "Open in Google Maps" link (query-based URL)
@@ -12,14 +11,14 @@ Turn a newline-separated list of places into a numbered, shareable map. Runs ent
 - Local geocoding cache (success and failure) with ~1 req/sec network rate limiting per Nominatim policy; cache can be cleared from the About modal
 
 ## How to Use
-
 1. Paste one place per line into the textarea
 2. Click "Add to Map"
 3. Optionally reorder by dragging tags; remove with ×
 4. Click "Copy Share Link" (or "Copy Link" in the header) to copy a URL others can open
 
-## URL Parameters
+Tip: Add optional notes in parentheses, e.g. `Hotel La Milagrosa, Alicante (Our Hotel)`. Notes show italicized in the left list and in the popup.
 
+## URL Parameters
 If both are present, `l` takes priority.
 
 - `l` (preferred): Base64-encoded newline-separated list
@@ -30,13 +29,11 @@ If both are present, `l` takes priority.
 On load, the app parses these parameters, pre-fills the textarea, and auto-plots.
 
 ## Tech
-
 - Leaflet + OpenStreetMap tiles
 - Nominatim geocoding (OpenStreetMap). Results cached locally; failures cached too
 - Tailwind for UI styling
 
 ## Development
-
 This is a single HTML file. Open `index.html` directly or serve with any static server. With Jekyll:
 
 ```bash
@@ -44,5 +41,4 @@ bundle exec jekyll serve --livereload
 ```
 
 ## Credits
-
 Data © OpenStreetMap contributors. Respect Nominatim usage policy.
