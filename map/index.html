@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shareable Map List</title>
+    <meta name="description" content="Shareable Map List: paste a list of places and get a numbered, interactive map you can share via URL.">
+    <meta name="keywords" content="map list, itinerary planner, trip map, numbered pins, leaflet, openstreetmap, nominatim, shareable map">
+    <meta name="author" content="Felix Sargent">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://felixsargent.com/map/">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Shareable Map List">
+    <meta property="og:description" content="Paste places, get a numbered, interactive map. Share via URL—no backend required.">
+    <meta property="og:type" content="website">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Shareable Map List">
+    <meta name="twitter:description" content="Paste places, get a numbered, interactive map. Share via URL—no backend required.">
+    
+    <!-- Leaflet CSS for map styling -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        #map { 
+            height: 100%; 
+            width: 100%;
+            border-radius: 0.5rem; 
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        /* iOS Safari viewport fix: ensure a concrete height on small screens */
+        @media (max-width: 767px) {
+            #map {
+                height: 60vh;
+                height: 60dvh;
+                min-height: 320px;
+            }
+        }
+        /* Style the textarea for location input */
+        #locationsTextarea {
+            border: 1px solid #d1d5db; /* gray-300 */
+            border-radius: 0.5rem; /* rounded-lg */
+            padding: 0.75rem; /* p-3 */
+            min-height: 10rem; /* h-40 */
+            width: 100%;
+            transition: all 0.15s ease-in-out;
+            resize: vertical;
+        }
+        #locationsTextarea:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            --tw-ring-color: #3b82f6; /* blue-500 */
+            box-shadow: 0 0 0 2px var(--tw-ring-color);
+            border-color: #3b82f6;
+        }
+        /* Style for the individual location tags */
+        .location-tag {
+            display: flex; /* Changed from inline-flex to flex */
+            align-items: center;
+            padding: 4px 8px;
+            margin-bottom: 4px; /* Use margin-bottom for spacing */
+            border-radius: 16px;
+            font-size: 0.875rem;
+            cursor: default;
+            transition: all 0.3s ease;
+            width: fit-content; /* Ensure tag doesn't take full width */
+        }
+        .status-pending { background-color: #e5e7eb; color: #374151; /* gray-200 / gray-700 */ }
+        .status-success { background-color: #d1fae5; color: #065f46; /* green-100 / green-800 */ }
+        .status-error { background-color: #fee2e2; color: #991b1b; /* red-100 / red-800 */ }
+        .tag-remove-btn {
+            margin-left: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+        .tag-remove-btn:hover { opacity: 1; }
+        .tag-edit-btn {
+            margin-left: 8px;
+            cursor: pointer;
+            opacity: 0.6;
+        }
+        .tag-edit-btn:hover { opacity: 1; }
+
+        /* Drag handle and drag styles */
+        .tag-drag-handle {
+            margin-right: 8px;
+            cursor: grab;
+            user-select: none;
+            opacity: 0.6;
+            font-size: 16px;
+            line-height: 1;
+        }
+        .tag-drag-handle:active { cursor: grabbing; }
+        .location-tag.dragging { opacity: 0.6; }
+
+        /* Style for the numbered map markers */
+        .numbered-marker {
+            background-color: #2563eb; /* blue-600 */
+            color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            line-height: 1; /* Fix vertical alignment */
+        }
+        /* Ensure map overlay controls are always above Leaflet panes */
+        .map-overlay { z-index: 2000; }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen p-4 md:p-8">
+
+    <div class="max-w-7xl mx-auto h-full grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Left Panel: Input and Controls -->
+        <div class="bg-white p-6 rounded-lg shadow-md flex flex-col h-full">
+            <div class="flex items-center justify-between mb-2">
+                <h1 class="text-2xl font-bold text-gray-800">Numbered Plotter</h1>
+                <div class="flex items-center gap-3">
+                    <button id="shareButtonTop" class="text-sm text-indigo-600 hover:text-indigo-800 underline">Copy Link</button>
+                    <button id="aboutButton" class="text-sm text-gray-600 hover:text-gray-900 underline">About</button>
+                </div>
+            </div>
+            <p class="text-gray-600 mb-2 text-sm">Paste locations below, one per line. They will be numbered and plotted on the map.</p>
+
+            <textarea id="locationsTextarea" placeholder="Buckingham Palace
+            10 Downing Street
+            A random place that won't be found
+            Eiffel Tower, Paris"></textarea>
+
+            <button id="plotButton" class="mt-3 w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition">
+                Add to Map
+            </button>
+
+            <div id="tagsContainer" class="mt-3 space-y-1"></div>
+
+            <div class="mt-4 flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
+                <button id="shareButton" class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition">
+                    Copy Share Link
+                </button>
+                <button id="clearButton" class="w-full bg-gray-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition">
+                    Clear All
+                </button>
+            </div>
+            <div id="status" class="mt-4 text-sm text-gray-500 h-5"></div>
+        </div>
+
+        <!-- Right Panel: Map Display -->
+        <div class="relative md:col-span-2 bg-white p-2 rounded-lg shadow-md h-full">
+            <div id="map"></div>
+            <div class="absolute map-overlay top-3 right-3 flex gap-2">
+                <button id="fitAllButton" class="bg-emerald-600 text-white text-sm font-semibold py-2 px-3 rounded-lg shadow hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition">
+                    Zoom to Show All
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS for map functionality -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    
+    <!-- Modal for About -->
+    <div id="aboutModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-[2000]">
+        <div class="bg-white max-w-lg w-11/12 md:w-[640px] rounded-lg shadow-xl p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-semibold">About Numbered Plotter</h2>
+                <button id="aboutClose" class="text-gray-500 hover:text-gray-700 text-xl">&times;</button>
+            </div>
+            <div class="text-sm text-gray-700 space-y-3">
+                <p>This tool turns a newline-separated list of locations into an interactive map with numbered pins.</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li><b>Map</b>: Leaflet.js with OpenStreetMap tiles.</li>
+                    <li><b>Geocoding</b>: Nominatim (OpenStreetMap). Requests are limited to ~1 per second per client. Successful results are cached locally to reduce load.</li>
+                    <li><b>Shareability</b>: Your list is encoded in the URL query string so you can refresh or share the link without any server.</li>
+                    <li><b>URL parameters</b>:
+                        <ul class="list-disc pl-5 mt-1">
+                            <li><code>l</code> (preferred): Base64-encoded newline-separated list of places.</li>
+                            <li><code>list</code>: Raw URL-encoded newline-separated list (use <code>%0A</code> for newlines). Used when <code>l</code> is not present.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="text-xs text-gray-500">Data courtesy of OpenStreetMap contributors. Use responsibly and in accordance with the Nominatim usage policy.</p>
+            </div>
+            <div class="mt-6 flex justify-between">
+                <button id="clearCacheBtn" class="bg-gray-200 text-gray-800 text-sm font-semibold py-2 px-4 rounded-lg hover:bg-gray-300">Clear Geocode Cache</button>
+                <button id="aboutOk" class="bg-blue-600 text-white text-sm font-semibold py-2 px-4 rounded-lg hover:bg-blue-700">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA STORE ---
+        let locationsData = [];
+
+        // --- MAP INITIALIZATION ---
+        const map = L.map('map').setView([48.8566, 2.3522], 4);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        // --- CUSTOM MARKER ICONS ---
+        const createNumberedIcon = (number) => {
+            return new L.DivIcon({
+                html: number,
+                className: 'numbered-marker',
+                iconSize: [28, 28],
+                iconAnchor: [14, 14] 
+            });
+        };
+        
+        // --- DOM ELEMENT REFERENCES ---
+        const plotButton = document.getElementById('plotButton');
+         const fitAllButton = document.getElementById('fitAllButton');
+         const shareButton = document.getElementById('shareButton');
+         const shareButtonTop = document.getElementById('shareButtonTop');
+        const clearButton = document.getElementById('clearButton');
+         const aboutButton = document.getElementById('aboutButton');
+         const locationsTextarea = document.getElementById('locationsTextarea');
+         const tagsContainer = document.getElementById('tagsContainer');
+        const statusDiv = document.getElementById('status');
+        
+        // --- URL ENCODING HELPERS ---
+        // --- LOGGING ---
+        const LOG_NS = '[NumberedPlotter]';
+        const log = {
+            debug: (...args) => console.debug(LOG_NS, ...args),
+            info: (...args) => console.info(LOG_NS, ...args),
+            warn: (...args) => console.warn(LOG_NS, ...args),
+            error: (...args) => console.error(LOG_NS, ...args),
+        };
+
+        function base64EncodeUnicode(str) {
+            const bytes = new TextEncoder().encode(str);
+            let binary = '';
+            bytes.forEach(b => binary += String.fromCharCode(b));
+            return btoa(binary);
+        }
+        function base64DecodeUnicode(b64) {
+            const binary = atob(b64);
+            const bytes = new Uint8Array([...binary].map(ch => ch.charCodeAt(0)));
+            return new TextDecoder().decode(bytes);
+        }
+        function updateShareUrl() {
+            const lines = locationsData.map(l => l.text).join('\n');
+            const url = new URL(window.location.href);
+            if (lines.trim() === '') {
+                url.searchParams.delete('l');
+            } else {
+                url.searchParams.set('l', base64EncodeUnicode(lines));
+            }
+            history.replaceState(null, '', url.toString());
+            log.debug('URL updated', url.toString());
+        }
+
+        // --- POPUP RENDERING ---
+        function renderPopupHtml(loc) {
+            const queryText = getGmapsQueryText(loc);
+            const sanitized = queryText.replace(/\s+/g, ' ').trim();
+            const gmaps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(sanitized)}`;
+            const nameLine = `<b>${loc.number}. ${escapeHtml(loc.text)}</b>`;
+            const displayLine = loc.displayName ? `<br>${escapeHtml(loc.displayName)}` : '';
+            const linkLine = `<br><a href="${gmaps}" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>`;
+            return `${nameLine}${displayLine}${linkLine}`;
+        }
+
+        function getGmapsQueryText(loc) {
+            if (loc && typeof loc.text === 'string' && loc.text.trim().length > 0) {
+                return loc.text.trim();
+            }
+            if (loc && typeof loc.displayName === 'string' && loc.displayName.trim().length > 0) {
+                const parts = loc.displayName.split(',').map(p => p.trim());
+                return parts.slice(0, Math.min(parts.length, 4)).join(', ');
+            }
+            return '';
+        }
+
+        function escapeHtml(s) {
+            return String(s)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        // --- GEOCODING CACHE (per Nominatim policy) ---
+        const GEOCODE_CACHE_KEY = 'nlp_geocode_cache_v1';
+        function normalizeQuery(q) { return (q || '').trim().toLowerCase(); }
+        function loadGeocodeCache() {
+            try {
+                const raw = localStorage.getItem(GEOCODE_CACHE_KEY);
+                if (!raw) return { byQuery: {} };
+                const parsed = JSON.parse(raw);
+                if (!parsed || typeof parsed !== 'object' || !parsed.byQuery) return { byQuery: {} };
+                return parsed;
+            } catch { return { byQuery: {} }; }
+        }
+        function saveGeocodeCache(cache) {
+            try { localStorage.setItem(GEOCODE_CACHE_KEY, JSON.stringify(cache)); log.debug('Cache saved'); } catch (e) { log.warn('Cache save failed', e); }
+        }
+        let geocodeCache = loadGeocodeCache();
+        function getCachedGeocode(query) {
+            const key = normalizeQuery(query);
+            const hit = geocodeCache.byQuery[key] || null;
+            if (hit) {
+                if (hit.error) {
+                    log.info('Cache hit (error)', { query: key });
+                } else {
+                    log.info('Cache hit (success)', { query: key });
+                }
+            } else {
+                log.debug('Cache miss', { query: key });
+            }
+            return hit;
+        }
+        function setCachedGeocode(query, result) {
+            const key = normalizeQuery(query);
+            geocodeCache.byQuery[key] = {
+                lat: result.lat,
+                lon: result.lon,
+                displayName: result.displayName || result.display_name || null,
+                error: false
+            };
+            saveGeocodeCache(geocodeCache);
+            log.info('Cache set', { query: key });
+        }
+        function setCachedError(query) {
+            const key = normalizeQuery(query);
+            geocodeCache.byQuery[key] = { error: true };
+            saveGeocodeCache(geocodeCache);
+            log.info('Cache set (error)', { query: key });
+        }
+        let lastNetworkGeocodeMs = 0;
+        
+        // --- CORE FUNCTIONS ---
+
+        function clearAll() {
+            locationsData = [];
+            if (tagsContainer) tagsContainer.innerHTML = '';
+            if (locationsTextarea) locationsTextarea.value = '';
+            map.eachLayer(layer => {
+                if (layer instanceof L.Marker) {
+                    map.removeLayer(layer);
+                }
+            });
+            statusDiv.textContent = 'Map cleared.';
+            map.setView([48.8566, 2.3522], 4);
+            updateShareUrl();
+        }
+
+        function removeLocation(id) {
+            const index = locationsData.findIndex(loc => loc.id === id);
+            if (index > -1) {
+                const loc = locationsData[index];
+                if (loc.marker) map.removeLayer(loc.marker);
+                
+                const tagElement = document.getElementById(loc.id);
+                if (tagElement) tagElement.remove();
+                
+                locationsData.splice(index, 1);
+                renumberAll();
+                updateMapBounds();
+                updateShareUrl();
+            }
+        }
+
+        function renumberAll() {
+            locationsData.forEach((loc, index) => {
+                loc.number = index + 1;
+                const tagElement = document.getElementById(loc.id);
+                if (tagElement) {
+                    const numberEl = tagElement.querySelector('.tag-number');
+                    if (numberEl) numberEl.textContent = `${loc.number}.`;
+                }
+                if (loc.marker) {
+                    loc.marker.setIcon(createNumberedIcon(loc.number));
+                    loc.marker.bindPopup(renderPopupHtml(loc));
+                }
+            });
+        }
+
+        function updateMapBounds() {
+            const validPoints = locationsData
+                .filter(loc => loc.status === 'success')
+                .map(loc => loc.coords);
+            
+            if (validPoints.length > 0) {
+                map.fitBounds(validPoints, { padding: [50, 50], maxZoom: 16 });
+            } else {
+                 map.setView([48.8566, 2.3522], 4);
+            }
+        }
+
+        function createOrUpdateTag(loc) {
+            let tag = document.getElementById(loc.id);
+            const statusClass = loc.status === 'success' ? 'status-success' : (loc.status === 'error' ? 'status-error' : 'status-pending');
+            if (!tag) {
+                tag = document.createElement('div');
+                tag.id = loc.id;
+                tag.className = `location-tag ${statusClass}`;
+                tag.innerHTML = `
+                    <span class="tag-drag-handle" title="Drag to reorder">⠿</span>
+                    <strong class="tag-number mr-1">${loc.number}.</strong>
+                    <span class="tag-text">${loc.text}</span>
+                    <span class="tag-edit-btn" title="Edit">✎</span>
+                    <span class="tag-remove-btn" title="Remove">&times;</span>
+                `;
+                tag.querySelector('.tag-remove-btn').onclick = (e) => {
+                    e.stopPropagation();
+                    removeLocation(loc.id);
+                };
+                const editBtn = tag.querySelector('.tag-edit-btn');
+                editBtn.style.display = loc.status === 'error' ? 'inline' : 'none';
+                editBtn.onclick = async (e) => {
+                    e.stopPropagation();
+                    await editLocation(loc);
+                };
+                // Clicking the tag opens the marker popup and pans without changing zoom
+                tag.onclick = () => {
+                    if (loc.marker && loc.coords) {
+                        loc.marker.openPopup();
+                        map.panTo(loc.coords, { animate: true, duration: 0.5 });
+                    }
+                };
+                attachDnDEvents(tag);
+                tagsContainer.appendChild(tag);
+            } else {
+                tag.className = `location-tag ${statusClass}`;
+                const numberEl = tag.querySelector('.tag-number');
+                if (numberEl) numberEl.textContent = `${loc.number}.`;
+                const textEl = tag.querySelector('.tag-text');
+                if (textEl) textEl.textContent = loc.text;
+                let editBtn = tag.querySelector('.tag-edit-btn');
+                if (!editBtn) {
+                    editBtn = document.createElement('span');
+                    editBtn.className = 'tag-edit-btn';
+                    editBtn.title = 'Edit';
+                    editBtn.textContent = '✎';
+                    tag.insertBefore(editBtn, tag.querySelector('.tag-remove-btn'));
+                }
+                editBtn.style.display = loc.status === 'error' ? 'inline' : 'none';
+                editBtn.onclick = async (e) => {
+                    e.stopPropagation();
+                    await editLocation(loc);
+                };
+                // Ensure the click handler stays up to date with current loc
+                tag.onclick = () => {
+                    if (loc.marker && loc.coords) {
+                        loc.marker.openPopup();
+                        map.panTo(loc.coords, { animate: true, duration: 0.5 });
+                    }
+                };
+                attachDnDEvents(tag);
+            }
+        }
+
+        async function editLocation(loc) {
+            const newText = (prompt('Edit location:', loc.text) || '').trim();
+            if (!newText || newText === loc.text) return;
+            loc.text = newText;
+            loc.status = 'pending';
+            createOrUpdateTag(loc);
+            try {
+                const cached = getCachedGeocode(loc.text);
+                if (cached) {
+                    loc.status = 'success';
+                    loc.coords = [parseFloat(cached.lat), parseFloat(cached.lon)];
+                    loc.displayName = cached.displayName || null;
+                    log.debug('Edit geocode from cache', { query: loc.text });
+                } else {
+                    const nowMs = Date.now();
+                    const sinceLast = nowMs - lastNetworkGeocodeMs;
+                    if (sinceLast < 1100) await sleep(1100 - sinceLast);
+                    const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=${encodeURIComponent(loc.text)}`;
+                    const response = await fetch(url, { headers: { 'Accept-Language': 'en', 'User-Agent': 'NumberedPlotter/1.0 (contact: felix.sargent@gmail.com)' } });
+                    lastNetworkGeocodeMs = Date.now();
+                    const data = await response.json();
+                    if (Array.isArray(data) && data.length > 0) {
+                        const result = data[0];
+                        loc.status = 'success';
+                        loc.coords = [parseFloat(result.lat), parseFloat(result.lon)];
+                        loc.displayName = result.display_name || null;
+                        setCachedGeocode(loc.text, { lat: result.lat, lon: result.lon, displayName: result.display_name });
+                        log.info('Edit geocode network success', { query: loc.text });
+                    } else {
+                        loc.status = 'error';
+                        setCachedError(loc.text);
+                        log.warn('Edit geocode network no results', { query: loc.text });
+                    }
+                }
+                if (loc.status === 'success') {
+                    const popupHtml = renderPopupHtml(loc);
+                    if (loc.marker) {
+                        loc.marker.setLatLng(loc.coords);
+                        loc.marker.setIcon(createNumberedIcon(loc.number));
+                        loc.marker.bindPopup(popupHtml);
+                    } else {
+                        loc.marker = L.marker(loc.coords, { icon: createNumberedIcon(loc.number) })
+                            .addTo(map)
+                            .bindPopup(popupHtml);
+                    }
+                } else {
+                    if (loc.marker) {
+                        map.removeLayer(loc.marker);
+                        loc.marker = null;
+                    }
+                }
+            } catch (err) {
+                log.error('Edit geocode error', { error: err });
+                loc.status = 'error';
+                setCachedError(loc.text);
+            }
+            createOrUpdateTag(loc);
+            updateShareUrl();
+        }
+
+        // --- DRAG AND DROP HELPERS ---
+        function attachDnDEvents(tag) {
+            const handle = tag.querySelector('.tag-drag-handle');
+            if (!handle || handle.dataset.dndAttached === '1') return;
+            handle.dataset.dndAttached = '1';
+            handle.setAttribute('draggable', 'true');
+            handle.addEventListener('dragstart', (e) => {
+                if (e.dataTransfer) {
+                    e.dataTransfer.effectAllowed = 'move';
+                    e.dataTransfer.setData('text/plain', tag.id);
+                }
+                tag.classList.add('dragging');
+            });
+            handle.addEventListener('dragend', () => {
+                tag.classList.remove('dragging');
+                persistNewOrderFromDOM();
+            });
+        }
+
+        function getDragAfterElement(container, y) {
+            const draggableElements = [...container.querySelectorAll('.location-tag:not(.dragging)')];
+            return draggableElements.reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = y - (box.top + box.height / 2);
+                if (offset < 0 && offset > closest.offset) {
+                    return { offset, element: child };
+                } else {
+                    return closest;
+                }
+            }, { offset: Number.NEGATIVE_INFINITY, element: null }).element;
+        }
+
+        function persistNewOrderFromDOM() {
+            const idsInOrder = Array.from(tagsContainer.children).map(el => el.id);
+            const idToLoc = new Map(locationsData.map(loc => [loc.id, loc]));
+            locationsData = idsInOrder.map(id => idToLoc.get(id)).filter(Boolean);
+            renumberAll();
+            updateShareUrl();
+        }
+
+        function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+
+        async function plotLocations() {
+            statusDiv.textContent = 'Processing...';
+            log.info('Plot start', { addCount: (locationsTextarea.value || '').split('\n').filter(l => l.trim() !== '').length, existingCount: locationsData.length });
+            const lines = (locationsTextarea.value || '').split('\n').map(l => l.trim()).filter(line => line !== '');
+
+            if (lines.length === 0) {
+                statusDiv.textContent = 'Please enter at least one location.';
+                return;
+            }
+
+            // Disable controls while processing
+            plotButton.disabled = true;
+            clearButton.disabled = true;
+            if (fitAllButton) fitAllButton.disabled = true;
+            plotButton.classList.add('opacity-50', 'cursor-not-allowed');
+            clearButton.classList.add('opacity-50', 'cursor-not-allowed');
+            if (fitAllButton) fitAllButton.classList.add('opacity-50', 'cursor-not-allowed');
+
+            // 1) Initialize data and render pending tags
+            const now = Date.now();
+            const baseNumber = locationsData.length;
+            lines.forEach((line, index) => {
+                const loc = {
+                    id: `loc-${now}-${index}-${Math.random().toString(36).slice(2)}`,
+                    text: line,
+                    number: baseNumber + index + 1,
+                    status: 'pending',
+                    coords: null,
+                    marker: null,
+                    displayName: null,
+                };
+                locationsData.push(loc);
+                createOrUpdateTag(loc);
+            });
+            // Clear the textarea after capturing the input
+            locationsTextarea.value = '';
+            updateShareUrl();
+
+            // 2) Geocode sequentially with a polite delay
+            let foundCount = 0;
+            for (let i = 0; i < locationsData.length; i++) {
+                const loc = locationsData[i];
+                try {
+                    const cached = getCachedGeocode(loc.text);
+                    if (cached) {
+                        loc.status = 'success';
+                        loc.coords = [parseFloat(cached.lat), parseFloat(cached.lon)];
+                        loc.displayName = cached.displayName || null;
+                    } else {
+                        const nowMs = Date.now();
+                        const sinceLast = nowMs - lastNetworkGeocodeMs;
+                        if (sinceLast < 1100) await sleep(1100 - sinceLast);
+                        const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=${encodeURIComponent(loc.text)}`;
+                        const response = await fetch(url, { headers: { 'Accept-Language': 'en', 'User-Agent': 'NumberedPlotter/1.0 (contact: none)' } });
+                        lastNetworkGeocodeMs = Date.now();
+                        const data = await response.json();
+                        if (Array.isArray(data) && data.length > 0) {
+                            const result = data[0];
+                            loc.status = 'success';
+                            loc.coords = [parseFloat(result.lat), parseFloat(result.lon)];
+                            loc.displayName = result.display_name || null;
+                            setCachedGeocode(loc.text, { lat: result.lat, lon: result.lon, displayName: result.display_name });
+                            log.info('Geocode network success', { query: loc.text, lat: result.lat, lon: result.lon });
+                    } else {
+                        loc.status = 'error';
+                        setCachedError(loc.text);
+                        log.warn('Geocode network no results', { query: loc.text });
+                    }
+                    }
+                    if (loc.status === 'success') {
+                        const popupHtml = renderPopupHtml(loc);
+                        loc.marker = L.marker(loc.coords, { icon: createNumberedIcon(loc.number) })
+                            .addTo(map)
+                            .bindPopup(popupHtml);
+                        foundCount++;
+                        log.debug('Marker added', { number: loc.number, text: loc.text });
+                    }
+                } catch (error) {
+                    log.error('Geocode error', { query: loc.text, error });
+                    loc.status = 'error';
+                    setCachedError(loc.text);
+                }
+                createOrUpdateTag(loc);
+            }
+
+            updateMapBounds();
+            statusDiv.textContent = `Added ${foundCount} of ${lines.length} locations.`;
+            log.info('Plot end', { added: foundCount, inputCount: lines.length, total: locationsData.length });
+
+            // Re-enable controls
+            plotButton.disabled = false;
+            clearButton.disabled = false;
+            if (fitAllButton) fitAllButton.disabled = false;
+            plotButton.classList.remove('opacity-50', 'cursor-not-allowed');
+            clearButton.classList.remove('opacity-50', 'cursor-not-allowed');
+            if (fitAllButton) fitAllButton.classList.remove('opacity-50', 'cursor-not-allowed');
+            updateShareUrl();
+        }
+        
+        // --- EVENT LISTENERS ---
+        plotButton.addEventListener('click', plotLocations);
+        fitAllButton.addEventListener('click', updateMapBounds);
+        function copyShareLink() {
+            return (async () => {
+                try {
+                    updateShareUrl();
+                    await navigator.clipboard.writeText(window.location.href);
+                    statusDiv.textContent = 'Share link copied to clipboard.';
+                    setTimeout(() => { if (statusDiv.textContent.startsWith('Share link')) statusDiv.textContent = ''; }, 3000);
+                } catch (e) {
+                    statusDiv.textContent = 'Could not copy link. You can copy the URL from the address bar.';
+                    setTimeout(() => { if (statusDiv.textContent.startsWith('Could not')) statusDiv.textContent = ''; }, 4000);
+                }
+            })();
+        }
+        if (shareButton) shareButton.addEventListener('click', copyShareLink);
+        if (shareButtonTop) shareButtonTop.addEventListener('click', copyShareLink);
+        clearButton.addEventListener('click', clearAll);
+        const aboutModal = document.getElementById('aboutModal');
+        const aboutClose = document.getElementById('aboutClose');
+        const aboutOk = document.getElementById('aboutOk');
+        const clearCacheBtn = document.getElementById('clearCacheBtn');
+        const aboutBtn = document.getElementById('aboutButton');
+        function openAbout() {
+            aboutModal.classList.remove('hidden');
+            aboutModal.classList.add('flex');
+        }
+        function closeAbout() {
+            aboutModal.classList.add('hidden');
+            aboutModal.classList.remove('flex');
+        }
+        if (aboutBtn) aboutBtn.addEventListener('click', openAbout);
+        if (aboutClose) aboutClose.addEventListener('click', closeAbout);
+        if (aboutOk) aboutOk.addEventListener('click', closeAbout);
+        if (clearCacheBtn) clearCacheBtn.addEventListener('click', () => {
+            geocodeCache = { byQuery: {} };
+            try { localStorage.removeItem(GEOCODE_CACHE_KEY); } catch {}
+            log.info('Cache cleared by user');
+        });
+        if (aboutModal) {
+            aboutModal.addEventListener('click', (e) => {
+                if (e.target === aboutModal) closeAbout();
+            });
+        }
+
+        // Enable drag-and-drop reordering inside the tags container
+        tagsContainer.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            const afterElement = getDragAfterElement(tagsContainer, e.clientY);
+            const dragging = document.querySelector('.location-tag.dragging');
+            if (!dragging) return;
+            if (afterElement == null) {
+                tagsContainer.appendChild(dragging);
+            } else {
+                tagsContainer.insertBefore(dragging, afterElement);
+            }
+        });
+        tagsContainer.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const dragging = document.querySelector('.location-tag.dragging');
+            if (dragging) {
+                dragging.classList.remove('dragging');
+                persistNewOrderFromDOM();
+            }
+        });
+        log.debug('Event listeners initialized');
+
+    </script>
+</body>
+</html>
+<script>
+    // On initial load, populate from URL param if present and auto-plot
+    (function loadFromUrl() {
+        try {
+            const url = new URL(window.location.href);
+            let initial = '';
+            const encoded = url.searchParams.get('l');
+            if (encoded) {
+                initial = base64DecodeUnicode(encoded);
+            } else {
+                const list = url.searchParams.get('list');
+                if (list) {
+                    initial = list.replace(/\r\n?/g, '\n');
+                }
+            }
+            if (!initial) return;
+            if (locationsTextarea) locationsTextarea.value = initial;
+            // Auto-plot after textarea fill
+            const clickSoon = () => {
+                if (typeof plotLocations === 'function') {
+                    plotLocations();
+                }
+            };
+            // Allow DOM to settle before plotting
+            setTimeout(clickSoon, 0);
+        } catch (e) {
+            console.warn('Failed to parse URL param', e);
+        }
+    })();
+</script>
