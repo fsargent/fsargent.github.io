@@ -4,6 +4,7 @@ title: "Get your CA Vaccine Pass into Apple Wallet"
 date: 2021-08-13
 category: "Technical"
 ---
+
 <section id="article">
     <h2>Get your CA Vaccine Pass into Apple Wallet</h2>
     <p><em>August 13, 2021</em></p>

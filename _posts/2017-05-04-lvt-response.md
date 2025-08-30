@@ -4,6 +4,7 @@ title: "Re: Shentrup’s Land Value Tax Critique"
 date: 2017-05-04
 category: "Democracy"
 ---
+
 <section id="article">
     <h2>Re: Shentrup’s Land Value Tax Critique</h2>
     <p><em>May 4, 2017</em></p>

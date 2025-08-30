@@ -2,40 +2,56 @@
 layout: default
 title: Home
 ---
+
 <section id="about">
-    <h2>About Me</h2>
-    <p>
-        I'm a seasoned engineering leader. I enjoy building high-performing teams and scalable, robust software. I program in Scala, Typescript, and Python, with a deep appreciation for type safety, observability, and comprehensive testing.
-    </p>
-    <p>
-        I'm driven by a curiosity for how complex systems work, whether in software or in society. Outside of my professional life, I'm passionate about improving democratic systems. As the former chair of the <a href="https://electionscience.org">Center for Election Science</a>, I've dedicated years to advocating for better voting methods.
-    </p>
-    <p>
-        I'm always open to connecting with interesting people. If you'd like to chat about technology, social choice theory, or engineering mentorship, feel free to book a <a href="https://tidycal.com/felix.sargent">30 minute chat</a>. I ask for a $50 donation to the <a href="https://electionscience.org">Center for Election Science</a> to support their work.
-    </p>
-    <p>
-        <a href="/resume/" class="resume-link">View My Resume</a>
-    </p>
+  <h2>About Me</h2>
+  <p>
+    I'm a seasoned engineering leader. I enjoy building high-performing teams
+    and scalable, robust software. I program in Scala, Typescript, and Python,
+    with a deep appreciation for type safety, observability, and comprehensive
+    testing.
+  </p>
+  <p>
+    I'm driven by a curiosity for how complex systems work, whether in software
+    or in society. Outside of my professional life, I'm passionate about
+    improving democratic systems. As the former chair of the
+    <a href="https://electionscience.org">Center for Election Science</a>, I've
+    dedicated years to advocating for better voting methods.
+  </p>
+  <p>
+    I'm always open to connecting with interesting people. If you'd like to chat
+    about technology, social choice theory, or engineering mentorship, feel free
+    to book a <a href="https://tidycal.com/felix.sargent">30 minute chat</a>. I
+    ask for a $50 donation to the
+    <a href="https://electionscience.org">Center for Election Science</a> to
+    support their work.
+  </p>
+  <p>
+    <a href="/resume/" class="resume-link">View My Resume</a>
+  </p>
 </section>
 <section id="articles">
-    <h2>Articles</h2>
-    {% for category in site.categories %}
-    <h3 id="{{ category | first }}">{{ category | first }}</h3>
-    <ul>
-        {% for post in category.last %}
-        <li>
-            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span> <a href="{{ post.url }}">{{ post.title }}</a>
-        </li>
-        {% endfor %}
-    </ul>
+  <h2>Articles</h2>
+  {% for category in site.categories %}
+  <h3 id="{{ category | first }}">{{ category | first }}</h3>
+  <ul>
+    {% for post in category.last %}
+    <li>
+      <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
     {% endfor %}
+  </ul>
+  {% endfor %}
 </section>
 <section id="websites">
-    <h2>Websites</h2>
-    <ul>
-        <li><a href="https://approval.vote">approval.vote</a></li>
-        <li><a href="https://vote.electionscience.org">vote.electionscience.org</a></li>
-        <li><a href="https://approvalvoting.co.uk">approvalvoting.co.uk</a></li>
-        <li><a href="/map/">Shareable Map List</a></li>
-    </ul>
+  <h2>Websites</h2>
+  <ul>
+    <li><a href="https://approval.vote">approval.vote</a></li>
+    <li>
+      <a href="https://vote.electionscience.org">vote.electionscience.org</a>
+    </li>
+    <li><a href="https://approvalvoting.co.uk">approvalvoting.co.uk</a></li>
+    <li><a href="/map/">Shareable Map List</a></li>
+  </ul>
 </section>

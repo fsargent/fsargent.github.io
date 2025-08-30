@@ -7,6 +7,7 @@ This repository contains the source code for my personal website, felixsargent.c
 To preview the website locally, you'll need to have Ruby and Bundler installed.
 
 1.  **Install Jekyll and other dependencies:**
+
     ```bash
     bundle install
     ```

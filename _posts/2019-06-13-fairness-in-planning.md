@@ -4,6 +4,7 @@ title: "Berkeleyside: Re-weighted Range Voting and the Berkeley City Council"
 date: 2019-06-13
 category: "Democracy"
 ---
+
 <section id="article">
     <h2>Fairness in Action — Re-weighted Range Voting and the Berkeley City Council</h2>
     <p><em>Originally published at <a href="https://www.berkeleyside.org/2019/06/19/opinion-berkeleys-city-councils-switch-to-re-weighted-range-voting-adds-fairness-to-the-system">Berkeleyside.org</a> on June 13, 2019</em></p>

@@ -6,9 +6,10 @@ category: "Democracy"
 ---
 
 ## Approval voting: The political reform engineers — and voters — love
+
 ### Unlike ranked-choice voting, it’s easy to understand and implement
 
-*Originally published at [https://rollcall.com/2022/01/18/approval-voting-the-political-reform-engineers-and-voters-love/](https://rollcall.com/2022/01/18/approval-voting-the-political-reform-engineers-and-voters-love/)*
+_Originally published at [https://rollcall.com/2022/01/18/approval-voting-the-political-reform-engineers-and-voters-love/](https://rollcall.com/2022/01/18/approval-voting-the-political-reform-engineers-and-voters-love/)_
 
 If there’s one thing engineers take pride in, it’s discovering the next big thing. As pretentious as it may sound, we are as cautious as we are thrilled to throw support behind emerging products, practices and ideas. So, when I tell you that engineers, entrepreneurs and other bright minds are throwing support behind approval voting, know that it’s far from the last time you’ll hear about it.
 
@@ -30,5 +31,4 @@ In the tech community, having a great idea is not good enough — it has to be a
 
 Approval voting has the potential to allow voters to support candidates across the spectrum of ideologies, eliminating the appeal of polarizing extremism. It would eliminate the complication, confusion and waste of the old way. It’s a sensible, intuitive and tested approach that every voting machine in America could execute tomorrow. It can be set up quickly and seamlessly, and, based on my engineer instincts, could very well become as ubiquitous and life-changing as the best apps.
 
-*Felix Sargent is a senior engineering manager with a decade of working in the software industry. He chairs the board of directors at the Center for Election Science, a nonpartisan group focused on voting reform, with an emphasis on approval voting.*
-
+_Felix Sargent is a senior engineering manager with a decade of working in the software industry. He chairs the board of directors at the Center for Election Science, a nonpartisan group focused on voting reform, with an emphasis on approval voting._

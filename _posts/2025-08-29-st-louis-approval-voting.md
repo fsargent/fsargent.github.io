@@ -6,9 +6,9 @@ category: "Democracy"
 description: "Analysis of cast vote records from St. Louis's approval voting election reveals that voters embraced the system as intended, with 33% supporting multiple candidates and debunking common myths about 'bullet voting.'"
 ---
 
-# St. Louis Approval Voting: What the Cast Vote Records Reveal
-
 _This article is a companion piece to our interactive data analysis and visualizations from this election at [approval.vote](https://approval.vote/report/us/mo/st_louis/2025/03/mayor)._
+
+<img src="/components/images/posts/2025-08-29-st-louis-approval-voting/results.png" alt="Election Results" style="max-width: 100%; width: 600px; height: auto; display: block; margin: 20px auto;">
 
 The St. Louis, MO Primary Municipal Election was held on March 4, 2025. The election included multiple races: Mayor, Comptroller, Alderman Ward 3, and Alderman Ward 11. While we have cast vote record data for all these races, this analysis focuses specifically on the mayoral contest, which provides the richest dataset for understanding voter behavior under approval voting.
 
@@ -38,7 +38,13 @@ One of the great myths used against Approval Voting is that voters will "Bullet 
 
 The St. Louis data decisively refutes these concerns. Our analysis demonstrates that in real world elections voters use approval voting to support all the candidates they like. While some voters genuinely preferred only one candidate (a perfectly valid choice), the system enabled nuanced preference expression where it mattered most. For supporters of Mike Butler and Andrew Jones - voters whose voices would have been completely silenced in a traditional primary - 84.4% and 83.1% respectively were able to express additional preferences. This wasn't strategic voting or gaming the system; it was honest preference expression that approval voting enables.
 
-It's a fair critique that individual Approval Voting ballots do not reveal the relative preferences of candidates, but here is where the [law of large numbers](https://en.wikipedia.org/wiki/Law_of_large_numbers) applies.
+## The Expressiveness Question
+
+RCV supporters claim that approval voting is less expressive than ranked systems because individual ballots don't show fine-grained preferences between approved candidates. This intuition, while understandable, misses how approval voting achieves expressiveness at the aggregate level.
+
+Consider a voter who approves Spencer and Butler but not Jones or Andrew Jones. While their ballot doesn't rank Spencer versus Butler, it does reveal two preference relationships: Spencer > Jones and Butler > Jones. Other voters make different approval choices—some might approve only Spencer, others might approve Spencer and Jones, and still others might approve all except Jones. These varied patterns collectively reveal the electorate's preferences with remarkable precision.
+
+This is where the [law of large numbers](https://en.wikipedia.org/wiki/Law_of_large_numbers) becomes crucial. Individual voters who can't differentiate between two candidates they both like statistically tend to have similar relative preferences to the broader electorate. [Research by voting systems experts](https://electionscience.github.io/vse-sim/) shows that approval voting consistently produces more accurate results—meaning outcomes that better satisfy the average voter—than even ranked choice voting with completely honest voters, because approval voting captures what matters most: which candidates voters genuinely support versus those they oppose.
 
 ## Coalition Patterns: The Co-Approval Matrix
 

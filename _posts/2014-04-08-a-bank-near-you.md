@@ -4,6 +4,7 @@ title: "Code for America, San Francisco: A bank near you"
 date: 2014-04-08
 category: "Democracy"
 ---
+
 <section id="article">
     <h2>A Bank Near You</h2>
     <p><em>April 8, 2014</em></p>

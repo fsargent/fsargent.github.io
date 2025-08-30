@@ -4,6 +4,7 @@ title: "Developer to Product Manager"
 date: 2014-08-12
 category: "Technical"
 ---
+
 <section id="article">
     <h2>Developer to Product Manager: Put the Kettle On</h2>
     <p><em>August 12, 2014</em></p>

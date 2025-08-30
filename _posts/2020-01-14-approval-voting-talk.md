@@ -7,8 +7,6 @@ category: "Democracy"
 
 ## Approval Voting Talk at RepresentUS Berkeley
 
-*January 14, 2020*
-
 Here's a talk I gave to the RepresentUS Berkeley Chapter about Approval Voting.
 
 <div class="video-container">

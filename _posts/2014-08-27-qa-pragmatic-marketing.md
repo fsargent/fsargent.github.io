@@ -3,6 +3,7 @@ layout: default
 title: "Q&A with Pragmatic Marketing Magazine"
 date: 2014-08-27
 ---
+
 <section id="article">
     <h2>Q&amp;A with Pragmatic Marketing Magazine</h2>
     <p><em>August 27, 2014</em></p>

@@ -1,55 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page.title }} | Felix Sargent</title>
-    <meta name="description" content="{{ page.description | default: page.excerpt | default: 'Software Engineering Leader | Social Choice Theorist' | strip_html | normalize_whitespace | truncate: 160 }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="/components/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/components/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/components/images/favicon-16x16.png">
-    <link rel="manifest" href="/components/images/site.webmanifest">
-    <link rel="mask-icon" href="/components/images/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#1e1e1e" media="(prefers-color-scheme: dark)">
+    <meta
+      name="description"
+      content="{{ page.description | default: page.excerpt | default: 'Software Engineering Leader | Social Choice Theorist' | strip_html | normalize_whitespace | truncate: 160 }}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/components/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/components/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/components/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/components/images/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/components/images/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1e1e1e"
+      media="(prefers-color-scheme: dark)"
+    />
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@felixsargent">
-    <meta name="twitter:title" content="Felix Sargent">
-    <meta name="twitter:description" content="Software Engineering Leader | Social Choice Theorist">
-    <meta name="twitter:image" content="https://felixsargent.com/components/images/headshots/felix-roughlinen-headshot.jpg">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@felixsargent" />
+    <meta
+      name="twitter:title"
+      content="{{ page.title | default: 'Felix Sargent' }}"
+    />
+    <meta
+      name="twitter:description"
+      content="{{ page.description | default: page.excerpt | default: 'Software Engineering Leader | Social Choice Theorist' | strip_html | normalize_whitespace | truncate: 160 }}"
+    />
+    {% unless page.layout == 'default' and page.title and page.date %}
+    <meta
+      name="twitter:image"
+      content="https://felixsargent.com/components/images/headshots/felix-roughlinen-headshot.jpg"
+    />
+    {% endunless %}
 
-    <meta property="og:title" content="Felix Sargent" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://felixsargent.com/" />
-    <meta property="og:image" content="https://felixsargent.com/components/images/headshots/felix-roughlinen-headshot.jpg" />
-    <meta property="og:description" content="Software Engineering Leader | Social Choice Theorist" />
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="{{ page.title | default: 'Felix Sargent' }}"
+    />
+    <meta
+      property="og:type"
+      content="{% if page.date %}article{% else %}website{% endif %}"
+    />
+    <meta
+      property="og:url"
+      content="https://felixsargent.com{{ page.url | default: '/' }}"
+    />
+    {% unless page.layout == 'default' and page.title and page.date %}
+    <meta
+      property="og:image"
+      content="https://felixsargent.com/components/images/headshots/felix-roughlinen-headshot.jpg"
+    />
+    {% endunless %}
+    <meta
+      property="og:description"
+      content="{{ page.description | default: page.excerpt | default: 'Software Engineering Leader | Social Choice Theorist' | strip_html | normalize_whitespace | truncate: 160 }}"
+    />
+    {% if page.date %}
+    <meta
+      property="article:published_time"
+      content="{{ page.date | date_to_xmlschema }}"
+    />
+    {% if page.category %}
+    <meta property="article:section" content="{{ page.category }}" />
+    {% endif %} {% endif %}
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css" />
     <script src="/components/scripts/print.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <a href="/"><img src="/components/images/headshots/yellow circle2.jpeg" alt="Felix Sargent Headshot" class="headshot"></a>
-            <div class="header-text">
-                <h1><a href="/">Felix Sargent</a></h1>
-                <p>Software Engineering | <span class="tooltip" title="Social choice theory is a branch of welfare economics that extends the theory of rational choice to collective decision-making.">Social Choice Theory</span></p>
-            </div>
-        </header>
+      <header>
+        <a href="/"
+          ><img
+            src="/components/images/headshots/yellow circle2.jpeg"
+            alt="Felix Sargent Headshot"
+            class="headshot"
+        /></a>
+        <div class="header-text">
+          <h1><a href="/">Felix Sargent</a></h1>
+          <p>
+            Software Engineering |
+            <span
+              class="tooltip"
+              title="Social choice theory is a branch of welfare economics that extends the theory of rational choice to collective decision-making."
+              >Social Choice Theory</span
+            >
+          </p>
+        </div>
+      </header>
 
+      {% if page.layout == 'default' and page.title and page.date %}
+      <div class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+        <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
+      </div>
+      {% endif %} {{ content }}
 
-        {{ content }}
-
-        <footer>
-            <p>
-                <a href="https://www.linkedin.com/in/felixsargent/">LinkedIn</a> |
-                <a href="https://github.com/fsargent">GitHub</a> |
-                <a href="https://twitter.com/felixsargent">Twitter</a> |
-                <a href="https://medium.com/@felix.sargent">Medium</a>
-            </p>
-        </footer>
+      <footer>
+        <p>
+          <a href="https://www.linkedin.com/in/felixsargent/">LinkedIn</a> |
+          <a href="https://github.com/fsargent">GitHub</a> |
+          <a href="https://twitter.com/felixsargent">Twitter</a> |
+          <a href="https://medium.com/@felix.sargent">Medium</a>
+        </p>
+      </footer>
     </div>
-</body>
+  </body>
 </html>

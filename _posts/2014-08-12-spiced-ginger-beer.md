@@ -3,6 +3,7 @@ layout: default
 title: "Spiced Ginger Beer"
 date: 2014-08-12
 ---
+
 <section id="article">
     <h2>Spiced Ginger Beer</h2>
     <p><em>August 12, 2014</em></p>

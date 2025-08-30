@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Kill any existing Jekyll processes
+pkill -f jekyll 2>/dev/null
+
+# Set environment variables to silence Sass deprecations
+export SASS_SILENCE_DEPRECATIONS="import,global-builtin"
+
+# Start Jekyll server
+bundle exec jekyll serve --livereload --port 4000 2>&1 | grep -v "Deprecation Warning \[import\]" | grep -v "Deprecation Warning \[global-builtin\]"

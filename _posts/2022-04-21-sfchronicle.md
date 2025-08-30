@@ -4,6 +4,7 @@ title: "SF Chronicle: Chaos reigns in San Francisco’s redistricting"
 date: 2022-04-21
 category: "Democracy"
 ---
+
 <section id="article">
     <h2>Chaos reigns in San Francisco’s redistricting. Here’s a better way to do things</h2>
     <p><em>Originally published at https://www.sfchronicle.com on April 21, 2022.</em></p>

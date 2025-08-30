@@ -3,12 +3,9 @@ layout: default
 title: "Sign your git commits using your Yubikey + GPG (OS X)"
 date: 2021-10-27
 category: "Technical"
-
 ---
 
 ## Sign your git commits using your Yubikey + GPG (OS X)
-
-*October 27, 2021*
 
 Using GPG can feel like a miniature nightmare of being stuck in a maze. There are too many options, and it’s hard to know which are “safe” or reasonable. In our organization we wanted to ensure that all our commits were signed so that we could trust that the code in our repositories were ours.
 
@@ -32,7 +29,7 @@ gpg --card-edit
 
 This will output something like:
 
-```
+```text
 Reader ...........: Yubico YubiKey OTP FIDO CCID
 Application ID ...: D2760001240103040006169214170000
 Application type .: OpenPGP
@@ -58,21 +55,21 @@ General key info..: [none]
 
 Now, enter admin mode:
 
-```
+```text
 gpg/card> admin
 Admin commands are allowed
 ```
 
 We’re now in the GPG card editor, and we’re going to start generating a key on the yubikey itself.
 
-```
+```text
 gpg/card> generate
 Make off-card backup of encryption key? (Y/n) y
 ```
 
 Please note that the factory settings of the PINs are `PIN = '123456'` and `Admin PIN = '12345678'`. You should change them using the `passwd` command.
 
-```
+```text
 Please specify how long the key should be valid.
 0 = key does not expire
 <n>  = key expires in n days
@@ -114,7 +111,7 @@ cat ~/Documents/Felix\\ Sargent\\ \\(D27C4A68\\)\\ –\\ Public.asc
 
 This will output your public key block:
 
-```
+```gpg
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 mDMEYXmhiRYJKwYBBAHaRw8BAQdAzUGoX8W3VGDm1LVDE9LmIHDK/6KRGIckUQff
 K8a7Swe0OUZlbGl4IFNhcmdlbnQgKFl1YmlrZXkgZm9yIFRydWV3b3JrKSA8ZmVs
@@ -157,7 +154,7 @@ gpg --change-pin
 
 This will give you a menu:
 
-```
+```text
 gpg: OpenPGP card no. D2760001240102010006055532110000 detected
 
 1 - change PIN

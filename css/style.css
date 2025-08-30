@@ -1,275 +1,339 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: #333;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
 
 .container {
-    max-width: 800px;
-    margin: auto;
-    padding: 1rem;
-    background: #fff;
+  max-width: 800px;
+  margin: auto;
+  padding: 1rem;
+  background: #fff;
 }
 
 header {
-    text-align: center;
-    margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+  margin: 0;
+  font-size: 2.5rem;
 }
 
 header p {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #666;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #666;
 }
 
 nav {
-    text-align: center;
-    margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 a {
-    color: #0056b3;
-    text-decoration: none;
+  color: #0056b3;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 nav a {
-    margin: 0 1rem;
-    font-weight: bold;
+  margin: 0 1rem;
+  font-weight: bold;
 }
 
 section {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 h2 {
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 h3 {
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 footer {
-    text-align: center;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
-    font-size: 0.9rem;
-    color: #666;
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+  color: #666;
 }
 
 pre {
-    background: #f4f4f4;
-    border: 1px solid #ddd;
-    border-left: 3px solid #f36d33;
-    color: #666;
-    page-break-inside: avoid;
-    font-family: monospace;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 1.6em;
-    max-width: 100%;
-    overflow: auto;
-    padding: 1em 1.5em;
-    display: block;
-    word-wrap: break-word;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-left: 3px solid #f36d33;
+  color: #666;
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1em 1.5em;
+  display: block;
+  word-wrap: break-word;
 }
 
 .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    background: #000;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
 }
 
 .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212;
-        color: #eee;
-    }
+  body {
+    background-color: #1e1e1e;
+    color: #eee;
+  }
 
-    .container {
-        background: #1e1e1e;
-    }
+  .container {
+    background: #1e1e1e;
+  }
 
-    header p {
-        color: #aaa;
-    }
+  header p {
+    color: #aaa;
+  }
 
-    a {
-        color: #8ab4f8;
-    }
+  a {
+    color: #8ab4f8;
+  }
 
-    h2 {
-        border-bottom-color: #333;
-    }
+  h2 {
+    border-bottom-color: #333;
+  }
 
-    footer {
-        border-top-color: #333;
-        color: #aaa;
-    }
+  .post-header {
+    border-bottom-color: #333;
+  }
 
-    pre {
-        background: #2d2d2d;
-        border: 1px solid #444;
-        border-left: 3px solid #f36d33;
-        color: #ccc;
-    }
+  .post-title {
+    color: #fff;
+  }
+
+  .post-date {
+    color: #aaa;
+  }
+
+  footer {
+    border-top-color: #333;
+    color: #aaa;
+  }
+
+  pre {
+    background: #2d2d2d;
+    border: 1px solid #444;
+    border-left: 3px solid #f36d33;
+    color: #ccc;
+  }
 }
 
 .headshot {
-    border-radius: 100%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.post-header {
+  text-align: left;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #eee;
+}
+
+.post-title {
+  margin: 0 0 1rem 0;
+  font-size: 2.2rem;
+  line-height: 1.3;
+  color: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-title {
+    color: #fff !important;
+  }
 }
 
 .post-date {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
 }
 
 .tooltip {
-    border-bottom: 1px dotted #333;
-    cursor: help;
+  border-bottom: 1px dotted #333;
+  cursor: help;
 }
 
 #print-button {
-    display: block;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: 0 auto 2rem;
-    padding: 0.5rem 1rem;
-    background: #0056b3;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto 2rem;
+  padding: 0.5rem 1rem;
+  background: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 @media print {
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        background-color: #fff;
-        color: #000;
-        font-size: 10pt; /* Smaller base font size for print */
-        line-height: 1.4;
-    }
+  body {
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+      Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    font-size: 10pt; /* Smaller base font size for print */
+    line-height: 1.4;
+  }
 
-    .container {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        box-shadow: none;
-    }
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
 
-    header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-        text-align: left;
-    }
+  header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
 
-    header .headshot {
-        width: 80px;
-        height: 80px;
-        margin-right: 1rem;
-    }
+  header .headshot {
+    width: 80px;
+    height: 80px;
+    margin-right: 1rem;
+  }
 
-    header .header-text {
-        display: flex;
-        flex-direction: column;
-    }
+  header .header-text {
+    display: flex;
+    flex-direction: column;
+  }
 
-    header h1 {
-        font-size: 2rem;
-        margin: 0;
-    }
+  header h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
 
-    header p {
-        font-size: 1rem;
-    }
+  header p {
+    font-size: 1rem;
+  }
 
-    nav, footer {
-        display: none;
-    }
+  .post-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #000;
+    text-align: left;
+  }
 
-    section {
-        margin-bottom: 1rem;
-    }
+  .post-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+  }
 
-    h2 {
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
-        padding-bottom: 0.2rem;
-    }
+  .post-date {
+    font-size: 0.9rem;
+    color: #666;
+  }
 
-    h3 {
-        font-size: 1.1rem;
-        margin-top: 1rem;
-        margin-bottom: 0.2rem;
-    }
+  nav,
+  footer {
+    display: none;
+  }
 
-    p, ul {
-        margin-top: 0.2rem;
-        margin-bottom: 0.5rem;
-    }
+  section {
+    margin-bottom: 1rem;
+  }
 
-    ul {
-        padding-left: 20px;
-    }
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.2rem;
+  }
 
-    a {
-        color: #000;
-        text-decoration: none;
-    }
+  h3 {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+  }
 
-    h1, h2, h3 {
-        page-break-after: avoid;
-    }
+  p,
+  ul {
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+  }
 
-    ul {
-        page-break-inside: avoid;
-    }
+  ul {
+    padding-left: 20px;
+  }
 
-    .job, .volunteering-entry, .education-entry {
-        page-break-inside: avoid;
-        margin-bottom: 0.5rem;
-    }
+  a {
+    color: #000;
+    text-decoration: none;
+  }
 
-    .two-column-layout {
-        display: flex;
-        justify-content: space-between;
-    }
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 
-    .two-column-layout .column {
-        width: 48%;
-    }
+  ul {
+    page-break-inside: avoid;
+  }
 
-    #print-button {
-        display: none;
-    }
+  .job,
+  .volunteering-entry,
+  .education-entry {
+    page-break-inside: avoid;
+    margin-bottom: 0.5rem;
+  }
+
+  .two-column-layout {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .two-column-layout .column {
+    width: 48%;
+  }
+
+  #print-button {
+    display: none;
+  }
 }
