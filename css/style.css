@@ -91,6 +91,27 @@ pre {
   word-wrap: break-word;
 }
 
+blockquote {
+  background: #f9f9f9;
+  border-left: 4px solid #0056b3;
+  margin: 2em 0;
+  padding: 1.5em 2em;
+  font-style: italic;
+  position: relative;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+blockquote p {
+  margin: 0;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+blockquote p:not(:last-child) {
+  margin-bottom: 1em;
+}
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -152,6 +173,12 @@ pre {
     border: 1px solid #444;
     border-left: 3px solid #f36d33;
     color: #ccc;
+  }
+
+  blockquote {
+    background: #2d2d2d;
+    border-left: 4px solid #8ab4f8;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
   }
 }
 

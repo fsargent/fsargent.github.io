@@ -34,7 +34,11 @@ Our analysis of the Approval Distribution reveals that a third (32.8%) of voters
 
 One of the great myths used against Approval Voting is that voters will "Bullet Vote" (only approve of one candidate). FairVote (the US organization; FairVote Canada and FairVote UK are unassociated) insists that in Approval Voting elections voters will not take advantage of the ability to support multiple candidates because of the chance that a less favored candidate will win because of their vote. In the worst case scenario, they hypothesize, this would devolve an approval voting election into a "Choose One" First Past the Post election, along with the horrific vote splitting we see in those elections.
 
-**Bullet voting: insincerely expressing a preference for only a single candidate to increase that candidate's chance of victory. This strategy applies to any degree of insincere preference truncation, such as expressing a preference for two candidates when one sincerely prefers three.** [Fairvote.org - Comparing single-winner voting methods](https://fairvote.org/resources/electoral-systems/comparing-voting-methods/?section=criteria-welltested-in-government-elections)
+FairVote defines bullet voting as:
+
+> **Bullet voting**: insincerely expressing a preference for only a single candidate to increase that candidate's chance of victory. This strategy applies to any degree of insincere preference truncation, such as expressing a preference for two candidates when one sincerely prefers three.
+>
+> _— [Fairvote.org - Comparing single-winner voting methods](https://fairvote.org/resources/electoral-systems/comparing-voting-methods/?section=criteria-welltested-in-government-elections)_
 
 The St. Louis data decisively refutes these concerns. Our analysis demonstrates that in real world elections voters use approval voting to support all the candidates they like. While some voters genuinely preferred only one candidate (a perfectly valid choice), the system enabled nuanced preference expression where it mattered most. For supporters of Mike Butler and Andrew Jones - voters whose voices would have been completely silenced in a traditional primary - 84.4% and 83.1% respectively were able to express additional preferences. This wasn't strategic voting or gaming the system; it was honest preference expression that approval voting enables.
 
