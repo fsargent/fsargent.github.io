@@ -44,7 +44,7 @@
     />
 
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@felixsargent" />
     <meta
       name="twitter:title"
@@ -54,12 +54,10 @@
       name="twitter:description"
       content="{{ page.description | default: page.excerpt | default: 'Software Engineering Leader | Social Choice Theorist' | strip_html | normalize_whitespace | truncate: 160 }}"
     />
-    {% unless page.layout == 'default' and page.title and page.date %}
     <meta
       name="twitter:image"
-      content="https://felixsargent.com/components/images/headshots/felix-roughlinen-headshot.jpg"
+      content="https://felixsargent.com{{ page.image | default: '/components/images/headshots/felix-roughlinen-headshot.jpg' }}"
     />
-    {% endunless %}
 
     <!-- Open Graph Meta Tags -->
     <meta
@@ -74,12 +72,10 @@
       property="og:url"
       content="https://felixsargent.com{{ page.url | default: '/' }}"
     />
-    {% unless page.layout == 'default' and page.title and page.date %}
     <meta
       property="og:image"
-      content="https://felixsargent.com/components/images/headshots/felix-roughlinen-headshot.jpg"
+      content="https://felixsargent.com{{ page.image | default: '/components/images/headshots/felix-roughlinen-headshot.jpg' }}"
     />
-    {% endunless %}
     <meta
       property="og:description"
       content="{{ page.description | default: page.excerpt | default: 'Software Engineering Leader | Social Choice Theorist' | strip_html | normalize_whitespace | truncate: 160 }}"

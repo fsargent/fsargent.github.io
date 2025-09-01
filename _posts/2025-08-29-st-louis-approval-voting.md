@@ -4,6 +4,7 @@ title: "St. Louis Approval Voting: What the Cast Vote Records Reveal"
 date: 2025-08-29
 category: "Democracy"
 description: "Analysis of cast vote records from St. Louis's approval voting election reveals that voters embraced the system as intended, with 33% supporting multiple candidates and debunking common myths about 'bullet voting.'"
+image: "/components/images/posts/2025-08-29-st-louis-approval-voting/co_approval_matrix.png"
 ---
 
 _This article is a companion piece to our interactive data analysis and visualizations from this election at [approval.vote](https://approval.vote/report/us/mo/st_louis/2025/03/mayor)._
@@ -54,7 +55,7 @@ This is where the [law of large numbers](https://en.wikipedia.org/wiki/Law_of_la
 
 <img src="/components/images/posts/2025-08-29-st-louis-approval-voting/co_approval_matrix.png" alt="CoApproval Matrix" style="max-width: 100%; width: 400px; height: auto; display: block; margin: 20px auto;">
 
-The Co-Approval matrix shows the fraction of voters who approved one candidate that also approved the other. This reveals voting patterns and candidate coalitions. The data shows fascinating cross-support patterns: 67.1% of Andrew Jones supporters also approved Mike Butler, while 60.6% of Butler supporters reciprocated that support. Both of these candidates' supporters showed significant cross-approval with Cara Spencer (22.1% of Spencer supporters approved Butler, 13.4% approved Andrew Jones). In contrast, there was much less overlap between Tishaura O. Jones and the other candidates, with only 20.1% of Tishaura O. Jones supporters approving Butler and just 4.3% approving Andrew Jones. This suggests Cara Spencer, the highest approved candidate, successfully positioned herself as a consensus candidate who could attract support from across the political spectrum.
+The Co-Approval matrix shows the fraction of voters who approved one candidate that also approved the other. This reveals voting patterns and candidate coalitions. The data shows fascinating cross-support patterns: 45.7% of Andrew Jones supporters also approved Mike Butler, while 25.1% of Butler supporters reciprocated that support. Both of these candidates' supporters showed significant cross-approval with Cara Spencer (60.6% of Butler supporters approved Spencer, 67.1% of Andrew Jones supporters approved Spencer). In contrast, there was much less overlap between Tishaura O. Jones and the other candidates, with only 26.9% of Butler supporters approving Tishaura O. Jones and just 10.4% of Andrew Jones supporters approved of Tishaura O. Jones. This suggests Cara Spencer, the highest approved candidate, successfully positioned herself as a consensus candidate who could attract support from across the political spectrum.
 
 ## Election-Wide Coalition Patterns
 
