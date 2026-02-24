@@ -2,6 +2,9 @@ title: Felix Sargent
 description: Software Engineering Leadership | Social Choice Theory
 theme: minima
 
+plugins:
+  - jekyll-redirect-from
+
 sass:
   style: compressed
   load_paths:
