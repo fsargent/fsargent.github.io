@@ -38,7 +38,7 @@ title: Home
     {% for post in category.last %}
     <li>
       <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}">{{ post.title }}</a>{% if post.format == "video" %} <span class="post-format">📺</span>{% endif %}
     </li>
     {% endfor %}
   </ul>

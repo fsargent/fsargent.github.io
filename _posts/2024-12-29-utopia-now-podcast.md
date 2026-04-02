@@ -3,6 +3,7 @@ layout: default
 title: "Utopia Now: Approval Voting and Voting Reform"
 date: 2024-12-29
 category: "Democracy"
+format: video
 ---
 
 An interview covering my background, work at the Center for Election Science, approval voting in Fargo and St. Louis, and the case for simpler and more effective democratic reform.

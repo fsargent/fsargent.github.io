@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "The Product Group Presentations (Video)"
+title: "The Product Group Presentations"
 date: 2016-07-16
 category: Technical
+format: video
 ---
 
 I've had the pleasure of giving a few presentations at The Product Group, a fantastic community for product managers. Here are the recordings of those talks:

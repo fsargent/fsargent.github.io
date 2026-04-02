@@ -3,6 +3,7 @@ layout: default
 title: "In Class with Sass: Inclusivity in Voting Reform"
 date: 2021-10-02
 category: "Democracy"
+format: video
 ---
 
 A conversation with Sass for Congress on improving diversity and building a more inclusive space within voting science and voting method reform.

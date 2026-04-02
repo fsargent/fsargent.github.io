@@ -3,6 +3,7 @@ layout: default
 title: "RepresentUS: Approval Voting"
 date: 2020-01-14
 category: "Democracy"
+format: video
 ---
 
 ## Approval Voting Talk at RepresentUS Berkeley
