@@ -1,4 +1,4 @@
-# Felix Sargent's Personal Website
+;# Felix Sargent's Personal Website
 
 This repository contains the source code for my personal website, felixsargent.com. It's a static website built with Jekyll and hosted on GitHub Pages.
 
